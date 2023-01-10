@@ -39,6 +39,12 @@ class SignUpViewController: UIViewController {
         customModel.cornerRadiusTXT(txt: txtphoneNo)
         customModel.cornerRadiusTXT(txt: txtUserName)
         customModel.cornerRadiusTXT(txt: txtPassword)
+        txtEmail.layer.borderColor = UIColor.green.cgColor
+        txtPassword.layer.borderColor = UIColor.red.cgColor
+        txtEmail.layer.borderWidth = 3
+        txtPassword.layer.borderWidth = 3
+
+        
 
         // Do any additional setup after loading the view.
     }

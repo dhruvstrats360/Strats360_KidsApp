@@ -24,7 +24,12 @@ class CustomClass{
         let paddingView = UIView(frame: CGRectMake(0, 0, 10, 10))
              textfield.leftViewMode = .always
              textfield.leftView = paddingView
+        
     }
+    func imgCustom( ){
+        
+    }
+    
     
     
     

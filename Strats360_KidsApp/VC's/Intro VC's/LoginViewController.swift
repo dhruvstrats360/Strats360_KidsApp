@@ -30,13 +30,25 @@ class LoginViewController: UIViewController {
         
     }
     
+    
     @IBAction func backBTNpressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
+    @IBAction func logingBTNpressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+        
+        
+        let customViewControllersArray : NSArray = [destinationVC]
+        navigationController?.viewControllers = customViewControllersArray as! [UIViewController]
+            
+//            if let window = UIApplication.shared.delegate?.window {
+//                
+//             }
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
-
-
 
 /*
 // MARK: - Navigation
@@ -47,3 +59,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // Pass the selected object to the new view controller.
 }
 */
+extension UINavigationController {
+
+    var rootViewController: UIViewController? {
+        return viewControllers.first
+    }
+    
+
+}

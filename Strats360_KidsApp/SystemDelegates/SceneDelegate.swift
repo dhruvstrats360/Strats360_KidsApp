@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let loginBool: Bool = true
     
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
@@ -20,7 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+//        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
+//        if loginBool{
+//            let custom = storyBoard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
+//            window?.rootViewController = custom
+//            window?.makeKeyAndVisible()
+//        }
+//        else{
+//            let custom1 = storyBoard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+//            window?.rootViewController = custom1
+//            window?.makeKeyAndVisible()
+//
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

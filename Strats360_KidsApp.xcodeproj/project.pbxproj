@@ -29,7 +29,11 @@
 		8F31C7F92966B7CB00554AB8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8F31C7EC2966B7CA00554AB8 /* LICENSE.txt */; };
 		8F31C7FC2966EE2700554AB8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7FB2966EE2600554AB8 /* SignUpViewController.swift */; };
 		8F31C7FE29671C3A00554AB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7FD29671C3A00554AB8 /* LoginViewController.swift */; };
+		8F98E964296C001300B6D71A /* StartNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98E963296C001300B6D71A /* StartNavController.swift */; };
+		8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98E966296C1B6900B6D71A /* HomePageNavController.swift */; };
 		8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC73C229685236000F8DE5 /* HomePageViewController.swift */; };
+		8FE7C5FD296C402600F3E67E /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */; };
+		8FE7C624296D325D00F3E67E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FE7C623296D325D00F3E67E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +61,11 @@
 		8F31C7EC2966B7CA00554AB8 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		8F31C7FB2966EE2600554AB8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8F31C7FD29671C3A00554AB8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8F98E963296C001300B6D71A /* StartNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavController.swift; sourceTree = "<group>"; };
+		8F98E966296C1B6900B6D71A /* HomePageNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageNavController.swift; sourceTree = "<group>"; };
 		8FCC73C229685236000F8DE5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
+		8FE7C623296D325D00F3E67E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 				8F31C7CC2965AC0400554AB8 /* LaunchScreen.storyboard */,
 				8F31C7CA2965AC0400554AB8 /* Assets.xcassets */,
 				8F31C7CF2965AC0400554AB8 /* Info.plist */,
+				8FE7C623296D325D00F3E67E /* GoogleService-Info.plist */,
 				8F31C7BF2965AC0100554AB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +114,7 @@
 		8F31C7D7296698EF00554AB8 /* VC's */ = {
 			isa = PBXGroup;
 			children = (
+				8F98E965296C001600B6D71A /* NAV's */,
 				8FCC73C129684056000F8DE5 /* Intro VC's */,
 				8FCC73C42968523C000F8DE5 /* HomePageVC's */,
 			);
@@ -156,6 +166,15 @@
 			path = "Roboto Fonts";
 			sourceTree = "<group>";
 		};
+		8F98E965296C001600B6D71A /* NAV's */ = {
+			isa = PBXGroup;
+			children = (
+				8F98E963296C001300B6D71A /* StartNavController.swift */,
+				8F98E966296C1B6900B6D71A /* HomePageNavController.swift */,
+			);
+			path = "NAV's";
+			sourceTree = "<group>";
+		};
 		8FCC73C129684056000F8DE5 /* Intro VC's */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				8FCC73C229685236000F8DE5 /* HomePageViewController.swift */,
+				8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */,
 			);
 			path = "HomePageVC's";
 			sourceTree = "<group>";
@@ -244,6 +264,7 @@
 				8F31C7F62966B7CB00554AB8 /* Roboto-Regular.ttf in Resources */,
 				8F31C7F72966B7CB00554AB8 /* Roboto-Thin.ttf in Resources */,
 				8F31C7F82966B7CB00554AB8 /* Roboto-MediumItalic.ttf in Resources */,
+				8FE7C624296D325D00F3E67E /* GoogleService-Info.plist in Resources */,
 				8F31C7F92966B7CB00554AB8 /* LICENSE.txt in Resources */,
 				8F31C7CE2965AC0400554AB8 /* LaunchScreen.storyboard in Resources */,
 				8F31C7CB2965AC0400554AB8 /* Assets.xcassets in Resources */,
@@ -258,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE7C5FD296C402600F3E67E /* ChapterViewController.swift in Sources */,
+				8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */,
 				8F31C7FE29671C3A00554AB8 /* LoginViewController.swift in Sources */,
 				8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */,
+				8F98E964296C001300B6D71A /* StartNavController.swift in Sources */,
 				8F31C7DD2966994C00554AB8 /* CustomModel.swift in Sources */,
 				8F31C7C62965AC0100554AB8 /* DescriptionViewController.swift in Sources */,
 				8F31C7C22965AC0100554AB8 /* AppDelegate.swift in Sources */,

@@ -17,21 +17,30 @@ class HomePageViewController: UIViewController {
     let CustomModel = CustomClass()
     
     // Constants
-    let arrVIPImg = [UIImage(imageLiteralResourceName: "Screenshot")]
-    let arrSubImg = [UIImage(imageLiteralResourceName: "kid_1")]
+    let arrVIPImg = [UIImage(imageLiteralResourceName: "360 Kids logo")]
+    let arrSubImg = [UIImage(imageLiteralResourceName: "Screenshot")]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Hello"
+        SubjectColView.delegate = self
+        SubjectColView.dataSource = self
         CustomModel.cornerRadiusTXT(txt: txtSearchBar)
         imgVIP.layer.cornerRadius = 15
-        // Do any additional setup after loading the view.
+        imgVIP.image = arrVIPImg[0]
+        navigationController?.isNavigationBarHidden = false
         
     }
-
+    
+    
+    
+    @IBAction func homeBtnPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,6 +50,11 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         cell.containerView.layer.cornerRadius = 10
         
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
     
     
