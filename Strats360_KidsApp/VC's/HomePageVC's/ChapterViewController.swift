@@ -14,18 +14,24 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var ChapterColView: UICollectionView!
     @IBOutlet weak var lessoncolView: UICollectionView!
     
+    // Custom model
+    let customClass = CustomClass()
     
+    // Constants
+    let arrBGColor = [UIColor(named: "Color 1"),UIColor(named: "Color 2"),UIColor(named: "Color 3"),UIColor(named: "Color 4"),UIColor(named: "Color 5"),UIColor(named: "Color 6"),UIColor(named: "Color 7"),UIColor(named: "Color 8"),UIColor(named: "Color 9"),UIColor(named: "Color 10"), UIColor(named: "Color 1"),UIColor(named: "Color 2"),UIColor(named: "Color 3"),UIColor(named: "Color 4"),UIColor(named: "Color 5"),UIColor(named: "Color 6"),UIColor(named: "Color 7"),UIColor(named: "Color 8"),UIColor(named: "Color 9"),UIColor(named: "Color 10") ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
         
     }
-
 }
 extension ChapterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0{
-            return 10
+            return arrBGColor.count
         }
         else{
             return 10
@@ -35,25 +41,30 @@ extension ChapterViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChapterVCUpperCell", for: indexPath) as! ChapterVCUpperCell
-            cell.imgThumbnail.image = UIImage(imageLiteralResourceName: "GirlIcon")
-            cell.bgView.layer.cornerRadius = cell.bgView.frame.width / 2.4
+            cell.bgView.layer.cornerRadius = cell.bgView.frame.width / 2
+            cell.lblOverview.layer.cornerRadius = cell.lblOverview.frame.width / 2
             
-            
+            cell.lblOverview.backgroundColor = arrBGColor[indexPath.row]
             return cell
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChapterVCLowerCell", for: indexPath) as! ChapterVCLowerCell
            
             cell.imgLesson.image = UIImage(imageLiteralResourceName: "Screenshot")
-            cell.bgView.bounds.size = CGSize(width: view.frame.width, height: view.frame.height * 0.7)
-            cell.imgLesson.bounds.size = CGSize(width: cell.bgView.frame.width, height: cell.bgView.frame.height)
             return cell
         }
     }
+    func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+      return CGSize(width: (view.frame.size.width) * 0.95, height:(view.frame.size.height) * 0.7)
+    }
 }
+
 class ChapterVCUpperCell: UICollectionViewCell{
+    
+    @IBOutlet weak var lblOverview: UILabel!
     @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var imgThumbnail: UIImageView!
 }
 class ChapterVCLowerCell: UICollectionViewCell{
     @IBOutlet weak var imgLesson: UIImageView!

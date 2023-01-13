@@ -13,7 +13,7 @@ class HomePageNavController: UINavigationController, UINavigationBarDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationBar.delegate = self
+//        navigationBar.delegate = self
     }
     
 

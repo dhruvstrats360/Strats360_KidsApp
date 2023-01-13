@@ -6,14 +6,27 @@
 //
 
 import UIKit
+import FirebaseCore
+import IQKeyboardManagerSwift
+import FTPopOverMenu
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var windowAppD: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // IQkeyboard
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        
+        // firebase
+        FirebaseApp.configure()
+        
+        
+        
         return true
     }
 

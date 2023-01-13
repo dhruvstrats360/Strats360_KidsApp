@@ -1,0 +1,6 @@
+framework module Pods_Strats360_KidsApp {
+  umbrella header "Pods-Strats360_KidsApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

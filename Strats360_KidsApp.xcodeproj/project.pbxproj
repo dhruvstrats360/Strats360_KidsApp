@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DF02D948D1BDBD8A36A26DA /* Pods_Strats360_KidsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B176DCB86172D74D828303C /* Pods_Strats360_KidsApp.framework */; };
 		8F31C7C22965AC0100554AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C12965AC0100554AB8 /* AppDelegate.swift */; };
 		8F31C7C42965AC0100554AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C32965AC0100554AB8 /* SceneDelegate.swift */; };
 		8F31C7C62965AC0100554AB8 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C52965AC0100554AB8 /* DescriptionViewController.swift */; };
@@ -37,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E07282F1800FC428CD2EF97 /* Pods-Strats360_KidsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strats360_KidsApp.release.xcconfig"; path = "Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp.release.xcconfig"; sourceTree = "<group>"; };
+		54C23F2EB65C218EDCFAE9AE /* Pods-Strats360_KidsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strats360_KidsApp.debug.xcconfig"; path = "Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5B176DCB86172D74D828303C /* Pods_Strats360_KidsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strats360_KidsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F31C7BE2965AC0100554AB8 /* Strats360_KidsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strats360_KidsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F31C7C12965AC0100554AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F31C7C32965AC0100554AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,12 +77,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF02D948D1BDBD8A36A26DA /* Pods_Strats360_KidsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54CEC959D392600B20D3371F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B176DCB86172D74D828303C /* Pods_Strats360_KidsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F31C7B52965AC0100554AB8 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,8 @@
 				8F31C7CF2965AC0400554AB8 /* Info.plist */,
 				8FE7C623296D325D00F3E67E /* GoogleService-Info.plist */,
 				8F31C7BF2965AC0100554AB8 /* Products */,
+				BEB01B0DAFC2DAC0379857DC /* Pods */,
+				54CEC959D392600B20D3371F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +209,15 @@
 			path = "HomePageVC's";
 			sourceTree = "<group>";
 		};
+		BEB01B0DAFC2DAC0379857DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54C23F2EB65C218EDCFAE9AE /* Pods-Strats360_KidsApp.debug.xcconfig */,
+				2E07282F1800FC428CD2EF97 /* Pods-Strats360_KidsApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F31C7D22965AC0400554AB8 /* Build configuration list for PBXNativeTarget "Strats360_KidsApp" */;
 			buildPhases = (
+				F101FC465FAAA9ACF35EF85F /* [CP] Check Pods Manifest.lock */,
 				8F31C7BA2965AC0100554AB8 /* Sources */,
 				8F31C7BB2965AC0100554AB8 /* Frameworks */,
 				8F31C7BC2965AC0100554AB8 /* Resources */,
+				B05A3A23D5E8A06E187DEEEE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +299,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B05A3A23D5E8A06E187DEEEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F101FC465FAAA9ACF35EF85F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Strats360_KidsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F31C7BA2965AC0100554AB8 /* Sources */ = {
@@ -430,6 +498,7 @@
 		};
 		8F31C7D32965AC0400554AB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C23F2EB65C218EDCFAE9AE /* Pods-Strats360_KidsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +529,7 @@
 		};
 		8F31C7D42965AC0400554AB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E07282F1800FC428CD2EF97 /* Pods-Strats360_KidsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class DescriptionViewController: UIViewController {
     
@@ -44,6 +45,7 @@ class DescriptionViewController: UIViewController {
         else{
             btnBack.isHidden = false
         }
+       
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {

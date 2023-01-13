@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let loginBool: Bool = true
     
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
 
+    }
+    func isUserLoggedIn() -> Bool {
+      return Auth.auth().currentUser != nil
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -23,19 +26,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         guard let _ = (scene as? UIWindowScene) else { return }
+        // check logged in
+        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
         
-//        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
-//        if loginBool{
-//            let custom = storyBoard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
-//            window?.rootViewController = custom
-//            window?.makeKeyAndVisible()
-//        }
-//        else{
-//            let custom1 = storyBoard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-//            window?.rootViewController = custom1
-//            window?.makeKeyAndVisible()
-//
-//        }
+        if isUserLoggedIn(){
+            let custom = storyBoard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
+            window?.rootViewController = custom
+            window?.makeKeyAndVisible()
+        }
+        else{
+            let custom1 = storyBoard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+            window?.rootViewController = custom1
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
