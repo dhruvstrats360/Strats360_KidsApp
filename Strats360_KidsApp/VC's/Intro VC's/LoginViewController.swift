@@ -34,6 +34,12 @@ class LoginViewController: UIViewController {
     @IBAction func backBTNpressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    @IBAction func signUpBTNpressed(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: .main)
+        let destinationVC = sb.instantiateViewController(withIdentifier: "SignUpViewController")
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
+
     @IBAction func logingBTNpressed(_ sender: Any) {
         if let email = txtUsername.text{
             if let password = txtPassword.text{
@@ -71,22 +77,9 @@ class LoginViewController: UIViewController {
         }
     }
 }
-
-/*
-// MARK: - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-}
-*/
 extension UINavigationController {
 
     var rootViewController: UIViewController? {
         return viewControllers.first
     }
-    
-
 }
-

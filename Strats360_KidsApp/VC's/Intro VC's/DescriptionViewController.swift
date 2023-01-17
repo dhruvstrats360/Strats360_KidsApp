@@ -63,7 +63,7 @@ class DescriptionViewController: UIViewController {
         }
         else {
             let sb = UIStoryboard(name: "Main", bundle: .main)
-            let destinationVC = sb.instantiateViewController(withIdentifier: "SignUpViewController")
+            let destinationVC = sb.instantiateViewController(withIdentifier: "LoginViewController") 
             navigationController?.pushViewController(destinationVC, animated: true)
           }
     }

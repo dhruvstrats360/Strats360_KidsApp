@@ -13,25 +13,49 @@ import IQKeyboardManagerSwift
 import FTPopOverMenu
 
 class CustomClass{
-//    let logoColor: UIColor = UIColor(named: "LogoColor")!
-//    let appFont_Bold:UIFont = UIFont(name: "Roboto-Bold", size: 20)!
-//    let appFont:UIFont = UIFont(name: "Roboto-Medium", size: 16)!
+    //    let logoColor: UIColor = UIColor(named: "LogoColor")!
+    //    let appFont_Bold:UIFont = UIFont(name: "Roboto-Bold", size: 20)!
+    //    let appFont:UIFont = UIFont(name: "Roboto-Medium", size: 16)!
     func curveBTN( btn button: UIButton){
         button.layer.cornerRadius = button.frame.height / 2.5
         button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: button.frame.height * 0.33)
-        }
+    }
+    
     func cornerRadiusTXT( txt textfield: UITextField){
         textfield.layer.masksToBounds = true
         textfield.layer.cornerRadius = textfield.frame.height / 2.5
         textfield.borderStyle = .none
         textfield.backgroundColor = .white
         let paddingView = UIView(frame: CGRectMake(0, 0, 10, 10))
-             textfield.leftViewMode = .always
-             textfield.leftView = paddingView
-        
+        textfield.leftViewMode = .always
+        textfield.leftView = paddingView
+        textfield.layer.borderWidth = 3
+        textfield.layer.borderColor = UIColor.clear.cgColor
     }
-    func imgCustom( ){
-        
+    func errorTxtFields(txt txtField: [UITextField?], error: Bool){
+        if error{
+            for txtx in txtField{
+                if txtx != nil{
+                    txtx!.layer.borderColor = UIColor.red.cgColor
+                }
+            }
+        }
+        else{
+            for txtx in txtField{
+                if txtx != nil{
+                    txtx!.layer.borderColor = UIColor.green.cgColor
+                }
+            }
+        }
+    }
+    
+    func errorTxtField(txt txtField: UITextField, iserror: Bool){
+        if iserror{
+                txtField.layer.borderColor = UIColor.red.cgColor
+        }
+        else{
+                txtField.layer.borderColor = UIColor.green.cgColor
+        }
     }
 }
 
