@@ -20,8 +20,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var btnExtra: UIButton!
-    @IBOutlet weak var btnBack: UIButton!
+    
+    @IBOutlet weak var btnLOGIN: UIButton!
     
     // custom Model
     let customModel = CustomClass()
@@ -29,11 +29,9 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // navigation bar - disabling
-        navigationController?.navigationBar.isHidden = true
         // btns
-        customModel.curveBTN(btn: btnBack)
-        btnExtra.isHidden = true
+        customModel.curveBTN(btn: btnLOGIN)
+        
         customModel.curveBTN(btn: btnSignUp)
         
         // txt fields
@@ -45,9 +43,10 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func gotoLogin(_ sender: UIButton) {
+    @IBAction func backtoLogin(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func signUpPressed(_ sender: UIButton) {
         if !(txtUserName.text == "" || txtEmail.text == "" || txtphoneNo.text == "" || txtPassword.text == ""){
             if let email = txtEmail.text,let password = txtEmail.text{

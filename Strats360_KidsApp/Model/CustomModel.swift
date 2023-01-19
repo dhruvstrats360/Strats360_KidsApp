@@ -90,22 +90,24 @@ lblMessage.layer.masksToBounds = true
     bgimage.layer.cornerRadius = 8
     bgimage.layer.masksToBounds = true
     bgView.addSubview(bgimage)
-    bgView.backgroundColor = .clear
     
 bgView.addSubview(lblMessage)
 self.addSubview(bgView)
 lblMessage.alpha = 0
 bgimage.alpha = 0
+    bgView.alpha = 0
 
 UIView.animateKeyframes(withDuration:TimeInterval(duration) , delay: 0, options: [] , animations: {
     lblMessage.alpha = 1
     bgimage.alpha = 1
+    bgView.alpha = 1
+//    bgView.backgroundColor = .lightText
 }, completion: {
 sucess in
-UIView.animate(withDuration:TimeInterval(duration/2), delay: 0, options: [] , animations: {
-    lblMessage.alpha = 0.5
-    bgimage.alpha = 0.5
-    bgView.alpha = 0.5
+UIView.animate(withDuration:TimeInterval(duration), delay: 0, options: [] , animations: {
+    lblMessage.alpha = 0
+    bgimage.alpha = 0
+    bgView.alpha = 0
 })
 bgView.removeFromSuperview()
 })

@@ -25,7 +25,14 @@ class HomePageViewController: UIViewController {
     
     // Constants
     let arrVIPImg = [UIImage(imageLiteralResourceName: "360 Kids logo")]
-    let arrSubImg = [UIImage(imageLiteralResourceName: "Screenshot")]
+    
+    let arrSubImg = [UIImage(imageLiteralResourceName: "alphabet")
+                     ,UIImage(imageLiteralResourceName: "animal")
+                     ,UIImage(imageLiteralResourceName: "birds")
+                     ,UIImage(imageLiteralResourceName: "digits")
+                     ,UIImage(imageLiteralResourceName: "fruits")
+                     ,UIImage(imageLiteralResourceName: "vegs")]
+    let arrSubImageName = ["ALPHABETS","ANIMALS","BIRDS","DIGITS","FRUITS","VEGETABLES"]
     var arritem = ["Profile", "Language", "Sign Out"]
     var isComeFromLogin = true // by default false
     var loggedinuserData = ""
@@ -39,12 +46,10 @@ class HomePageViewController: UIViewController {
         imgVIP.layer.cornerRadius = 15
         imgVIP.image = arrVIPImg[0]
         navigationController?.isNavigationBarHidden = false
+        self.view.showToast(toastMessage: "Namaste.. ", duration: 2.0, imageName: "success")
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.view.showToast(toastMessage: "Namaste.. ", duration: 2.0, imageName: "success")
-    }
-
+    
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
         if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
             for view in navigationBarSubviews {
@@ -65,7 +70,7 @@ class HomePageViewController: UIViewController {
                                     // 2nd pop on selected btn.
                                     
                                     FTPopOverMenu.show(fromSenderFrame: popframe
-                                                       , withMenuArray: ["kalu", "bhalu"], imageArray: [],configuration: homepageModel.configuration, doneBlock: { (selectedIndex) in
+                                                       , withMenuArray: ["Hindi", "English","Gujrati"], imageArray: [],configuration: homepageModel.configuration, doneBlock: { (selectedIndex) in
                                         if self.arritem.count > 0{
                                         }
                                     } , dismiss: {
@@ -76,7 +81,7 @@ class HomePageViewController: UIViewController {
                                     do {
                                       try Auth.auth().signOut()
                                         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                                        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+                                        let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                                         let customViewControllersArray : NSArray = [destinationVC]
                                         self.navigationController?.viewControllers = customViewControllersArray as! [UIViewController]
                                         self.navigationController?.popToRootViewController(animated: true)
@@ -87,15 +92,11 @@ class HomePageViewController: UIViewController {
                             }
                         } , dismiss: {
                             
-                        })
-                    }
+                    })
                 }
             }
-        
-
+        }
     }
-    
-
     
     @IBAction func homeBtnPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
@@ -103,14 +104,15 @@ class HomePageViewController: UIViewController {
 }
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        arrSubImg.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCollectionViewCell", for: indexPath) as! HomePageCollectionViewCell
-        cell.imgSubject.image = arrSubImg[0]
-        cell.lblSubName.text = "Subject Name"
-        cell.containerView.layer.cornerRadius = 10
-        
+        cell.imgSubject.image = arrSubImg[indexPath.row]
+        cell.lblSubName.text = arrSubImageName[indexPath.row]
+        cell.contentView.layer.cornerRadius = 15
+        cell.imgSubject.layer.cornerRadius = 15
+        cell.containerView.layer.cornerRadius = 15
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

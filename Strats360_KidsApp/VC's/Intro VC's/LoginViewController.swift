@@ -13,9 +13,11 @@ class LoginViewController: UIViewController {
     //Outlets
     
     @IBOutlet weak var btnBack: UIButton!
-    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var txtUsername: UITextField!
+    
     
     // Models
     let CustomModel = CustomClass()
@@ -25,11 +27,11 @@ class LoginViewController: UIViewController {
         // customModel in use
         
         CustomModel.curveBTN(btn: btnBack)
+        CustomModel.curveBTN(btn: btnSignUp)
         CustomModel.curveBTN(btn: btnLogin)
         CustomModel.cornerRadiusTXT(txt: txtPassword)
         CustomModel.cornerRadiusTXT(txt: txtUsername)
     }
-    
     
     @IBAction func backBTNpressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
