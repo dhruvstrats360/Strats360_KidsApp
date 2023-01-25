@@ -28,6 +28,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         // btns
         customModel.curveBTN(btn: btnLOGIN)
@@ -52,10 +54,13 @@ class SignUpViewController: UIViewController {
             if let email = txtEmail.text,let password = txtEmail.text{
                 Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
                         if let error = error as? NSError {
-                            self.SignUp_error(error: error as! AuthErrorCode)
+                            
+                            SignUp_error(error: error as! AuthErrorCode)
                         }
                         else {
+                            // .....dispatchQueue line will come here - Note......
                             self.customModel.errorTxtFields(txt: [txtEmail,txtphoneNo,txtPassword,txtUserName], error: false)
+                            
                             // Logged in successfully.
                             print("User signs up successfully")
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -91,7 +96,7 @@ class SignUpViewController: UIViewController {
     }
     
 }
-extension SignUpViewController{
+extension UIViewController{
     func SignUp_error(error: AuthErrorCode) {
         switch error.code{
         case .operationNotAllowed:
@@ -113,20 +118,6 @@ extension SignUpViewController{
             UIAlertController.alert(title: "Error", msg: "\(error.localizedDescription)", target: self)
             break
         }
-//        switch AuthErrorCode.Code(rawValue: error.code){
-//        case .operationNotAllowed: break
-//            // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
-//        case .emailAlreadyInUse:
-//            print(error.localizedDescription)
-//            break
-//            // Error: The email address is already in use by another account.
-//        case .invalidEmail: break
-//            // Error: The email address is badly formatted.
-//        case .weakPassword: break
-//            // Error: The password must be 6 characters long or more.
-//        default:
-//            print("Error: \(error.localizedDescription)")
-//        }
     }
 }
 

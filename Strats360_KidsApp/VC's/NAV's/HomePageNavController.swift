@@ -12,11 +12,9 @@ class HomePageNavController: UINavigationController, UINavigationBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-//        navigationBar.delegate = self
+        navigationBar.backIndicatorImage = UIImage(named: "prev")
+        
     }
-    
-
     /*
     // MARK: - Navigation
 

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>328116638035-ivkhcj0m6tfi82hgdmdehqfg2b2j4ue6.apps.googleusercontent.com</string>
+	<string>328116638035-r2e6895hp665h9mahrej5iaomjhueat4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.328116638035-ivkhcj0m6tfi82hgdmdehqfg2b2j4ue6</string>
+	<string>com.googleusercontent.apps.328116638035-r2e6895hp665h9mahrej5iaomjhueat4</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCp2QlgkjJ-JT6m5D5oZSvoJzDLMciVWUE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Strats360.Strats360-KidsApp</string>
+	<string>Strats360.360KidsApp</string>
 	<key>PROJECT_ID</key>
 	<string>strats360kids</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:328116638035:ios:909605dc43ffaea3b5d1a6</string>
+	<string>1:328116638035:ios:3e2ce9b4d3352bd7b5d1a6</string>
 </dict>
 </plist>

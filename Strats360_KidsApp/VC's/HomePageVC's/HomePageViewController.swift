@@ -10,7 +10,7 @@ import FirebaseAuth
 import FTPopOverMenu
 
 
-class HomePageViewController: UIViewController {
+class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var btnpopUpmenu: UIBarButtonItem!
     @IBOutlet weak var imgVIP: UIImageView!
@@ -36,6 +36,7 @@ class HomePageViewController: UIViewController {
     var arritem = ["Profile", "Language", "Sign Out"]
     var isComeFromLogin = true // by default false
     var loggedinuserData = ""
+   
     
     
     override func viewDidLoad() {
@@ -45,12 +46,18 @@ class HomePageViewController: UIViewController {
         CustomModel.cornerRadiusTXT(txt: txtSearchBar)
         imgVIP.layer.cornerRadius = 15
         imgVIP.image = arrVIPImg[0]
+        
+        //navigation
+        
         navigationController?.isNavigationBarHidden = false
-        self.view.showToast(toastMessage: "Namaste.. ", duration: 2.0, imageName: "success")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        self.view.showToast(toastMessage: "Namaste.. ", duration: 1.5, imageName: "success")
         
     }
     
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
+        
         if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
             for view in navigationBarSubviews {
                 if let findClass = NSClassFromString("_UINavigationBarContentView"),
@@ -66,25 +73,30 @@ class HomePageViewController: UIViewController {
                             // here action will be done on clicked btn.
                             if self.arritem.count > 0{
                                 
-                                if selectedIndex == 1{
+                                if selectedIndex == 0{
+                                    performSegue(withIdentifier: "gotoProfile", sender: self)
+                                }
+                                
+                                else if selectedIndex == 1{
                                     // 2nd pop on selected btn.
                                     
                                     FTPopOverMenu.show(fromSenderFrame: popframe
                                                        , withMenuArray: ["Hindi", "English","Gujrati"], imageArray: [],configuration: homepageModel.configuration, doneBlock: { (selectedIndex) in
                                         if self.arritem.count > 0{
+                                            
+                                             if selectedIndex == 1{
+                                                // 3rd pop on selected btn.
+                                                
+                                            }
                                         }
                                     } , dismiss: {
-                                        
                                     })
                                 }
                                 if selectedIndex == 2{
                                     do {
                                       try Auth.auth().signOut()
-                                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                                        let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                        let customViewControllersArray : NSArray = [destinationVC]
-                                        self.navigationController?.viewControllers = customViewControllersArray as! [UIViewController]
-                                        self.navigationController?.popToRootViewController(animated: true)
+                                        self.navigationController?.PopVCAnimation(rootViewController: LoginViewController())
+//                                        self.navigationController?.popToRootViewController(animated: true)
                                     } catch {
                                       print("Sign out error")
                                     }
@@ -122,10 +134,26 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     }
 }
 
-
 class HomePageCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var lblSubName: UILabel!
     @IBOutlet weak var imgSubject: UIImageView!
     @IBOutlet weak var containerView: UIView!
 }
+extension UINavigationController{
+    func PopVCAnimation(rootViewController: UIViewController){
+        let transition:CATransition = CATransition()
+                transition.duration = 0.5
+                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+                transition.type = CATransitionType.reveal
+                transition.subtype = CATransitionSubtype.fromBottom
+                self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let destinationViewC = storyboard.instantiateViewController(withIdentifier: String(rootViewController)) as! rootViewController
+        
+        let customViewControllersArray : NSArray = [destinationViewC]
+        self.navigationController?.viewControllers = customViewControllersArray as! [UIViewController]
+        
+        self.navigationController?.popViewController(animated: false)
 
+    }
+}
