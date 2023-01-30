@@ -105,17 +105,9 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                                       let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                                         let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
                                                            nvc.viewControllers = [rootVC]
+                                        rootVC.cameFromHomePage = true
                                         let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
                                         appDelegate.window!.rootViewController = nvc
-                                        // animation
-                                        let transition:CATransition = CATransition()
-                                                transition.duration = 0.5
-                                                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-                                                transition.type = CATransitionType.reveal
-                                                transition.subtype = CATransitionSubtype.fromBottom
-                                                self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-                                        self.navigationController?.popToRootViewController(animated: true)
-                                        
                                         
                                     } catch {
                                       print("Sign out error")

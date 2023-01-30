@@ -59,18 +59,23 @@ class SignUpViewController: UIViewController {
                         }
                         else {
                             // .....dispatchQueue line will come here - Note......
-                            self.customModel.errorTxtFields(txt: [txtEmail,txtphoneNo,txtPassword,txtUserName], error: false)
                             
-                            // Logged in successfully.
-                            print("User signs up successfully")
-                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                          let rootVC:HomePageViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-                            let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
-                                               nvc.viewControllers = [rootVC]
-                            rootVC.isComeFromLogin = true
-                            rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
-                            let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                            appDelegate.window!.rootViewController = nvc
+                                self.customModel.errorTxtFields(txt: [self.txtEmail,self.txtphoneNo,self.txtPassword,self.txtUserName], error: false)
+                                
+                            Task{
+                                // hold it for 1 mins
+                                try await Task.sleep(nanoseconds: 1000000000)
+                                // Logged in successfully.
+                                print("User signs up successfully")
+                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                let rootVC:HomePageViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+                                let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
+                                nvc.viewControllers = [rootVC]
+                                rootVC.isComeFromLogin = true
+                                rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
+                                let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                                appDelegate.window!.rootViewController = nvc
+                        }
                     }
                 }
             }

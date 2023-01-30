@@ -271,11 +271,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-br-9H9">
                                 <rect key="frame" x="37.666666666666657" y="214.00000000000003" width="300" height="454.66666666666674"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="38a-zF-lF9">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="308.66666666666669"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="38a-zF-lF9">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="308"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TQ-Uk-YuP">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
                                                 <string key="text">Don't have an Account?
 Create your Account</string>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
@@ -283,41 +283,30 @@ Create your Account</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-at-JMq">
-                                                <rect key="frame" x="0.0" y="63" width="300" height="55"/>
+                                                <rect key="frame" x="0.0" y="63.333333333333314" width="300" height="55"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-Od-9CB">
-                                                <rect key="frame" x="0.0" y="126.00000000000001" width="300" height="55.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="126.3333333333333" width="300" height="55.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="q3N-9f-5p7">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-Jy-f4N">
                                                 <rect key="frame" x="0.0" y="189.66666666666669" width="300" height="55.333333333333343"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-Jy-f4N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Z-oc-n5K">
-                                                <rect key="frame" x="0.0" y="252.99999999999997" width="300" height="55.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="253" width="300" height="55"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="4hj-Od-9CB" firstAttribute="height" secondItem="HpM-Jy-f4N" secondAttribute="height" id="7bE-QK-WdZ"/>
-                                            <constraint firstItem="Y7Z-oc-n5K" firstAttribute="height" secondItem="4hj-Od-9CB" secondAttribute="height" id="QSP-zz-tFM"/>
-                                            <constraint firstItem="ddf-at-JMq" firstAttribute="height" secondItem="6TQ-Uk-YuP" secondAttribute="height" id="TFa-lG-crD"/>
-                                            <constraint firstItem="ddf-at-JMq" firstAttribute="height" secondItem="4hj-Od-9CB" secondAttribute="height" multiplier="0.990291" id="WcW-hX-SBe"/>
-                                        </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84P-4K-D6Q" userLabel="Sign Up">
-                                        <rect key="frame" x="0.0" y="326.66666666666663" width="300" height="55"/>
+                                        <rect key="frame" x="0.0" y="399.66666666666663" width="300" height="55"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -328,38 +317,7 @@ Create your Account</string>
                                             <action selector="signUpPressed:" destination="S0L-ep-fRn" eventType="touchUpInside" id="TzJ-Gv-lax"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjK-q4-VK0">
-                                        <rect key="frame" x="0.0" y="399.66666666666663" width="300" height="55"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ros-u7-LZ1">
-                                                <rect key="frame" x="22.333333333333343" y="0.0" width="255.00000000000003" height="55"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-4s-YL6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="55"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Jro-1k-eLE">
-                                                        <rect key="frame" x="88.666666666666657" y="0.0" width="77.666666666666657" height="55"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-Qc-5Au">
-                                                        <rect key="frame" x="177.33333333333334" y="0.0" width="77.666666666666657" height="55"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                        <constraints>
-                                            <constraint firstItem="ros-u7-LZ1" firstAttribute="width" secondItem="VjK-q4-VK0" secondAttribute="width" multiplier="0.85" id="6Xh-jT-IBW"/>
-                                            <constraint firstAttribute="height" constant="55" id="Q9a-EW-35H"/>
-                                            <constraint firstItem="ros-u7-LZ1" firstAttribute="centerX" secondItem="VjK-q4-VK0" secondAttribute="centerX" id="abB-7u-OBW"/>
-                                            <constraint firstAttribute="bottom" secondItem="ros-u7-LZ1" secondAttribute="bottom" id="eKp-6U-K0E"/>
-                                            <constraint firstItem="ros-u7-LZ1" firstAttribute="centerY" secondItem="VjK-q4-VK0" secondAttribute="centerY" id="neU-vA-kmL"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="84P-4K-D6Q" firstAttribute="height" secondItem="VjK-q4-VK0" secondAttribute="height" id="5h8-xb-VUg"/>
-                                    <constraint firstItem="6TQ-Uk-YuP" firstAttribute="height" secondItem="84P-4K-D6Q" secondAttribute="height" id="JFL-rz-OXn"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OF6-49-je3">
                                 <rect key="frame" x="-20" y="674" width="142.66666666666666" height="104"/>
@@ -392,7 +350,9 @@ Create your Account</string>
                             <constraint firstItem="bSY-ms-gce" firstAttribute="centerX" secondItem="I8f-QH-mLK" secondAttribute="centerX" id="Swt-KE-MY0"/>
                             <constraint firstItem="I8f-QH-mLK" firstAttribute="bottom" secondItem="OF6-49-je3" secondAttribute="bottom" id="VUm-8D-08V"/>
                             <constraint firstItem="A2X-br-9H9" firstAttribute="top" secondItem="bSY-ms-gce" secondAttribute="bottom" constant="10" id="coh-Ji-1t3"/>
+                            <constraint firstItem="84P-4K-D6Q" firstAttribute="height" secondItem="UUY-6P-9ct" secondAttribute="height" id="dlr-54-qgf"/>
                             <constraint firstItem="OF6-49-je3" firstAttribute="width" secondItem="hWd-rJ-keQ" secondAttribute="width" multiplier="0.38" id="jHd-KQ-27Z"/>
+                            <constraint firstItem="6TQ-Uk-YuP" firstAttribute="height" secondItem="UUY-6P-9ct" secondAttribute="height" id="srh-4T-Pr1"/>
                             <constraint firstItem="bSY-ms-gce" firstAttribute="width" secondItem="hWd-rJ-keQ" secondAttribute="width" multiplier="0.5" id="waf-6F-k8E"/>
                         </constraints>
                     </view>
@@ -422,31 +382,31 @@ Create your Account</string>
                                 <rect key="frame" x="93.666666666666671" y="80" width="187.66666666666663" height="124"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U6g-Gl-g07">
-                                <rect key="frame" x="37.666666666666657" y="214" width="300" height="268"/>
+                                <rect key="frame" x="37.666666666666657" y="214.00000000000003" width="300" height="308.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an Account? Please Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-KL-diY">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qTX-cU-jBg">
-                                        <rect key="frame" x="0.0" y="74.666666666666686" width="300" height="118.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="181.66666666666666"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dhruv@gmail.com" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-mu-1OF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an Account? Please Login" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-KL-diY">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dhruv@gmail.com" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-mu-1OF">
+                                                <rect key="frame" x="0.0" y="63.333333333333314" width="300" height="55"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pod-KD-wla">
-                                                <rect key="frame" x="0.0" y="63.333333333333314" width="300" height="55.333333333333343"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pod-KD-wla">
+                                                <rect key="frame" x="0.0" y="126.3333333333333" width="300" height="55.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="061-v9-wW4">
-                                        <rect key="frame" x="0.0" y="212.66666666666669" width="300" height="55.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="253.33333333333334" width="300" height="55.333333333333343"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -458,27 +418,14 @@ Create your Account</string>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Nv2-KL-diY" firstAttribute="height" secondItem="061-v9-wW4" secondAttribute="height" id="Tl3-js-QRg"/>
+                                    <constraint firstItem="Nv2-KL-diY" firstAttribute="height" secondItem="061-v9-wW4" secondAttribute="height" id="Ypf-H7-Rr0"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M4e-b5-2IL">
-                                <rect key="frame" x="-20" y="674" width="415" height="104"/>
+                                <rect key="frame" x="252.66666666666663" y="674" width="142.33333333333337" height="104"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-uw-Kas">
-                                        <rect key="frame" x="0.0" y="24.333333333333375" width="142.66666666666666" height="55.333333333333343"/>
-                                        <color key="backgroundColor" name="ButtonColor"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="BACK">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backBTNpressed:" destination="cmD-ZB-QQd" eventType="touchUpInside" id="UTD-Kl-hwv"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaK-AJ-S65">
-                                        <rect key="frame" x="272.66666666666663" y="24.333333333333375" width="142.33333333333337" height="55.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="24.333333333333375" width="142.33333333333334" height="55.333333333333343"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -490,13 +437,9 @@ Create your Account</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="DaK-AJ-S65" firstAttribute="height" secondItem="iYd-uw-Kas" secondAttribute="height" id="Szy-dV-Eoe"/>
-                                    <constraint firstItem="DaK-AJ-S65" firstAttribute="width" secondItem="iYd-uw-Kas" secondAttribute="width" id="wmF-xN-RPa"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01n-ou-iRm">
-                                <rect key="frame" x="37.666666666666657" y="492" width="300" height="30"/>
+                                <rect key="frame" x="37.666666666666657" y="532.66666666666663" width="300" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Forgot your password?">
@@ -510,30 +453,27 @@ Create your Account</string>
                         <viewLayoutGuide key="safeArea" id="oVu-mr-hL6"/>
                         <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.96862751250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="M4e-b5-2IL" firstAttribute="leading" secondItem="oVu-mr-hL6" secondAttribute="leading" constant="-20" id="1f0-H5-IS7"/>
                             <constraint firstItem="YJN-5x-AXQ" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.152709" id="8FQ-rQ-FE2"/>
                             <constraint firstItem="oVu-mr-hL6" firstAttribute="trailing" secondItem="M4e-b5-2IL" secondAttribute="trailing" constant="-20" id="9Bw-Uw-UxU"/>
                             <constraint firstItem="01n-ou-iRm" firstAttribute="leading" secondItem="061-v9-wW4" secondAttribute="leading" id="D60-D1-P8R"/>
                             <constraint firstItem="YJN-5x-AXQ" firstAttribute="centerX" secondItem="oVu-mr-hL6" secondAttribute="centerX" id="GPJ-PC-JLS"/>
-                            <constraint firstItem="U6g-Gl-g07" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.33" id="MjV-LR-S3W"/>
                             <constraint firstItem="U6g-Gl-g07" firstAttribute="top" secondItem="YJN-5x-AXQ" secondAttribute="bottom" constant="10" id="O8t-dB-I2i"/>
-                            <constraint firstItem="pod-KD-wla" firstAttribute="height" secondItem="iYd-uw-Kas" secondAttribute="height" id="Vxn-XA-qTZ"/>
+                            <constraint firstItem="DaK-AJ-S65" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.068" id="P5q-12-NrD"/>
+                            <constraint firstItem="DaK-AJ-S65" firstAttribute="height" secondItem="061-v9-wW4" secondAttribute="height" id="QZz-JW-AQc"/>
                             <constraint firstItem="01n-ou-iRm" firstAttribute="trailing" secondItem="061-v9-wW4" secondAttribute="trailing" id="Xql-qP-Bns"/>
                             <constraint firstItem="YJN-5x-AXQ" firstAttribute="top" secondItem="oVu-mr-hL6" secondAttribute="top" constant="33" id="dP6-0k-sln"/>
-                            <constraint firstItem="iYd-uw-Kas" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.068" id="eXl-DS-Q0G"/>
                             <constraint firstItem="U6g-Gl-g07" firstAttribute="width" secondItem="XOc-j8-tAh" secondAttribute="width" multiplier="0.8" id="nU4-wk-V3r"/>
+                            <constraint firstItem="M4e-b5-2IL" firstAttribute="width" secondItem="XOc-j8-tAh" secondAttribute="width" multiplier="0.38" id="pKB-5z-w6C"/>
                             <constraint firstItem="01n-ou-iRm" firstAttribute="top" secondItem="U6g-Gl-g07" secondAttribute="bottom" constant="10" id="s0b-n4-Fpl"/>
+                            <constraint firstItem="U6g-Gl-g07" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.38" id="s10-7v-Rc4"/>
                             <constraint firstItem="U6g-Gl-g07" firstAttribute="centerX" secondItem="oVu-mr-hL6" secondAttribute="centerX" id="sBD-Ww-qbx"/>
-                            <constraint firstItem="iYd-uw-Kas" firstAttribute="width" secondItem="XOc-j8-tAh" secondAttribute="width" multiplier="0.38" id="sTf-kv-1jl"/>
                             <constraint firstItem="YJN-5x-AXQ" firstAttribute="width" secondItem="XOc-j8-tAh" secondAttribute="width" multiplier="0.5" id="urP-OA-TIz"/>
                             <constraint firstItem="oVu-mr-hL6" firstAttribute="bottom" secondItem="M4e-b5-2IL" secondAttribute="bottom" id="uye-5t-QKD"/>
-                            <constraint firstItem="061-v9-wW4" firstAttribute="height" secondItem="iYd-uw-Kas" secondAttribute="height" id="uyx-Xx-zEA"/>
                             <constraint firstItem="M4e-b5-2IL" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.128079" id="zG4-aX-PeB"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="btnBack" destination="iYd-uw-Kas" id="i42-Kz-pIB"/>
                         <outlet property="btnLogin" destination="061-v9-wW4" id="qwp-9l-rqm"/>
                         <outlet property="btnSignUp" destination="DaK-AJ-S65" id="3a1-FP-EyM"/>
                         <outlet property="txtPassword" destination="pod-KD-wla" id="Fyb-nY-CGZ"/>
@@ -1186,12 +1126,9 @@ Create your Account</string>
         <image name="360 Kids logo" width="1400" height="850"/>
         <image name="Blue Gradient Login Page Wireframe Mobile Prototype" width="1294" height="2800"/>
         <image name="GirlIcon" width="512" height="512"/>
-        <image name="Google" width="512" height="512"/>
-        <image name="apple" width="512" height="512"/>
         <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
         <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
-        <image name="facebook" width="512" height="512"/>
         <image name="prev" width="72" height="72"/>
         <image name="speaker.wave.2.fill" catalog="system" width="128" height="88"/>
         <namedColor name="ButtonColor">
@@ -1203,9 +1140,6 @@ Create your Account</string>
         <namedColor name="LogoColor">
             <color red="0.13199999928474426" green="0.17100000381469727" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
