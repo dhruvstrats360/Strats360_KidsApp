@@ -431,14 +431,14 @@ Create your Account</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qTX-cU-jBg">
-                                        <rect key="frame" x="0.0" y="74.666666666666742" width="300" height="118.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="74.666666666666686" width="300" height="118.66666666666669"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-mu-1OF">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dhruv@gmail.com" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-mu-1OF">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pod-KD-wla">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pod-KD-wla">
                                                 <rect key="frame" x="0.0" y="63.333333333333314" width="300" height="55.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -446,7 +446,7 @@ Create your Account</string>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="061-v9-wW4">
-                                        <rect key="frame" x="0.0" y="212.66666666666674" width="300" height="55.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="212.66666666666669" width="300" height="55.333333333333314"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -465,7 +465,7 @@ Create your Account</string>
                                 <rect key="frame" x="-20" y="674" width="415" height="104"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-uw-Kas">
-                                        <rect key="frame" x="0.0" y="24.333333333333371" width="142.66666666666666" height="55.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="24.333333333333375" width="142.66666666666666" height="55.333333333333343"/>
                                         <color key="backgroundColor" name="ButtonColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -478,7 +478,7 @@ Create your Account</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaK-AJ-S65">
-                                        <rect key="frame" x="272.66666666666663" y="24.333333333333371" width="142.33333333333337" height="55.333333333333343"/>
+                                        <rect key="frame" x="272.66666666666663" y="24.333333333333375" width="142.33333333333337" height="55.333333333333343"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -728,6 +728,7 @@ Create your Account</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SubjectColView" destination="hMl-lk-yv6" id="kgH-vJ-Xu5"/>
+                        <outlet property="animatedView" destination="hrJ-ey-J2e" id="rq1-OP-VNy"/>
                         <outlet property="btnpopUpmenu" destination="ZNy-HX-2MX" id="YV7-Yr-wFC"/>
                         <outlet property="imgVIP" destination="Sel-Di-9ns" id="ejB-7I-hRy"/>
                         <outlet property="txtSearchBar" destination="lEq-Vn-haO" id="ses-UY-BSd"/>
@@ -1177,7 +1178,7 @@ Create your Account</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ptc-qS-aZP"/>
+        <segue reference="QIE-Xd-187"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="794" height="1123"/>

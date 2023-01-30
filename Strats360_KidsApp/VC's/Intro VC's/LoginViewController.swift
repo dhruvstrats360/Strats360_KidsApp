@@ -22,11 +22,16 @@ class LoginViewController: UIViewController {
     
     // Models
     let CustomModel = CustomClass()
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        view.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
+            self.view.alpha = 1
+        })
         // customModel in use
-        
         CustomModel.curveBTN(btn: btnBack)
         CustomModel.curveBTN(btn: btnSignUp)
         CustomModel.curveBTN(btn: btnLogin)
@@ -35,7 +40,10 @@ class LoginViewController: UIViewController {
         
         txtPassword.placeholder = "Password"
         txtUsername.placeholder = "User Name"
+        
     }
+    
+    
     
     @IBAction func backBTNpressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -63,15 +71,19 @@ class LoginViewController: UIViewController {
                     let userInfo = Auth.auth().currentUser
                       
                     let email = userInfo?.email
+                      // animation
+                      
                       
                       let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let rootVC:HomePageViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
                       let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
-                                         nvc.viewControllers = [rootVC]
+                      
+                      nvc.viewControllers = [rootVC]
                       rootVC.isComeFromLogin = true
                       rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
                       let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
                       appDelegate.window!.rootViewController = nvc
+                      
                     }
                 }
             }

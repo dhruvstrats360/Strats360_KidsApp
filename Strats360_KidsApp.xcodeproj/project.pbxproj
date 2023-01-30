@@ -196,8 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				8F31C7C52965AC0100554AB8 /* DescriptionViewController.swift */,
-				8F31C7FB2966EE2600554AB8 /* SignUpViewController.swift */,
 				8F31C7FD29671C3A00554AB8 /* LoginViewController.swift */,
+				8F31C7FB2966EE2600554AB8 /* SignUpViewController.swift */,
 			);
 			path = "Intro VC's";
 			sourceTree = "<group>";

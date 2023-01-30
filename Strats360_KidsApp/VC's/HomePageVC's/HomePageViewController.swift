@@ -11,7 +11,9 @@ import FTPopOverMenu
 
 
 class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    
+    @IBOutlet weak var animatedView: UIView!
+    
     @IBOutlet weak var btnpopUpmenu: UIBarButtonItem!
     @IBOutlet weak var imgVIP: UIImageView!
     @IBOutlet weak var SubjectColView: UICollectionView!
@@ -37,10 +39,13 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     var isComeFromLogin = true // by default false
     var loggedinuserData = ""
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        animatedView.alpha = 0
+        UIView.animate(withDuration: 1, delay: 0, animations: {
+            self.animatedView.alpha = 1
+        })
+        
         SubjectColView.delegate = self
         SubjectColView.dataSource = self
         CustomModel.cornerRadiusTXT(txt: txtSearchBar)
@@ -95,8 +100,23 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                                 if selectedIndex == 2{
                                     do {
                                       try Auth.auth().signOut()
-                                        self.navigationController?.PopVCAnimation(rootViewController: LoginViewController())
-//                                        self.navigationController?.popToRootViewController(animated: true)
+                                        
+                                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                      let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                                                           nvc.viewControllers = [rootVC]
+                                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                                        appDelegate.window!.rootViewController = nvc
+                                        // animation
+                                        let transition:CATransition = CATransition()
+                                                transition.duration = 0.5
+                                                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+                                                transition.type = CATransitionType.reveal
+                                                transition.subtype = CATransitionSubtype.fromBottom
+                                                self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+                                        self.navigationController?.popToRootViewController(animated: true)
+                                        
+                                        
                                     } catch {
                                       print("Sign out error")
                                     }
@@ -138,22 +158,4 @@ class HomePageCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var lblSubName: UILabel!
     @IBOutlet weak var imgSubject: UIImageView!
     @IBOutlet weak var containerView: UIView!
-}
-extension UINavigationController{
-    func PopVCAnimation(rootViewController: UIViewController){
-        let transition:CATransition = CATransition()
-                transition.duration = 0.5
-                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-                transition.type = CATransitionType.reveal
-                transition.subtype = CATransitionSubtype.fromBottom
-                self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let destinationViewC = storyboard.instantiateViewController(withIdentifier: String(rootViewController)) as! rootViewController
-        
-        let customViewControllersArray : NSArray = [destinationViewC]
-        self.navigationController?.viewControllers = customViewControllersArray as! [UIViewController]
-        
-        self.navigationController?.popViewController(animated: false)
-
-    }
 }

@@ -25,8 +25,6 @@ class CustomClass{
     func addCustomizedBackBtn(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
         navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
-    
-    
     func cornerRadiusTXT( txt textfield: UITextField){
         textfield.layer.masksToBounds = true
         textfield.layer.cornerRadius = textfield.frame.height / 2.5
@@ -65,6 +63,8 @@ class CustomClass{
                 txtField.layer.borderColor = UIColor.green.cgColor
         }
     }
+    
+    
 }
 
 //MARK: Add Toast method function in UIView Extension so can use in whole project.
@@ -125,6 +125,17 @@ bgView.removeFromSuperview()
         alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { (_) in
              }))
         
+    }
+    func ViewAnimations(view: UIView){
+        UIView.animateKeyframes(withDuration:2 , delay: 0, options: [] , animations: {
+            view.alpha = 0
+        //    bgView.backgroundColor = .lightText
+        }, completion: {
+            sucess in
+            UIView.animate(withDuration:2, delay: 0, options: [] , animations: {
+                view.alpha = 1
+            })
+        })
     }
 }
 extension CGFloat
@@ -214,12 +225,9 @@ class HomePageModels{
 
 extension UINavigationController{
     func CustombackBtn(){
-//        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "arrowshape.turn.up.left.fill")
-//        navigationItem.backBarButtonItem?.title = ""
-//        navigationController?.navigationBar.tintColor = UIColor.black
-        
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "prev")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "prev")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+    
 }
