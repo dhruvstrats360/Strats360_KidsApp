@@ -6,6 +6,8 @@ target 'Strats360_KidsApp' do
   use_frameworks!
 
   # Pods for Strats360_KidsApp
+  # Splash Screen
+  pod 'RevealingSplashView'
 	# dropDown btn
 	pod 'FTPopOverMenu'
 	# Firebase
@@ -13,4 +15,6 @@ target 'Strats360_KidsApp' do
 	pod 'FirebaseFirestore'
 	# keyboard
 	pod 'IQKeyboardManagerSwift'
+  # AlamoFire
+  pod 'Alamofire'
 end

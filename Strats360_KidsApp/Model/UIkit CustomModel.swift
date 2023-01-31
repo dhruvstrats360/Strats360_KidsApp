@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RevealingSplashView
 
 //MARK: Add Toast method function in UIView Extension so can use in whole project.
 extension UIView
@@ -143,5 +144,32 @@ return contentSize
 }
 }
 }
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+}
 
+extension UIViewController{
+    func splashScreenAnimation(view: UIView){
+        let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "360 Kids Complete Learning APP Logo"), iconInitialSize: CGSize(width: 300, height: 300), backgroundColor: .clear)
+        view.addSubview(splashScreen)
+        splashScreen.animationType = .heartBeat
+    }
+}
 

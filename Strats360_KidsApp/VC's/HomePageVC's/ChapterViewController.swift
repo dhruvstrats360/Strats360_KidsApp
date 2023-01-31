@@ -76,6 +76,11 @@ class ChapterViewController: UIViewController {
         }
     }
     
+    @IBAction func homebtnPressed(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
         if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
             for view in navigationBarSubviews {

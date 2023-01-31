@@ -643,7 +643,7 @@ Create your Account</string>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac5-wS-182">
                                     <rect key="frame" x="43.666666666666657" y="-33" width="100" height="66"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title=" "/>
                                     <connections>
                                         <action selector="homeBtnPressed:" destination="NGZ-MH-GLM" eventType="touchUpInside" id="bZQ-pZ-XxB"/>
                                     </connections>
@@ -859,16 +859,19 @@ Create your Account</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360 Kids logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZU2-OS-3rl">
-                                    <rect key="frame" x="43.666666666666657" y="-33" width="100" height="66"/>
+                                    <rect key="frame" x="14.666666666666671" y="-33" width="100" height="66"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="ft0-vw-XIC"/>
                                         <constraint firstAttribute="height" constant="66" id="sEx-uf-oam"/>
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55P-SB-jET">
-                                    <rect key="frame" x="43.666666666666657" y="-33" width="100" height="66"/>
+                                    <rect key="frame" x="14.666666666666671" y="-33" width="100" height="66"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                    <connections>
+                                        <action selector="homebtnPressed:" destination="GjQ-xr-pfv" eventType="touchUpInside" id="xDR-2c-fvK"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>

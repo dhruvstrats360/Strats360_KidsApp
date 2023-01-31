@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 import FTPopOverMenu
+import Alamofire
+import RevealingSplashView
 
 
 class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -23,17 +25,15 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     let CustomModel = CustomClass()
     let ftpDropdown = FTPopOverMenuConfiguration()
     let homepageModel = HomePageModels()
-    
+    let customAlamofire = CustomAlamofire()
     
     // Constants
+    let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "360 Kids Complete Learning APP Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
+   
+    var ApifetchedData: HomePageAPIModel!
     let arrVIPImg = [UIImage(imageLiteralResourceName: "360 Kids logo")]
     
-    let arrSubImg = [UIImage(imageLiteralResourceName: "alphabet")
-                     ,UIImage(imageLiteralResourceName: "animal")
-                     ,UIImage(imageLiteralResourceName: "birds")
-                     ,UIImage(imageLiteralResourceName: "digits")
-                     ,UIImage(imageLiteralResourceName: "fruits")
-                     ,UIImage(imageLiteralResourceName: "vegs")]
+    let arrSubImg = [UIImage(imageLiteralResourceName: "alphabet"),UIImage(imageLiteralResourceName: "animal"),UIImage(imageLiteralResourceName: "birds"),UIImage(imageLiteralResourceName: "digits"),UIImage(imageLiteralResourceName: "fruits"),UIImage(imageLiteralResourceName: "vegs")]
     let arrSubImageName = ["ALPHABETS","ANIMALS","BIRDS","DIGITS","FRUITS","VEGETABLES"]
     var arritem = ["Profile", "Language", "Sign Out"]
     var isComeFromLogin = true // by default false
@@ -41,23 +41,40 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //View Animation
+//        splashScreen.bounds.size = CGSize(width: view.frame.width, height: view.frame.width)
+        view.addSubview(self.splashScreen)
+        splashScreen.startAnimation()
         animatedView.alpha = 0
-        UIView.animate(withDuration: 1, delay: 0, animations: {
-            self.animatedView.alpha = 1
-        })
         
+        //Fetching Data from API
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()){
+            self.customAlamofire.GetAPIData(endPoint: "api/get_category_list"){ (fetchedData) in
+                self.ApifetchedData = fetchedData
+                print(self.ApifetchedData!)
+                DispatchQueue.main.async {
+                    //Toast msg
+                    self.view.showToast(toastMessage: "Namaste.. ", duration: 1.5, imageName: "success")
+
+                    self.CustomModel.cornerRadiusTXT(txt: self.txtSearchBar)
+                    self.imgVIP.layer.cornerRadius = 15
+                    self.imgVIP.downloaded(from: self.ApifetchedData!.logo)
+                
+                UIView.animate(withDuration: 1, delay: 0, animations: {
+                    self.animatedView.alpha = 1
+                })
+                    self.SubjectColView.reloadData()
+                }
+            }
+        }
         SubjectColView.delegate = self
         SubjectColView.dataSource = self
-        CustomModel.cornerRadiusTXT(txt: txtSearchBar)
-        imgVIP.layer.cornerRadius = 15
-        imgVIP.image = arrVIPImg[0]
         
         //navigation
-        
         navigationController?.isNavigationBarHidden = false
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
-        self.view.showToast(toastMessage: "Namaste.. ", duration: 1.5, imageName: "success")
         
     }
     
@@ -128,12 +145,12 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
 }
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrSubImg.count
+        ApifetchedData?.data.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCollectionViewCell", for: indexPath) as! HomePageCollectionViewCell
-        cell.imgSubject.image = arrSubImg[indexPath.row]
-        cell.lblSubName.text = arrSubImageName[indexPath.row]
+        cell.imgSubject.downloaded(from: (ApifetchedData?.data[indexPath.row].image)!)
+        cell.lblSubName.text = ApifetchedData?.data[indexPath.row].name ?? "xyz"
         cell.contentView.layer.cornerRadius = 15
         cell.imgSubject.layer.cornerRadius = 15
         cell.containerView.layer.cornerRadius = 15
@@ -151,3 +168,4 @@ class HomePageCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var imgSubject: UIImageView!
     @IBOutlet weak var containerView: UIView!
 }
+

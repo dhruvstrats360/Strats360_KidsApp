@@ -32,6 +32,7 @@
 		8F31C7FE29671C3A00554AB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7FD29671C3A00554AB8 /* LoginViewController.swift */; };
 		8F98E964296C001300B6D71A /* StartNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98E963296C001300B6D71A /* StartNavController.swift */; };
 		8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98E966296C1B6900B6D71A /* HomePageNavController.swift */; };
+		8FB6F4132988E0D300D3E4D3 /* APIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */; };
 		8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC73C229685236000F8DE5 /* HomePageViewController.swift */; };
 		8FCFC4C829797C9D00B136ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */; };
 		8FCFC4CA297A752200B136ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C9297A752200B136ED /* ProfileViewController.swift */; };
@@ -69,6 +70,7 @@
 		8F31C7FD29671C3A00554AB8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8F98E963296C001300B6D71A /* StartNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavController.swift; sourceTree = "<group>"; };
 		8F98E966296C1B6900B6D71A /* HomePageNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageNavController.swift; sourceTree = "<group>"; };
+		8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModels.swift; sourceTree = "<group>"; };
 		8FCC73C229685236000F8DE5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FCFC4C9297A752200B136ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Strats360_KidsApp/VC's/HomePageVC's/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				8F31C7DC2966994C00554AB8 /* CustomModel.swift */,
+				8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */,
 				8FE36F012987A6A400E27752 /* UIkit CustomModel.swift */,
 			);
 			path = Model;
@@ -358,6 +361,7 @@
 				8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */,
 				8F31C7FE29671C3A00554AB8 /* LoginViewController.swift in Sources */,
 				8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */,
+				8FB6F4132988E0D300D3E4D3 /* APIDataModels.swift in Sources */,
 				8F98E964296C001300B6D71A /* StartNavController.swift in Sources */,
 				8F31C7DD2966994C00554AB8 /* CustomModel.swift in Sources */,
 				8FCFC4CA297A752200B136ED /* ProfileViewController.swift in Sources */,
@@ -516,12 +520,14 @@
 				DEVELOPMENT_TEAM = MNA6AL6UGK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Strats360_KidsApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "360 Kids";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,6 +535,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Strats360.360KidsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,11 +556,12 @@
 				DEVELOPMENT_TEAM = MNA6AL6UGK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Strats360_KidsApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "360 Kids";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,6 +570,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Strats360.360KidsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

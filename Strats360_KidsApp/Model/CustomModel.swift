@@ -11,7 +11,10 @@ import FirebaseCore
 import FirebaseFirestore
 import IQKeyboardManagerSwift
 import FTPopOverMenu
+import Alamofire
+import RevealingSplashView
 
+//MARK: Custom Class
 class CustomClass{
     
     func curveBTN( btn button: UIButton){
@@ -19,9 +22,11 @@ class CustomClass{
         button.layer.cornerRadius = button.frame.height / 2.5
         button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: button.frame.height * 0.33)
     }
+    
     func addCustomizedBackBtn(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
         navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+    
     func cornerRadiusTXT( txt textfield: UITextField){
         textfield.layer.masksToBounds = true
         textfield.layer.cornerRadius = textfield.frame.height / 2.5
@@ -35,6 +40,7 @@ class CustomClass{
         textfield.font = UIFont(name: "Roboto-Regular", size: textfield.frame.height * 0.27)
         
     }
+    
     func errorTxtFields(txt txtField: [UITextField?], error: Bool) {
         
             if error{
@@ -67,7 +73,6 @@ class CustomClass{
     }
 }
 
-
 //MARK: HomePage CustomCLass Model
 class HomePageModels{
     
@@ -97,3 +102,28 @@ extension UINavigationController{
     }
     
 }
+
+//MARK: Custom Alamofire Model
+
+class CustomAlamofire{
+//    public var modelData = HomePageAPIModel(status: 0, message: "", logo: URL(string: "")!, data: [])
+
+    func GetAPIData(endPoint: String, completion: @escaping((HomePageAPIModel) -> ()) ){
+        
+        AF.request("https://360kids.360websitedemo.com/" + endPoint, method: .post,encoding: URLEncoding.default).response{ (responseData) in
+            guard let data = responseData.data else { return }
+            do{
+                let results = try JSONDecoder().decode(HomePageAPIModel.self, from: data)
+                DispatchQueue.main.async {
+                    completion(results)
+                }
+                
+            }
+            catch{
+                print("error while decoding API == \(error)")
+            }
+        }
+    }
+}
+
+

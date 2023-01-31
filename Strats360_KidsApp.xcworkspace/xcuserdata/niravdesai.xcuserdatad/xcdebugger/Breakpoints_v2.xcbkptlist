@@ -55,79 +55,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8434820-103D-47FB-B77B-35B50462CA91"
+            uuid = "53716DD2-D87C-4000-A106-83DC8EABEF84"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/Intro VC&apos;s/LoginViewController.swift"
+            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ChapterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "logingBTNpressed(_:)"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "homebtnPressed(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E8434820-103D-47FB-B77B-35B50462CA91 - 79fd17f492f85623"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () async throws -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Strats360_KidsApp.LoginViewController.logingBTNpressed(Any) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/Intro%20VC&apos;s/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  uuid = "E8434820-103D-47FB-B77B-35B50462CA91 - 1366fb7a2c681c44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Strats360_KidsApp.LoginViewController.logingBTNpressed(Any) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/Intro%20VC&apos;s/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "49">
-               </Location>
-               <Location
-                  uuid = "E8434820-103D-47FB-B77B-35B50462CA91 - 68ec06cd25de5303"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Strats360_KidsApp.LoginViewController.logingBTNpressed(Any) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/Intro%20VC&apos;s/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "21">
-               </Location>
-               <Location
-                  uuid = "E8434820-103D-47FB-B77B-35B50462CA91 - 68ec06cd25de5303"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Strats360_KidsApp.LoginViewController.logingBTNpressed(Any) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/Intro%20VC&apos;s/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "45">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

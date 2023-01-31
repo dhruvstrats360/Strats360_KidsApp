@@ -596,6 +596,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (5.6.4)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
@@ -708,16 +709,20 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.1)
+  - RevealingSplashView (0.6.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FirebaseAuth
   - FirebaseFirestore
   - FTPopOverMenu
   - IQKeyboardManagerSwift
+  - RevealingSplashView
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - BoringSSL-GRPC
     - FirebaseAuth
     - FirebaseCore
@@ -733,9 +738,11 @@ SPEC REPOS:
     - Libuv-gRPC
     - nanopb
     - PromisesObjC
+    - RevealingSplashView
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   FirebaseAuth: 0e415d29d846c1dce2fb641e46f35e9888d9bec6
   FirebaseCore: 988754646ab3bd4bdcb740f1bfe26b9f6c0d5f2a
@@ -751,7 +758,8 @@ SPEC CHECKSUMS:
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
 
-PODFILE CHECKSUM: 3f294f47b4af64bc4334a16c0fee2e363423b3e8
+PODFILE CHECKSUM: 39906841230d4149cfd37efed73a6908ce99fea8
 
 COCOAPODS: 1.11.3
