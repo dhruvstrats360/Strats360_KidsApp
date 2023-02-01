@@ -14,8 +14,8 @@ import RevealingSplashView
 
 class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    //Outlets
     @IBOutlet weak var animatedView: UIView!
-    
     @IBOutlet weak var btnpopUpmenu: UIBarButtonItem!
     @IBOutlet weak var imgVIP: UIImageView!
     @IBOutlet weak var SubjectColView: UICollectionView!
@@ -32,27 +32,23 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
    
     var ApifetchedData: HomePageAPIModel!
     let arrVIPImg = [UIImage(imageLiteralResourceName: "360 Kids logo")]
-    
-    let arrSubImg = [UIImage(imageLiteralResourceName: "alphabet"),UIImage(imageLiteralResourceName: "animal"),UIImage(imageLiteralResourceName: "birds"),UIImage(imageLiteralResourceName: "digits"),UIImage(imageLiteralResourceName: "fruits"),UIImage(imageLiteralResourceName: "vegs")]
-    let arrSubImageName = ["ALPHABETS","ANIMALS","BIRDS","DIGITS","FRUITS","VEGETABLES"]
     var arritem = ["Profile", "Language", "Sign Out"]
-    var isComeFromLogin = true // by default false
+    var isComeFromLogin = false // by default false
     var loggedinuserData = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //View Animation
-//        splashScreen.bounds.size = CGSize(width: view.frame.width, height: view.frame.width)
-        view.addSubview(self.splashScreen)
-        splashScreen.startAnimation()
-        animatedView.alpha = 0
+        
+        //Splash Screen Animation
+        if !isComeFromLogin{
+            view.addSubview(self.splashScreen)
+            splashScreen.startAnimation()
+            animatedView.alpha = 0
+        }
         
         //Fetching Data from API
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()){
-            self.customAlamofire.GetAPIData(endPoint: "api/get_category_list"){ (fetchedData) in
-                self.ApifetchedData = fetchedData
+            customAlamofire.GetAPIData(endPoint: "api/get_category_list", dataModel: HomePageAPIModel.self){ (fetchedData) in
+                self.ApifetchedData = fetchedData as? HomePageAPIModel
                 print(self.ApifetchedData!)
                 DispatchQueue.main.async {
                     //Toast msg
@@ -68,12 +64,12 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                     self.SubjectColView.reloadData()
                 }
             }
-        }
         SubjectColView.delegate = self
         SubjectColView.dataSource = self
         
         //navigation
         navigationController?.isNavigationBarHidden = false
+        navigationItem.titleView?.bounds.size = CGSize(width: 100, height: 66)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
     }
@@ -149,8 +145,8 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCollectionViewCell", for: indexPath) as! HomePageCollectionViewCell
-        cell.imgSubject.downloaded(from: (ApifetchedData?.data[indexPath.row].image)!)
-        cell.lblSubName.text = ApifetchedData?.data[indexPath.row].name ?? "xyz"
+        cell.imgSubject.downloaded(from: (ApifetchedData.data[indexPath.row].image))
+        cell.lblSubName.text = ApifetchedData?.data[indexPath.row].name ?? "XYZ"
         cell.contentView.layer.cornerRadius = 15
         cell.imgSubject.layer.cornerRadius = 15
         cell.containerView.layer.cornerRadius = 15
@@ -158,8 +154,13 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
-        navigationController?.pushViewController(destinationVC, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()){
+            self.customAlamofire.GetAPIData(endPoint: "api/get_product_list?category_id=" + String(self.ApifetchedData.data[indexPath.row].id), dataModel: ChapterPageAPIModel.self){ (fetchedData) in
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
+            destinationVC.fetchedDataFromAPI = fetchedData as? ChapterPageAPIModel
+            self.navigationController?.pushViewController(destinationVC, animated: true)
+            }
+        }
     }
 }
 

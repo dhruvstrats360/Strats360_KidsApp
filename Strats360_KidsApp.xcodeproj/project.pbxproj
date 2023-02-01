@@ -212,8 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				8FCC73C229685236000F8DE5 /* HomePageViewController.swift */,
-				8FCFC4C9297A752200B136ED /* ProfileViewController.swift */,
 				8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */,
+				8FCFC4C9297A752200B136ED /* ProfileViewController.swift */,
 			);
 			path = "HomePageVC's";
 			sourceTree = "<group>";

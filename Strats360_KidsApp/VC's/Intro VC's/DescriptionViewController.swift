@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import RevealingSplashView
 
 class DescriptionViewController: UIViewController {
     
@@ -23,9 +24,15 @@ class DescriptionViewController: UIViewController {
     //Constants
     var counter = 0
     var arrDescription = [1,2,3]
+    let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "360 Kids Complete Learning APP Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Splash Screen..
+        view.addSubview(self.splashScreen)
+        splashScreen.startAnimation()
+        
         customModel.curveBTN(btn: btnBack)
         customModel.curveBTN(btn: btnNext)
         

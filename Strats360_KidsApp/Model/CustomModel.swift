@@ -71,6 +71,7 @@ class CustomClass{
                 txtField.layer.borderColor = UIColor.green.cgColor
         }
     }
+    
 }
 
 //MARK: HomePage CustomCLass Model
@@ -108,20 +109,35 @@ extension UINavigationController{
 class CustomAlamofire{
 //    public var modelData = HomePageAPIModel(status: 0, message: "", logo: URL(string: "")!, data: [])
 
-    func GetAPIData(endPoint: String, completion: @escaping((HomePageAPIModel) -> ()) ){
+    func GetAPIData(endPoint: String, dataModel: Decodable.Type, completion: @escaping((Any) -> ()) ){
         
         AF.request("https://360kids.360websitedemo.com/" + endPoint, method: .post,encoding: URLEncoding.default).response{ (responseData) in
             guard let data = responseData.data else { return }
             do{
-                let results = try JSONDecoder().decode(HomePageAPIModel.self, from: data)
+                
+                let results = try JSONDecoder().decode(dataModel.self, from: data)
+                
                 DispatchQueue.main.async {
                     completion(results)
                 }
-                
             }
             catch{
                 print("error while decoding API == \(error)")
             }
+        }
+    }
+    func JString_2_Json(Jstring string: String, completion: @escaping((Dictionary<String,Any>) -> ())){
+        
+        let data = string.data(using: .utf8)!
+        do {
+            if let jsonDic = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
+            {
+                completion(jsonDic)
+            } else {
+                print("bad json")
+            }
+        } catch let error as NSError {
+            print(error)
         }
     }
 }

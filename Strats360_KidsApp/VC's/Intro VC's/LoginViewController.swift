@@ -77,6 +77,7 @@ class LoginViewController: UIViewController {
                             nvc.viewControllers = [rootVC]
                             rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
                             //Set rootVC
+                            rootVC.isComeFromLogin = true
                             let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
                             appDelegate.window!.rootViewController = nvc
                         }
