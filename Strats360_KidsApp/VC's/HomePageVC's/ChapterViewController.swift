@@ -59,9 +59,11 @@ class ChapterViewController: UIViewController {
         downloadFileFromURL(url: NSURL(string: fetchedDataFromAPI.data[currentIndex].sound)!)
     }
     func downloadFileFromURL(url:NSURL){
+        let loader = self.loader()
         var downloadTask:URLSessionDownloadTask
         downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { [weak self](URL, response, error) -> Void in
             self?.playAudio(url: URL! as NSURL)
+            self?.stopLoader(loader: loader)
         })
         downloadTask.resume()
     }
@@ -93,6 +95,7 @@ class ChapterViewController: UIViewController {
             }
         }
     }
+    
     // rightBarButton pop btn...
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
         print(fetchedDataFromAPI as Any)

@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import RevealingSplashView
+import Alamofire
 
 class DescriptionViewController: UIViewController {
     
@@ -20,12 +21,13 @@ class DescriptionViewController: UIViewController {
     
     //Model initialization
     let customModel = CustomClass()
+    let customAlamofire = CustomAlamofire()
     
     //Constants
     var counter = 0
     var arrDescription = [1,2,3]
-    let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "360 Kids Complete Learning APP Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
-
+    let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
+    var FetchedDataFromAPI:DescriptionPageModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +35,16 @@ class DescriptionViewController: UIViewController {
         view.addSubview(self.splashScreen)
         splashScreen.startAnimation()
         
+        //APi Calling
+        apiCalling()
+        
+        //Custom Buttons
         customModel.curveBTN(btn: btnBack)
         customModel.curveBTN(btn: btnNext)
         
-        pageController.currentPage = counter
-        pageController.numberOfPages = 3
-        pageController.layer.shadowOffset = CGSize(width: 0.5, height: 10)
-        pageController.tintColor = .black
-        pageController.backgroundStyle = .prominent
-        btnBack.isHidden = true
-        navigationController?.navigationBar.isHidden = true
+        //PageController
+        pageControllerCustoms()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,12 +54,31 @@ class DescriptionViewController: UIViewController {
         else{
             btnBack.isHidden = false
         }
-       
+    }
+    func apiCalling(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+            let loader = self.loader()
+            self.customAlamofire.GetAPIData(url: APIConstants.DesccriptionPageAPI, dataModel: DescriptionPageModel.self) { responseData in
+                self.FetchedDataFromAPI = responseData as? DescriptionPageModel
+                self.descriptionColView.reloadData()
+                self.stopLoader(loader: loader)
+            }
+        }
+        
+    }
+    func pageControllerCustoms(){
+        pageController.currentPage = counter
+        pageController.numberOfPages = 3
+        pageController.layer.shadowOffset = CGSize(width: 0.5, height: 10)
+        pageController.tintColor = .black
+        pageController.backgroundStyle = .prominent
+        btnBack.isHidden = true
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
         counter += 1
-        if counter < arrDescription.count {
+        if counter < FetchedDataFromAPI.screenData.count {
             if counter >= 0 {
                 btnBack.isHidden = false
             }
@@ -65,7 +86,6 @@ class DescriptionViewController: UIViewController {
              let index = IndexPath.init(item: counter, section: 0)
              self.descriptionColView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
              pageController.currentPage = counter
-             
             descriptionColView.reloadData()
         }
         else {
@@ -76,6 +96,7 @@ class DescriptionViewController: UIViewController {
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
+//        counter = FetchedDataFromAPI.screenData.count
         
         if counter == 1 {
             btnBack.isHidden = true
@@ -84,7 +105,7 @@ class DescriptionViewController: UIViewController {
             btnBack.isHidden = false
         }
         counter -= 1
-        if counter < arrDescription.count {
+        if counter < FetchedDataFromAPI.screenData.count {
             
              let index = IndexPath.init(item: counter, section: 0)
              self.descriptionColView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
@@ -97,15 +118,21 @@ class DescriptionViewController: UIViewController {
 }
 extension DescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrDescription.count
+        if FetchedDataFromAPI == nil{
+            return 0
+        }
+        else{
+            return FetchedDataFromAPI.screenData.count
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DescriptionCollectionViewCell", for: indexPath) as! DescriptionCollectionViewCell
         //        cell.insideView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.7)
-        cell.imgLogo.image = UIImage(imageLiteralResourceName: "360 Kids logo")
-        cell.imgKid.image = UIImage(imageLiteralResourceName: "kid_1")
-        cell.lblTitle.text = "Hi my name is dhruv chhatbar"
-        cell.lblSubTitle.text = "Hi my name is dhruv 123 235 44512 34234"
+        
+        cell.imgLogo.downloaded(from: FetchedDataFromAPI.screenData[indexPath.row].logo)
+        cell.imgKid.downloaded(from: FetchedDataFromAPI.screenData[indexPath.row].image)
+        cell.lblTitle.text = FetchedDataFromAPI.screenData[indexPath.row].title
+        cell.lblSubTitle.text = FetchedDataFromAPI.screenData[indexPath.row].title
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { return CGSize(width: view.frame.width, height: view.frame.height * 0.7) }

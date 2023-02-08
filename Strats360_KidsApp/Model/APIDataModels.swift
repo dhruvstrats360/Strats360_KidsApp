@@ -13,17 +13,19 @@ struct HomePageAPIModel: Codable {
     let status: Int
     let message: String
     let logo: String
+    let banner: String
     let data: [HomePageData]
     
-    init(status: Int, message: String, logo: String, data: [HomePageData]){
+    init(status: Int, message: String, logo: String,banner: String, data: [HomePageData]){
         self.status = status
         self.message = message
+        self.banner = banner
         self.logo = logo
         self.data = data
     }
     
 }
-//MARK: Datum
+//MARK: HomePageData
 struct HomePageData: Codable {
     let id: Int
     let name: String
@@ -58,7 +60,7 @@ struct CategoryWiseDatum: Codable {
     }
 }
 
-// MARK:  Datum
+// MARK:  ChapterDataModel
 struct ChapterDataModel: Codable {
     let id: Int
     let categoryID, name: String
@@ -72,4 +74,40 @@ struct ChapterDataModel: Codable {
     }
 }
 
+// MARK: - ProfilePageAPIModel
+struct ProfilePageAPIModel: Codable {
+    var status, message: String
+    var data: ProfilePageModel
+}
 
+// MARK:  ProfilePageModel
+struct ProfilePageModel: Codable {
+    let id: Int
+    var name, email, phone: String
+    var image: String
+    var updated_at: String
+}
+// MARK: - DescriptionPageModel
+
+struct DescriptionPageModel: Codable {
+    let status, message: String
+    let screenData: [ScreenDatum]
+
+    enum CodingKeys: String, CodingKey {
+        case status, message
+        case screenData = "ScreenData"
+    }
+}
+
+// MARK: ScreenDatum
+struct ScreenDatum: Codable {
+    let pageID: String
+    let logo, image: String
+    let title, subtitle: String
+
+    enum CodingKeys: String, CodingKey {
+        case pageID = "page_id"
+        case logo = "Logo"
+        case image, title, subtitle
+    }
+}

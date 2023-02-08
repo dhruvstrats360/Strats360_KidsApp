@@ -72,6 +72,70 @@ class CustomClass{
         }
     }
     
+    func txtFieldPopUp(view: UIViewController, numberOfTxtfield: Int, txtplaceholder: [String], title: String, message: String){
+        let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: .alert)
+        //2. Add the text field. You can configure it however you need.
+        
+        for index in 0...(numberOfTxtfield - 1){
+            alert.addTextField { (input) in
+                input.text = ""
+                input.placeholder = txtplaceholder[index]
+            }
+        }
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            for index in 0...(numberOfTxtfield - 1){
+                let userNameField = alert?.textFields![index]
+                if userNameField?.text == "" || userNameField?.text != nil {
+                    let alert = UIAlertController(title: "\(txtplaceholder[index]) field can't be NILL", message: "Invalid Data", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+                    view.present(alert, animated: true)
+                }
+            }
+            // Force unwrapping because we know it exists.
+            
+        }))
+        
+        view.present(alert, animated: true, completion: nil)
+    }
+    func validateName(name: String) ->Bool {
+//  Length be 18 characters max and 3 characters minimum, you can always modify. // No characters limit..
+          let nameRegex = "^[a-zA-Z-]+ ?.* [a-zA-Z-]+$"
+          let trimmedString = name.trimmingCharacters(in: .whitespaces)
+          let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
+          let isValidateName = validateName.evaluate(with: trimmedString)
+          return isValidateName
+       }
+    func validaPhoneNumber(phoneNumber: String) -> Bool {
+          let phoneNumberRegex = #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#
+          let trimmedString = phoneNumber.trimmingCharacters(in: .whitespaces)
+          let validatePhone = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
+          let isValidPhone = validatePhone.evaluate(with: trimmedString)
+          return isValidPhone
+       }
+    func validateEmailId(emailID: String) -> Bool {
+          let emailRegEx = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$"
+          let trimmedString = emailID.trimmingCharacters(in: .whitespaces)
+          let validateEmail = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+          let isValidateEmail = validateEmail.evaluate(with: trimmedString)
+          return isValidateEmail
+       }
+    func validatePassword(password: String) -> Bool {
+          //Minimum 8 characters at least 1 Alphabet and 1 Number:
+          let passRegEx = "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$"
+          let trimmedString = password.trimmingCharacters(in: .whitespaces)
+          let validatePassord = NSPredicate(format:"SELF MATCHES %@", passRegEx)
+          let isvalidatePass = validatePassord.evaluate(with: trimmedString)
+          return isvalidatePass
+       }
+    func validateAnyOtherTextField(otherField: String) -> Bool {
+          let otherRegexString = "Your regex String"
+          let trimmedString = otherField.trimmingCharacters(in: .whitespaces)
+          let validateOtherString = NSPredicate(format: "SELF MATCHES %@", otherRegexString)
+          let isValidateOtherString = validateOtherString.evaluate(with: trimmedString)
+          return isValidateOtherString
+       }
+        
 }
 
 //MARK: HomePage CustomCLass Model
@@ -109,9 +173,9 @@ extension UINavigationController{
 class CustomAlamofire{
 //    public var modelData = HomePageAPIModel(status: 0, message: "", logo: URL(string: "")!, data: [])
 
-    func GetAPIData(endPoint: String, dataModel: Decodable.Type, completion: @escaping((Any) -> ()) ){
+    func GetAPIData(url: String, dataModel: Decodable.Type, completion: @escaping((Any) -> ()) ){
         
-        AF.request("https://360kids.360websitedemo.com/" + endPoint, method: .post,encoding: URLEncoding.default).response{ (responseData) in
+        AF.request(url, method: .post, parameters: [:],encoding: URLEncoding.default).response{ (responseData) in
             guard let data = responseData.data else { return }
             do{
                 
@@ -126,6 +190,13 @@ class CustomAlamofire{
             }
         }
     }
+    func PutAPIDAta(endPoint: String, dataModel: Decodable.Type){
+        
+//        AF.request("https://360kids.360websitedemo.com/" + endPoint, method: .put, parameters:
+        
+    }
+    
+    
     func JString_2_Json(Jstring string: String, completion: @escaping((Dictionary<String,Any>) -> ())){
         
         let data = string.data(using: .utf8)!
@@ -140,6 +211,8 @@ class CustomAlamofire{
             print(error)
         }
     }
+    
 }
+
 
 

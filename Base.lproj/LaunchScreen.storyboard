@@ -16,20 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360 Kids Complete Learning APP Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-Fp-ruC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-Fp-ruC">
                                 <rect key="frame" x="0.0" y="231" width="375" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="NPb-k4-NUd"/>
+                                    <constraint firstAttribute="height" constant="350" id="5GK-PI-rCX"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDj-Ck-1qz">
+                                <rect key="frame" x="0.0" y="581" width="375" height="197"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Powered by 360 Inc">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="18" name="Roboto-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="LogoColor"/>
                         <constraints>
                             <constraint firstItem="HXa-Fp-ruC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0eJ-5F-Evx"/>
-                            <constraint firstItem="HXa-Fp-ruC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D4D-Nx-4aC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HXa-Fp-ruC" secondAttribute="trailing" id="IJ9-tF-w9a"/>
+                            <constraint firstAttribute="trailing" secondItem="HXa-Fp-ruC" secondAttribute="trailing" id="87G-Yk-PoL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kDj-Ck-1qz" secondAttribute="trailing" id="VGf-JV-EUm"/>
+                            <constraint firstItem="kDj-Ck-1qz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XTd-x6-9dF"/>
+                            <constraint firstItem="HXa-Fp-ruC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ntE-yT-Vzp"/>
                             <constraint firstItem="HXa-Fp-ruC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uLu-D2-RGc"/>
+                            <constraint firstItem="kDj-Ck-1qz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w3O-va-XGS"/>
+                            <constraint firstItem="kDj-Ck-1qz" firstAttribute="top" secondItem="HXa-Fp-ruC" secondAttribute="bottom" id="yI5-Xy-Cvr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kDj-Ck-1qz" secondAttribute="bottom" id="zwO-J2-THL"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,9 +57,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="360 Kids Complete Learning APP Logo" width="1563" height="1563"/>
+        <image name="Logo" width="1250" height="1250"/>
         <namedColor name="LogoColor">
-            <color red="0.13234817979999999" green="0.17120045419999999" blue="0.49022501709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.13199999928474426" green="0.17100000381469727" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

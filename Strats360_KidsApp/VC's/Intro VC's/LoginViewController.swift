@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func forgetPasspressed(_ sender: UIButton) {
-        
+        CustomModel.txtFieldPopUp(view: self, numberOfTxtfield: 1, txtplaceholder: ["Enter your email ID"], title: "Forgot Password your password ?", message: "No worries Enter your Email ID, you will get new Password their.")
     }
     
     @IBAction func logingBTNpressed(_ sender: Any) {

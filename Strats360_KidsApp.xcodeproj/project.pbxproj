@@ -33,6 +33,8 @@
 		8F98E964296C001300B6D71A /* StartNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98E963296C001300B6D71A /* StartNavController.swift */; };
 		8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98E966296C1B6900B6D71A /* HomePageNavController.swift */; };
 		8FB6F4132988E0D300D3E4D3 /* APIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */; };
+		8FC463C1298D2FE1001038BE /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC463C0298D2FE1001038BE /* ServerCommunication.swift */; };
+		8FC463C3298D3697001038BE /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC463C2298D3697001038BE /* AppConstants.swift */; };
 		8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC73C229685236000F8DE5 /* HomePageViewController.swift */; };
 		8FCFC4C829797C9D00B136ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */; };
 		8FCFC4CA297A752200B136ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C9297A752200B136ED /* ProfileViewController.swift */; };
@@ -71,6 +73,8 @@
 		8F98E963296C001300B6D71A /* StartNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavController.swift; sourceTree = "<group>"; };
 		8F98E966296C1B6900B6D71A /* HomePageNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageNavController.swift; sourceTree = "<group>"; };
 		8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModels.swift; sourceTree = "<group>"; };
+		8FC463C0298D2FE1001038BE /* ServerCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
+		8FC463C2298D3697001038BE /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8FCC73C229685236000F8DE5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FCFC4C9297A752200B136ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Strats360_KidsApp/VC's/HomePageVC's/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -164,7 +168,9 @@
 			children = (
 				8F31C7DC2966994C00554AB8 /* CustomModel.swift */,
 				8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */,
+				8FC463C0298D2FE1001038BE /* ServerCommunication.swift */,
 				8FE36F012987A6A400E27752 /* UIkit CustomModel.swift */,
+				8FC463C2298D3697001038BE /* AppConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,8 +363,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE36F022987A6A400E27752 /* UIkit CustomModel.swift in Sources */,
+				8FC463C1298D2FE1001038BE /* ServerCommunication.swift in Sources */,
 				8FE7C5FD296C402600F3E67E /* ChapterViewController.swift in Sources */,
 				8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */,
+				8FC463C3298D3697001038BE /* AppConstants.swift in Sources */,
 				8F31C7FE29671C3A00554AB8 /* LoginViewController.swift in Sources */,
 				8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */,
 				8FB6F4132988E0D300D3E4D3 /* APIDataModels.swift in Sources */,
@@ -444,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -498,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -527,7 +535,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15.7;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,6 +571,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -12,9 +12,10 @@ target 'Strats360_KidsApp' do
 	pod 'FTPopOverMenu'
 	# Firebase
 	pod 'FirebaseAuth'
-	pod 'FirebaseFirestore'
 	# keyboard
 	pod 'IQKeyboardManagerSwift'
   # AlamoFire
   pod 'Alamofire'
+  # CountryPicker 
+  pod 'CountryPickerView'
 end

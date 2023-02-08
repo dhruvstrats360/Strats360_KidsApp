@@ -7,13 +7,17 @@
 
 import UIKit
 import FirebaseAuth
+import CountryPickerView
 
 
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, CountryPickerViewDelegate, CountryPickerViewDataSource {
+    
+    
     
     // Outlet
     
+    @IBOutlet weak var countryPicker: CountryPickerView!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtphoneNo: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -26,6 +30,8 @@ class SignUpViewController: UIViewController {
     // custom Model
     let customModel = CustomClass()
     
+    //Constants
+    var countryCodee: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigation bar
@@ -33,7 +39,6 @@ class SignUpViewController: UIViewController {
         
         // btns
         customModel.curveBTN(btn: btnLOGIN)
-        
         customModel.curveBTN(btn: btnSignUp)
         
         // txt fields
@@ -42,9 +47,21 @@ class SignUpViewController: UIViewController {
         customModel.cornerRadiusTXT(txt: txtUserName)
         customModel.cornerRadiusTXT(txt: txtPassword)
         
+        //Country picker Delegates Datasource
+        countryPicker.delegate = self
+        countryPicker.dataSource = self
+        countryPicker.showPhoneCodeInView = true
+        countryPicker.font = UIFont(name: "Roboto-Bold", size: 12)!
+        countryPicker.flagSpacingInView = 8.0
         // Do any additional setup after loading the view.
     }
     
+    
+    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        print(country.code)
+        countryCodee = country.code
+        
+    }
     @IBAction func backtoLogin(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -96,7 +113,7 @@ class SignUpViewController: UIViewController {
                         customModel.errorTxtField(txt: linedData!, iserror: true)
                     }
                 }
-                UIAlertController.alert(title: "Error", msg: "\(data)", target: self)
+                UIAlertController.CustomAlert(title: "Error", msg: "\(data)", target: self)
         }
     }
     
@@ -107,20 +124,20 @@ extension UIViewController{
         case .operationNotAllowed:
             // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
             
-            UIAlertController.alert(title: "Error", msg: "\(error.localizedDescription)", target: self)
+            UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
             break
         case .emailAlreadyInUse:
-            UIAlertController.alert(title: "Error", msg: "\(error.localizedDescription)", target: self)
+            UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
             break
             // Error: The email address is already in use by another account.
-        case .invalidEmail: UIAlertController.alert(title: "Error", msg: "\(error.localizedDescription)", target: self)
+        case .invalidEmail: UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
             break
             // Error: The email address is badly formatted.
-        case .weakPassword: UIAlertController.alert(title: "Error", msg: "\(error.localizedDescription)", target: self)
+        case .weakPassword: UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
             break
             // Error: The password must be 6 characters long or more.
         default:
-            UIAlertController.alert(title: "Error", msg: "\(error.localizedDescription)", target: self)
+            UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
             break
         }
     }

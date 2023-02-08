@@ -16,6 +16,7 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //Outlets
     @IBOutlet weak var animatedView: UIView!
+    @IBOutlet weak var imgNavLogo: UIImageView!
     @IBOutlet weak var btnpopUpmenu: UIBarButtonItem!
     @IBOutlet weak var imgVIP: UIImageView!
     @IBOutlet weak var SubjectColView: UICollectionView!
@@ -28,42 +29,28 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     let customAlamofire = CustomAlamofire()
     
     // Constants
-    let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "360 Kids Complete Learning APP Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
-   
+    let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
+    
     var ApifetchedData: HomePageAPIModel!
-    let arrVIPImg = [UIImage(imageLiteralResourceName: "360 Kids logo")]
     var arritem = ["Profile", "Language", "Sign Out"]
     var isComeFromLogin = false // by default false
     var loggedinuserData = ""
+    var timeInterval = 0.0
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Splash Screen Animation
         if !isComeFromLogin{
-            view.addSubview(self.splashScreen)
-            splashScreen.startAnimation()
-            animatedView.alpha = 0
+            self.view.addSubview(self.splashScreen)
+            self.splashScreen.startAnimation()
+            self.animatedView.alpha = 0
+            self.timeInterval = 2.0
         }
-        
-        //Fetching Data from API
-            customAlamofire.GetAPIData(endPoint: "api/get_category_list", dataModel: HomePageAPIModel.self){ (fetchedData) in
-                self.ApifetchedData = fetchedData as? HomePageAPIModel
-                print(self.ApifetchedData!)
-                DispatchQueue.main.async {
-                    //Toast msg
-                    self.view.showToast(toastMessage: "Namaste.. ", duration: 1.5, imageName: "success")
-
-                    self.CustomModel.cornerRadiusTXT(txt: self.txtSearchBar)
-                    self.imgVIP.layer.cornerRadius = 15
-                    self.imgVIP.downloaded(from: self.ApifetchedData!.logo)
-                
-                UIView.animate(withDuration: 1, delay: 0, animations: {
-                    self.animatedView.alpha = 1
-                })
-                    self.SubjectColView.reloadData()
-                }
-            }
+//        Fetching Data from API
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
+                self.fetchingAPiData()
+        }
         SubjectColView.delegate = self
         SubjectColView.dataSource = self
         
@@ -71,7 +58,29 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.isNavigationBarHidden = false
         navigationItem.titleView?.bounds.size = CGSize(width: 100, height: 66)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+    }
+    func fetchingAPiData(){
+        let loader = self.loader()
+        customAlamofire.GetAPIData(url: APIConstants.HomePageAPI, dataModel: HomePageAPIModel.self){ (fetchedData) in
+            
+                self.ApifetchedData = fetchedData as? HomePageAPIModel
+                print(self.ApifetchedData!)
+                DispatchQueue.main.async {
+                    //Toast msg
+                    self.view.showToast(toastMessage: "Namaste.. ", duration: 1.5, imageName: "success")
+                    self.CustomModel.cornerRadiusTXT(txt: self.txtSearchBar)
+                    self.imgVIP.layer.cornerRadius = 15
+                    self.imgNavLogo.downloaded(from: self.ApifetchedData!.logo)
+                    self.imgVIP.downloaded(from: self.ApifetchedData!.banner)
+                    
+                UIView.animate(withDuration: 1, delay: 0, animations: {
+                    self.animatedView.alpha = 1
+                })
+                    self.SubjectColView.reloadData()
+                    self.stopLoader(loader: loader)
+                }
+            }
+
     }
     
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
@@ -87,7 +96,7 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                             let popframe = CGRect(origin: CGPoint(x: point.x, y: point.y + UIApplication.shared.statusBarFrame.height + 10), size: CGSize(width: 0, height: 0))
                         // added popup btn to it.
                         FTPopOverMenu.show(fromSenderFrame: popframe
-                                           , withMenuArray: arritem, imageArray: arrVIPImg,configuration: homepageModel.configuration, doneBlock: { [self] (selectedIndex) in
+                                           , withMenuArray: arritem, imageArray: [/* image for popup button */],configuration: homepageModel.configuration, doneBlock: { [self] (selectedIndex) in
                             // here action will be done on clicked btn.
                             if self.arritem.count > 0{
                                 
@@ -155,7 +164,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         DispatchQueue.main.asyncAfter(deadline: .now()){
-            self.customAlamofire.GetAPIData(endPoint: "api/get_product_list?category_id=" + String(self.ApifetchedData.data[indexPath.row].id), dataModel: ChapterPageAPIModel.self){ (fetchedData) in
+            self.customAlamofire.GetAPIData(url: APIConstants.ChapterPageAPI + String(self.ApifetchedData.data[indexPath.row].id), dataModel: ChapterPageAPIModel.self){ (fetchedData) in
             let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
             destinationVC.fetchedDataFromAPI = fetchedData as? ChapterPageAPIModel
             self.navigationController?.pushViewController(destinationVC, animated: true)

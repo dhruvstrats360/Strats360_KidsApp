@@ -25,7 +25,7 @@ lblMessage.lineBreakMode = .byWordWrapping
 lblMessage.textColor = .white
     lblMessage.backgroundColor = .clear
 lblMessage.text = toastMessage
-    lblMessage.frame = CGRect(x: bgView.frame.midX - (bgView.frame.width * 0.33) , y: bgView.frame.midX - (bgView.frame.width * 0.23), width: bgView.frame.width * 0.6, height: 50)
+    lblMessage.frame = CGRect(x: bgView.frame.midX - (bgView.frame.width * 0.33) , y: 90, width: bgView.frame.width * 0.6, height: 50)
     lblMessage.font = UIFont(name: "Roboto-Bold", size: lblMessage.frame.height * 0.5)
     lblMessage.textAlignment = .center
 lblMessage.layer.cornerRadius = 8
@@ -35,7 +35,7 @@ lblMessage.layer.masksToBounds = true
     let bgimage = UIImageView()
     bgimage.image = UIImage(imageLiteralResourceName: "\(imageName)")
     
-    bgimage.frame = CGRect(x: bgView.frame.midX - (bgView.frame.width * 0.33) , y: bgView.frame.midX - (bgView.frame.width * 0.23), width: bgView.frame.width * 0.6, height: 50)
+    bgimage.frame = CGRect(x: bgView.frame.midX - (bgView.frame.width * 0.33) , y: 90, width: bgView.frame.width * 0.6, height: 50)
     
     bgimage.contentMode = .scaleAspectFill
     bgimage.layer.cornerRadius = 8
@@ -98,12 +98,12 @@ return value2
 }
 
 extension UIAlertController {
-    class func alert(title:String, msg:String, target: UIViewController) {
+    class func CustomAlert(title:String, msg:String, target: UIViewController) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
-            (result: UIAlertAction) -> Void in
-        })
         target.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+            target.dismiss(animated: true)
+        }
     }
 }
 
@@ -167,9 +167,24 @@ extension UIImageView {
 
 extension UIViewController{
     func splashScreenAnimation(view: UIView){
-        let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "360 Kids Complete Learning APP Logo"), iconInitialSize: CGSize(width: 300, height: 300), backgroundColor: .clear)
+        let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: .clear)
         view.addSubview(splashScreen)
         splashScreen.animationType = .heartBeat
+    }
+    func loader() -> UIAlertController{
+        let alert = UIAlertController(title: nil, message: "Loading....", preferredStyle: .alert)
+        let indicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        indicator.style = .large
+        alert.view.addSubview(indicator)
+        present(alert, animated: true)
+        return alert
+    }
+    func stopLoader(loader: UIAlertController){
+        DispatchQueue.main.async {
+            loader.dismiss(animated: true)
+        }
     }
 }
 

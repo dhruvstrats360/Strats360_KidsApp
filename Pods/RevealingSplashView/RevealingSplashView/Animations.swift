@@ -18,7 +18,7 @@ public extension RevealingSplashView {
     /**
      Starts the animation depending on the type
      */
-    public func startAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    func startAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         switch animationType{
         case .twitter:
