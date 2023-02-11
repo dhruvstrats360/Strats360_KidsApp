@@ -13,6 +13,10 @@ public class APIConstants{
     static let ChapterPageAPI = "https://360kids.360websitedemo.com/api/get_product_list?category_id="
     static let ProfilePageAPI = "https://360kids.360websitedemo.com/api/user_detail?id=1"
     static let EditProfilePageAPI = "https://360kids.360websitedemo.com/api/update_user?id=1"
-    static let DesccriptionPageAPI = "https://360kids.360websitedemo.com/api/desc_screen"
-    
+    static let DesccriptionPageAPI = "https://360kids.360websitedemo.com/api/desc_screen?id=1"
+    static let RegisterPageAPI = "https://360kids.360websitedemo.com/api/register"
+    static let LoginPageAPI = "https://360kids.360websitedemo.com/api/login"
+    static let ChangePassAPI = "https://360kids.360websitedemo.com/api/change_password"
+
 }
+

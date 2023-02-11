@@ -58,13 +58,12 @@ class DescriptionViewController: UIViewController {
     func apiCalling(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
             let loader = self.loader()
-            self.customAlamofire.GetAPIData(url: APIConstants.DesccriptionPageAPI, dataModel: DescriptionPageModel.self) { responseData in
+            self.customAlamofire.GetAPIData(url: APIConstants.DesccriptionPageAPI, dataModel: DescriptionPageModel.self, parameter: [:]) { responseData in
                 self.FetchedDataFromAPI = responseData as? DescriptionPageModel
                 self.descriptionColView.reloadData()
                 self.stopLoader(loader: loader)
             }
         }
-        
     }
     func pageControllerCustoms(){
         pageController.currentPage = counter

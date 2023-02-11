@@ -78,8 +78,10 @@ class ServerCommunication : NSObject {
             }
             else {
 //                var backToString = String(data: response.data!, encoding: String.Encoding.utf8) as String?
-//                print(backToString)
+//                print(backToString as Any)
+                
                 let jsonData = ServerCommunication.share.nsdataToJSON(data: response.data! ) as! NSDictionary
+                
                 print(jsonData)
                 
                 var status : Int = 0
@@ -132,12 +134,9 @@ class ServerCommunication : NSObject {
                 }
             }
             else {
-//                var backToString = String(data: response.data!, encoding: String.Encoding.utf8) as String?
-//                print(backToString)
+                
                 let jsonData = ServerCommunication.share.nsdataToJSON(data: response.data! ) as! NSDictionary
                 print(jsonData)
-                
-                
                 var status : Int!
                    
                 if let value = jsonData["api_status"] as? Int{

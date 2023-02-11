@@ -72,32 +72,7 @@ class CustomClass{
         }
     }
     
-    func txtFieldPopUp(view: UIViewController, numberOfTxtfield: Int, txtplaceholder: [String], title: String, message: String){
-        let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: .alert)
-        //2. Add the text field. You can configure it however you need.
-        
-        for index in 0...(numberOfTxtfield - 1){
-            alert.addTextField { (input) in
-                input.text = ""
-                input.placeholder = txtplaceholder[index]
-            }
-        }
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            for index in 0...(numberOfTxtfield - 1){
-                let userNameField = alert?.textFields![index]
-                if userNameField?.text == "" || userNameField?.text != nil {
-                    let alert = UIAlertController(title: "\(txtplaceholder[index]) field can't be NILL", message: "Invalid Data", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .destructive))
-                    view.present(alert, animated: true)
-                }
-            }
-            // Force unwrapping because we know it exists.
-            
-        }))
-        
-        view.present(alert, animated: true, completion: nil)
-    }
+    
     func validateName(name: String) ->Bool {
 //  Length be 18 characters max and 3 characters minimum, you can always modify. // No characters limit..
           let nameRegex = "^[a-zA-Z-]+ ?.* [a-zA-Z-]+$"
@@ -173,9 +148,9 @@ extension UINavigationController{
 class CustomAlamofire{
 //    public var modelData = HomePageAPIModel(status: 0, message: "", logo: URL(string: "")!, data: [])
 
-    func GetAPIData(url: String, dataModel: Decodable.Type, completion: @escaping((Any) -> ()) ){
+    func GetAPIData(url: String, dataModel: Decodable.Type, parameter: [String: Any], completion: @escaping((Any) -> ()) ){
         
-        AF.request(url, method: .post, parameters: [:],encoding: URLEncoding.default).response{ (responseData) in
+        AF.request(url, method: .post, parameters: parameter,encoding: URLEncoding.default).response{ (responseData) in
             guard let data = responseData.data else { return }
             do{
                 

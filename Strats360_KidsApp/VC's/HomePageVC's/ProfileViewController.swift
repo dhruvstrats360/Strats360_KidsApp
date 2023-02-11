@@ -29,6 +29,9 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     let customALamoFire = CustomAlamofire()
     var FetchedData = [String: Any]()
     let imagePicker = UIImagePickerController()
+    
+    //Constants
+    var UserId: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +50,7 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        
-        
-        
-        
+
     }
     
     func presetEdits(){
@@ -119,7 +117,7 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     }
     
     @IBAction func chngPasspresseD(_ sender: UIButton) {
-        customModel.txtFieldPopUp(view: self, numberOfTxtfield: 2, txtplaceholder: ["New Password :", "Re Enter New Password :"], title: "Change Password", message: "Enter Your New Password")
+    txtFieldPopUp(view: self, numberOfTxtfield: 3, txtplaceholder: ["Your Old Password: ", "Enter your New Password :","Re- Enter your new password :"], title: "Change Password", message: "Enter Your New Password ")
     }
     
     @IBAction func saveDataPressed(_ sender: UIButton) {
@@ -154,6 +152,7 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             customModel.errorTxtFields(txt: [txtEmail,txtphoneNo,txtUserName], error: false)
             // id, name, email, phone, profile
             let dicData:[String:Any] = self.FetchedData["data"] as! [String : Any]
+            
             let parameter = [
                 "name" : name,
                 "email" : email,
@@ -172,8 +171,6 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
                     print(data!)
                 }
             }
-
-            
             print("All fields are correct")
         }
         self.dismiss(animated: true)
@@ -189,4 +186,79 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             }
             dismiss(animated: true, completion: nil)
         }
+}
+extension ProfileViewController{
+    func txtFieldPopUp(view: UIViewController, numberOfTxtfield: Int, txtplaceholder: [String], title: String, message: String){
+        let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: .alert)
+        //2. Add the text field. You can configure it however you need.
+        
+        for index in 0...(numberOfTxtfield - 1){
+            alert.addTextField { (input) in
+                input.text = ""
+                input.placeholder = txtplaceholder[index]
+            }
+        }
+         
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [self, weak alert] (_) in
+            guard let oldPassword = alert?.textFields![0].text, let newPassword = alert?.textFields![1].text, let confirmNewPass = alert?.textFields![2].text
+            else{
+                let alert = UIAlertController(title: "fields can't be NILL", message: "Invalid Data", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+                view.present(alert, animated: true)
+                return
+            }
+            if customModel.validatePassword(password: newPassword) {
+                // url parameters
+                let parameter1 =
+                [
+                    "user_id": 80,
+                    "old_pwd": oldPassword,
+                    "new_pwd": newPassword,
+                    "confirm_new_pwd": confirmNewPass
+                ] as [String: Any]
+                let headers : HTTPHeaders? = [
+                        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovLzM2MGtpZHMuMzYwd2Vic2l0ZWRlbW8uY29tL2FwaS9sb2dpbiIsImlhdCI6MTY3NjAyODA3MCwiZXhwIjoxNjc2MDMxNjcwLCJuYmYiOjE2NzYwMjgwNzAsImp0aSI6IlNNdVBkSmZuTGMzazFnOTIiLCJzdWIiOiI3OSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.QYw1WyxIgYnPrHvJ5Fv6q29HtG31MmjPZ8QfpZqhSPE",
+                        "type": "bearer"
+                    ]
+                
+                let request = RequestModel(url: APIConstants.ChangePassAPI, httpMethod: .post, headerFields: headers , parameter: parameter1)
+                ServerCommunication.share.APICallingFunction(request: request) { response, data in
+                    if response{
+
+                        let msgString = data!["message"]! as! Array<Any>
+                        var errorText = ""
+                        for index in msgString{
+                            errorText = errorText + " " + (index as! String)
+                        }
+                        let alert = UIAlertController(title: "\(errorText)", message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+                        view.present(alert, animated: true)
+                        return
+                    }
+                    else{
+                        print(data!)
+                        let msgString = data!["message"] as! Array<Any>
+                        var errorText = ""
+                        for index in msgString{
+                            errorText = errorText + " " + (index as! String)
+                        }
+                        let alert = UIAlertController(title: "\(errorText)", message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+                        view.present(alert, animated: true)
+                        return
+                    }
+                }
+            }
+            else{
+                let alert = UIAlertController(title: "Error", message: "Invalid Format of password", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+                view.present(alert, animated: true)
+                return
+            }
+            
+            }))
+        
+        view.present(alert, animated: true, completion: nil)
+    }
 }

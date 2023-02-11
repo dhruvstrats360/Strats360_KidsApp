@@ -68,7 +68,7 @@
                         </connections>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mi3-59-fcN"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cfF-dI-yOY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcc-2V-let" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -485,6 +485,7 @@ Create your Account</string>
                             <constraint firstItem="M4e-b5-2IL" firstAttribute="height" secondItem="XOc-j8-tAh" secondAttribute="height" multiplier="0.128079" id="zG4-aX-PeB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0XE-HV-ios"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btnLogin" destination="061-v9-wW4" id="qwp-9l-rqm"/>

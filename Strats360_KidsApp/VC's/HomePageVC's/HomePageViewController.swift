@@ -29,6 +29,7 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     let customAlamofire = CustomAlamofire()
     
     // Constants
+    var UserId: Int!
     let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
     
     var ApifetchedData: HomePageAPIModel!
@@ -61,8 +62,7 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     func fetchingAPiData(){
         let loader = self.loader()
-        customAlamofire.GetAPIData(url: APIConstants.HomePageAPI, dataModel: HomePageAPIModel.self){ (fetchedData) in
-            
+        customAlamofire.GetAPIData(url: APIConstants.HomePageAPI, dataModel: HomePageAPIModel.self, parameter: [:]){ (fetchedData) in
                 self.ApifetchedData = fetchedData as? HomePageAPIModel
                 print(self.ApifetchedData!)
                 DispatchQueue.main.async {
@@ -72,17 +72,21 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                     self.imgVIP.layer.cornerRadius = 15
                     self.imgNavLogo.downloaded(from: self.ApifetchedData!.logo)
                     self.imgVIP.downloaded(from: self.ApifetchedData!.banner)
-                    
+                    self.UserId = self.ApifetchedData.data[0].id
+                    self.shareingIdtoALL()
                 UIView.animate(withDuration: 1, delay: 0, animations: {
                     self.animatedView.alpha = 1
                 })
                     self.SubjectColView.reloadData()
                     self.stopLoader(loader: loader)
-                }
             }
-
+        }
     }
-    
+    func shareingIdtoALL(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootVC:ProfileViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        rootVC.UserId = self.UserId!
+    }
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
         
         if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
@@ -164,7 +168,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         DispatchQueue.main.asyncAfter(deadline: .now()){
-            self.customAlamofire.GetAPIData(url: APIConstants.ChapterPageAPI + String(self.ApifetchedData.data[indexPath.row].id), dataModel: ChapterPageAPIModel.self){ (fetchedData) in
+            self.customAlamofire.GetAPIData(url: APIConstants.ChapterPageAPI + String(self.ApifetchedData.data[indexPath.row].id), dataModel: ChapterPageAPIModel.self, parameter: [:]){ (fetchedData) in
             let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
             destinationVC.fetchedDataFromAPI = fetchedData as? ChapterPageAPIModel
             self.navigationController?.pushViewController(destinationVC, animated: true)

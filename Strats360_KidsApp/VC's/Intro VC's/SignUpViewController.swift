@@ -6,13 +6,10 @@
 //
 
 import UIKit
-import FirebaseAuth
 import CountryPickerView
-
-
+import Alamofire
 
 class SignUpViewController: UIViewController, CountryPickerViewDelegate, CountryPickerViewDataSource {
-    
     
     
     // Outlet
@@ -31,7 +28,9 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
     let customModel = CustomClass()
     
     //Constants
+    var UserId: Int!
     var countryCodee: String!
+    var FetchedData: [String: Any]!
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigation bar
@@ -56,100 +55,92 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
         // Do any additional setup after loading the view.
     }
     
-    
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         print(country.code)
         countryCodee = country.code
-        
     }
     @IBAction func backtoLogin(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
-        if !(txtUserName.text == "" || txtEmail.text == "" || txtphoneNo.text == "" || txtPassword.text == ""){
-            if let email = txtEmail.text,let password = txtEmail.text{
-                Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
-                        if let error = error as? NSError {
-                            
-                            SignUp_error(error: error as! AuthErrorCode)
-                        }
-                        else {
-                            // .....dispatchQueue line will come here - Note......
-                            
-                                self.customModel.errorTxtFields(txt: [self.txtEmail,self.txtphoneNo,self.txtPassword,self.txtUserName], error: false)
-                                
-                            Task{
-                                // hold it for 1 mins
-                                try await Task.sleep(nanoseconds: 1000000000)
-                                // Logged in successfully.
-                                print("User signs up successfully")
-                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                let rootVC:HomePageViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-                                let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
-                                nvc.viewControllers = [rootVC]
-                                rootVC.isComeFromLogin = true
-                                rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
-                                let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                appDelegate.window!.rootViewController = nvc
-                        }
+        
+        guard let name = txtUserName.text, let email = txtEmail.text, let phone = txtphoneNo.text, let password = txtPassword.text
+        else {
+           return
+        }
+        let isValidateName = self.customModel.validateName(name: name)
+        let isValidateEmail = self.customModel.validateEmailId(emailID: email)
+        let isValidatePassword = self.customModel.validatePassword(password: password)
+        if (isValidateName == false && isValidateEmail == false){
+            customModel.errorTxtField(txt: txtUserName, iserror: true)
+            customModel.errorTxtField(txt: txtEmail, iserror: true)
+            UIAlertController.CustomAlert(title: "Error", msg: "Incorrect Name & Password", target: self)
+           print("Incorrect Name & email")
+           return
+        }
+        if (isValidateName == false) {
+            customModel.errorTxtField(txt: txtUserName, iserror: true)
+            UIAlertController.CustomAlert(title: "Error", msg: "Incorrect Name", target: self)
+            print("Incorrect Name")
+            return
+        }
+        if (isValidateEmail == false){
+            customModel.errorTxtField(txt: txtEmail, iserror: true)
+            UIAlertController.CustomAlert(title: "Error", msg: "Incorrect Email", target: self)
+            print("Incorrect Email")
+            return
+        }
+        if (isValidatePassword == false) {
+            customModel.errorTxtField(txt: txtPassword, iserror: true)
+            UIAlertController.CustomAlert(title: "Error", msg: "Weak Password", target: self)
+            print("Incorrect password")
+            return
+        }
+        
+        
+        if (isValidateEmail == true || isValidateName == true || isValidatePassword == true  ) {
+            
+            // Parameters - id, name, email, phone, profile
+            let parameter = [
+                "name" : name,
+                "email" : email,
+                "phone" : countryPicker.selectedCountry.phoneCode + phone,
+                "password" : password
+            ] as [String: Any]
+            
+            let request = RequestModel(url: APIConstants.RegisterPageAPI, httpMethod: .post, parameter: parameter)
+            
+            ServerCommunication.share.APICallingFunction(request: request) { response, data in
+                if response{
+                    print(data!)
+                    self.customModel.errorTxtFields(txt: [self.txtEmail,self.txtphoneNo,self.txtPassword,self.txtUserName], error: false)
+                    print("User signs up successfully")
+                    UIAlertController.CustomAlert(title: "\(data!["message"]!)", msg: "", target: self)
+                    // hold it for 1 sec
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let rootVC:HomePageViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
+                        nvc.viewControllers = [rootVC]
+                        rootVC.isComeFromLogin = true
+                        rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
+                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                        appDelegate.window!.rootViewController = nvc
                     }
+                }
+                else{
+                    self.customModel.errorTxtFields(txt: [self.txtEmail], error: true)
+                    var errorText = ""
+                    let arrOfdata = data!["message"]! as! Array<String>
+                    for index in arrOfdata{
+                        errorText = errorText + index
+                    }
+                    UIAlertController.CustomAlert(title: "Error", msg: "\(errorText)", target: self)
+                    print(data!)
                 }
             }
-        }
-        else{
-            let arrlist = [txtUserName, txtEmail, txtphoneNo, txtPassword]
-            let filteredData = arrlist.map({ (index) in
-                if index?.text == ""{
-                    return index
-                }
-                return nil
-            })
-            customModel.errorTxtFields(txt: filteredData, error: true)
-                var data = ""
-                for linedData in filteredData{
-                    if linedData != nil{
-                        data = data + " \(String(describing: linedData!.placeholder!)) cannot be empty, "
-                        customModel.errorTxtField(txt: linedData!, iserror: true)
-                    }
-                }
-                UIAlertController.CustomAlert(title: "Error", msg: "\(data)", target: self)
-        }
-    }
-    
-}
-extension UIViewController{
-    func SignUp_error(error: AuthErrorCode) {
-        switch error.code{
-        case .operationNotAllowed:
-            // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
-            
-            UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
-            break
-        case .emailAlreadyInUse:
-            UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
-            break
-            // Error: The email address is already in use by another account.
-        case .invalidEmail: UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
-            break
-            // Error: The email address is badly formatted.
-        case .weakPassword: UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
-            break
-            // Error: The password must be 6 characters long or more.
-        default:
-            UIAlertController.CustomAlert(title: "Error", msg: "\(error.localizedDescription)", target: self)
-            break
+            print("All fields are correct")
         }
     }
 }
-
- 
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
