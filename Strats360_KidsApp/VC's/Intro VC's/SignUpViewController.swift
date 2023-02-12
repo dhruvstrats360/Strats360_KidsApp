@@ -114,6 +114,16 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
             ServerCommunication.share.APICallingFunction(request: request) { response, data in
                 if response{
                     print(data!)
+                    
+                    UserDefaults.standard.set(data!, forKey: APIConstants.UserDataDic)
+                    
+                    // USer data auth Code..
+                    let authCode = data!["authorisation"]! as! [String:Any]
+                    UserDefaults.standard.set(authCode, forKey: APIConstants.UserAuthToken)
+                    
+                    // USer login status code...
+                    UserDefaults.standard.set(true, forKey: APIConstants.UserLoginSatus)
+                    
                     self.customModel.errorTxtFields(txt: [self.txtEmail,self.txtphoneNo,self.txtPassword,self.txtUserName], error: false)
                     print("User signs up successfully")
                     UIAlertController.CustomAlert(title: "\(data!["message"]!)", msg: "", target: self)

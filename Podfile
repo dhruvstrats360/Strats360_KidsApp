@@ -10,8 +10,6 @@ target 'Strats360_KidsApp' do
   pod 'RevealingSplashView'
 	# dropDown btn
 	pod 'FTPopOverMenu'
-	# Firebase
-	pod 'FirebaseAuth'
 	# keyboard
 	pod 'IQKeyboardManagerSwift'
   # AlamoFire

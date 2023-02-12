@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import RevealingSplashView
 import Alamofire
 

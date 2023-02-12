@@ -17,6 +17,11 @@ public class APIConstants{
     static let RegisterPageAPI = "https://360kids.360websitedemo.com/api/register"
     static let LoginPageAPI = "https://360kids.360websitedemo.com/api/login"
     static let ChangePassAPI = "https://360kids.360websitedemo.com/api/change_password"
-
+    static let LogOutAPI = "https://360kids.360websitedemo.com/api/logout"
+    
+    
+    static let UserLoginSatus = "UserLoginSatus"
+    static let UserDataDic = "UserDataDic"
+    static let UserAuthToken = "UserAuthToken"
 }
 

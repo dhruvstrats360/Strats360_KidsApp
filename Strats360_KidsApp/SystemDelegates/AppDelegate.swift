@@ -22,12 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         
-        
-        // firebase
-        FirebaseApp.configure()
-        
-        
-        
         return true
     }
 

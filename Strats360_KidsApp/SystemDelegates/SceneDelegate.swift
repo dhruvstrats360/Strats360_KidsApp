@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     }
     func isUserLoggedIn() -> Bool {
-      return true
+        let status = UserDefaults.standard.bool(forKey: APIConstants.UserLoginSatus) 
+      return status
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

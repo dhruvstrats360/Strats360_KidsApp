@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -82,7 +81,19 @@ class LoginViewController: UIViewController {
             
             ServerCommunication.share.APICallingFunction(request: request) { response, data in
                 if response{
+                    
                     print(data!)
+                    
+                    // USer data auth Code..
+                    let authCode = data!["authorisation"]! as? NSDictionary
+                    UserDefaults.standard.set(authCode!, forKey: APIConstants.UserAuthToken)
+                    
+                    // USer dataDictionary...
+                    UserDefaults.standard.set(data!["data"]!, forKey: APIConstants.UserDataDic)
+                    
+                    // USer login status code...
+                    UserDefaults.standard.set(true, forKey: APIConstants.UserLoginSatus)
+                    
                     self.CustomModel.errorTxtFields(txt: [self.txtUsername,self.txtPassword], error: false)
                     print("User signs up successfully")
                     UIAlertController.CustomAlert(title: "\(data!["message"]!)", msg: "", target: self)
@@ -93,7 +104,6 @@ class LoginViewController: UIViewController {
                         let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
                         nvc.viewControllers = [rootVC]
                         rootVC.isComeFromLogin = true
-                        rootVC.loggedinuserData = String(describing: "\(String(describing: email))")
                         let userData = data!["data"]! as! [String : Any]
                         rootVC.UserId = userData["id"] as? Int
                         let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate

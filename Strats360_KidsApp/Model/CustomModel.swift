@@ -6,9 +6,6 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseCore
-import FirebaseFirestore
 import IQKeyboardManagerSwift
 import FTPopOverMenu
 import Alamofire
@@ -97,7 +94,7 @@ class CustomClass{
        }
     func validatePassword(password: String) -> Bool {
           //Minimum 8 characters at least 1 Alphabet and 1 Number:
-          let passRegEx = "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$"
+          let passRegEx = "^(?=.*[a-z]).{6,}$"
           let trimmedString = password.trimmingCharacters(in: .whitespaces)
           let validatePassord = NSPredicate(format:"SELF MATCHES %@", passRegEx)
           let isvalidatePass = validatePassord.evaluate(with: trimmedString)

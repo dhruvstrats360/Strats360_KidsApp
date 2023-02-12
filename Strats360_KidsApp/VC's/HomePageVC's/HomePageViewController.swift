@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import FTPopOverMenu
 import Alamofire
 import RevealingSplashView
@@ -124,20 +123,26 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                                     })
                                 }
                                 if selectedIndex == 2{
-                                    do {
-                                      try Auth.auth().signOut()
-                                        
-                                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                      let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                                           nvc.viewControllers = [rootVC]
-                                        rootVC.cameFromHomePage = true
-                                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                        appDelegate.window!.rootViewController = nvc
-                                        
-                                    } catch {
-                                      print("Sign out error")
+                                    let header = UserDefaults.standard.object(forKey: APIConstants.UserAuthToken)
+                                    ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post,headerFields: header as? HTTPHeaders, parameter: [:])) { response, data in
+                                        print(data!)
+                                        if response{
+                                            // USer login status code...
+                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                          let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                                            let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                                                               nvc.viewControllers = [rootVC]
+                                            rootVC.cameFromHomePage = true
+                                            let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                                            appDelegate.window!.rootViewController = nvc
+                                        }
+                                        else{
+                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+                                            UIAlertController.CustomAlert(title: "Error", msg: (data!["msg"]! as? String)!, target: self)
+                                        }
                                     }
+                                    
                                 }
                             }
                         } , dismiss: {

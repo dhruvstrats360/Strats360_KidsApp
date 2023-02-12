@@ -100,10 +100,8 @@ class ServerCommunication : NSObject {
                 }
                 // Status is set as 1 beacause right now our server data is giving that as validation.
                 if(status == 1) {
-                    
                     let responseModel = ResponseModel(statusCode: response.response!.statusCode, error: response.error, data: jsonData, success: true)
                     completionHandler(responseModel)
-                    
                 }
                 else{
                     let responseModel = ResponseModel(statusCode: response.response!.statusCode, error: response.error, data: jsonData, success: false)

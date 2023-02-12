@@ -7,7 +7,6 @@
 
 import UIKit
 import FTPopOverMenu
-import FirebaseAuth
 import AVFoundation
 
 
@@ -131,16 +130,24 @@ class ChapterViewController: UIViewController {
                             }
                             // Signed Out...
                             else if selectedIndex == 2{
-                                do {
-                                    try Auth.auth().signOut()
-                                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                                    let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                    let customViewControllersArray : NSArray = [destinationVC]
-                                    self.navigationController?.viewControllers = customViewControllersArray as! [UIViewController]
-                                    self.navigationController?.popToRootViewController(animated: true)
-                                } catch {
-                                    print("Sign out error")
+                                ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post ,parameter: [:])) { response, data in
+                                    print(data!)
+                                    if response{
+                                        // USer login status code...
+                                        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+                                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                      let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                                                           nvc.viewControllers = [rootVC]
+                                        rootVC.cameFromHomePage = true
+                                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                                        appDelegate.window!.rootViewController = nvc
+                                    }
+                                    else{
+                                        UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
+                                    }
                                 }
+                                
                             }
                         }
                     } , dismiss: {
