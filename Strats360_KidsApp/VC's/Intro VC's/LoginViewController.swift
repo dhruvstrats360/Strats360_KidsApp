@@ -39,7 +39,8 @@ class LoginViewController: UIViewController {
         // txtFields edits
         txtPassword.placeholder = "Password"
         txtUsername.placeholder = "User Name"
-        
+        txtUsername.text = "tester03@gmail.com"
+        txtPassword.text = "tester@123"
     }
     
     @IBAction func signUpBTNpressed(_ sender: UIButton) {
@@ -77,7 +78,7 @@ class LoginViewController: UIViewController {
                 "password" : password
             ] as [String: Any]
             
-            let request = RequestModel(url: APIConstants.LoginPageAPI, httpMethod: .post, parameter: parameter )
+            let request = RequestModel(url: APIConstants.LoginPageAPI, httpMethod: .post, headerFields: [:], parameter: parameter )
             
             ServerCommunication.share.APICallingFunction(request: request) { response, data in
                 if response{
@@ -86,10 +87,13 @@ class LoginViewController: UIViewController {
                     
                     // USer data auth Code..
                     let authCode = data!["authorisation"]! as? NSDictionary
-                    UserDefaults.standard.set(authCode!, forKey: APIConstants.UserAuthToken)
+                    let authToken = authCode!["token"]!
+                    UserDefaults.standard.set(authToken, forKey: APIConstants.UserAuthToken)
                     
-                    // USer dataDictionary...
-                    UserDefaults.standard.set(data!["data"]!, forKey: APIConstants.UserDataDic)
+                    // USer ID
+                    let userData = data!["data"]! as? NSDictionary
+                    let UserId = userData!["id"]!
+                    UserDefaults.standard.set(UserId, forKey: APIConstants.UserloggedId)
                     
                     // USer login status code...
                     UserDefaults.standard.set(true, forKey: APIConstants.UserLoginSatus)
@@ -104,8 +108,8 @@ class LoginViewController: UIViewController {
                         let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "HomePageNavController") as! HomePageNavController
                         nvc.viewControllers = [rootVC]
                         rootVC.isComeFromLogin = true
-                        let userData = data!["data"]! as! [String : Any]
-                        rootVC.UserId = userData["id"] as? Int
+                        rootVC.UserData = data!
+                        
                         let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
                         appDelegate.window!.rootViewController = nvc
                     }

@@ -143,11 +143,10 @@ extension UINavigationController{
 //MARK: Custom Alamofire Model
 
 class CustomAlamofire{
-//    public var modelData = HomePageAPIModel(status: 0, message: "", logo: URL(string: "")!, data: [])
 
-    func GetAPIData(url: String, dataModel: Decodable.Type, parameter: [String: Any], completion: @escaping((Any) -> ()) ){
+    func GetAPIData(url: String, dataModel: Decodable.Type, parameter: [String: Any], header: [String:String]? , completion: @escaping((Any) -> ()) ){
         
-        AF.request(url, method: .post, parameters: parameter,encoding: URLEncoding.default).response{ (responseData) in
+        AF.request(url, method: .post, parameters: parameter,encoding: URLEncoding.default, headers: HTTPHeaders(header ?? [:])).response{ (responseData) in
             guard let data = responseData.data else { return }
             do{
                 
@@ -162,12 +161,6 @@ class CustomAlamofire{
             }
         }
     }
-    func PutAPIDAta(endPoint: String, dataModel: Decodable.Type){
-        
-//        AF.request("https://360kids.360websitedemo.com/" + endPoint, method: .put, parameters:
-        
-    }
-    
     
     func JString_2_Json(Jstring string: String, completion: @escaping((Dictionary<String,Any>) -> ())){
         

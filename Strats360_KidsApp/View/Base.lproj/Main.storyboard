@@ -547,8 +547,8 @@ Create your Account</string>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-lk-yv6">
                                                 <rect key="frame" x="0.0" y="0.0" width="307.66666666666669" height="458.66666666666669"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Tqe-md-UY4">
-                                                    <size key="itemSize" width="150" height="170"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="4" id="Tqe-md-UY4">
+                                                    <size key="itemSize" width="150" height="130"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
@@ -564,11 +564,25 @@ Create your Account</string>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSP-25-m8P">
                                                                     <rect key="frame" x="0.0" y="5" width="120" height="140"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-78-Wdv">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="112"/>
-                                                                        </imageView>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJc-uh-ssP">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="116.33333333333333"/>
+                                                                            <subviews>
+                                                                                <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" image="1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-78-Wdv">
+                                                                                    <rect key="frame" x="-5" y="0.0" width="130" height="116.33333333333333"/>
+                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                    </preferredSymbolConfiguration>
+                                                                                </imageView>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="bottom" secondItem="aVU-78-Wdv" secondAttribute="bottom" id="2ao-nt-apX"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="aVU-78-Wdv" secondAttribute="trailing" constant="-5" id="9a3-O1-gjS"/>
+                                                                                <constraint firstItem="aVU-78-Wdv" firstAttribute="leading" secondItem="uJc-uh-ssP" secondAttribute="leading" constant="-5" id="I51-sJ-EQH"/>
+                                                                                <constraint firstItem="aVU-78-Wdv" firstAttribute="top" secondItem="uJc-uh-ssP" secondAttribute="top" id="I8s-lG-IWq"/>
+                                                                            </constraints>
+                                                                        </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE3-wU-cSs">
-                                                                            <rect key="frame" x="0.0" y="117" width="120" height="23"/>
+                                                                            <rect key="frame" x="0.0" y="121.33333333333333" width="120" height="18.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -577,14 +591,13 @@ Create your Account</string>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="lE3-wU-cSs" secondAttribute="trailing" id="2eM-9M-An3"/>
-                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="top" secondItem="uSP-25-m8P" secondAttribute="top" id="Abw-L5-aVD"/>
                                                                         <constraint firstItem="lE3-wU-cSs" firstAttribute="leading" secondItem="uSP-25-m8P" secondAttribute="leading" id="GAA-hI-lSj"/>
-                                                                        <constraint firstItem="lE3-wU-cSs" firstAttribute="top" secondItem="aVU-78-Wdv" secondAttribute="bottom" constant="5" id="Ghz-Jy-Ylo"/>
-                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="centerX" secondItem="uSP-25-m8P" secondAttribute="centerX" id="H46-xm-hdl"/>
-                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="width" secondItem="uSP-25-m8P" secondAttribute="width" id="KE3-dx-bsf"/>
-                                                                        <constraint firstAttribute="width" constant="150" id="bN2-hN-1ha"/>
-                                                                        <constraint firstAttribute="height" constant="170" id="rgS-4J-Q3i"/>
-                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="height" secondItem="uSP-25-m8P" secondAttribute="height" multiplier="0.8" id="xCM-8T-mT5"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="uJc-uh-ssP" secondAttribute="trailing" id="PbE-Jc-jWO"/>
+                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="centerX" secondItem="uSP-25-m8P" secondAttribute="centerX" id="Vd4-55-QLj"/>
+                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="top" secondItem="uSP-25-m8P" secondAttribute="top" id="bvz-42-Kvv"/>
+                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="height" secondItem="uSP-25-m8P" secondAttribute="height" multiplier="0.83" id="coM-QN-Q1s"/>
+                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="leading" secondItem="uSP-25-m8P" secondAttribute="leading" id="os3-cf-8Z5"/>
+                                                                        <constraint firstItem="lE3-wU-cSs" firstAttribute="top" secondItem="uJc-uh-ssP" secondAttribute="bottom" constant="5" id="wls-p2-cvQ"/>
                                                                         <constraint firstAttribute="bottom" secondItem="lE3-wU-cSs" secondAttribute="bottom" id="xFu-81-cCs"/>
                                                                     </constraints>
                                                                 </view>
@@ -593,6 +606,7 @@ Create your Account</string>
                                                             <constraints>
                                                                 <constraint firstItem="uSP-25-m8P" firstAttribute="leading" secondItem="lbg-Bq-e5L" secondAttribute="leading" id="0fP-fZ-0wh"/>
                                                                 <constraint firstItem="uSP-25-m8P" firstAttribute="top" secondItem="lbg-Bq-e5L" secondAttribute="top" constant="5" id="406-bm-jta"/>
+                                                                <constraint firstItem="uJc-uh-ssP" firstAttribute="width" secondItem="lbg-Bq-e5L" secondAttribute="width" id="64P-G9-2rR"/>
                                                                 <constraint firstAttribute="bottom" secondItem="uSP-25-m8P" secondAttribute="bottom" constant="5" id="pJK-vW-wwZ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="uSP-25-m8P" secondAttribute="trailing" id="vAA-hu-9ug"/>
                                                             </constraints>
@@ -600,6 +614,7 @@ Create your Account</string>
                                                         <size key="customSize" width="120" height="150"/>
                                                         <connections>
                                                             <outlet property="containerView" destination="uSP-25-m8P" id="t67-Wc-VXh"/>
+                                                            <outlet property="imgBGview" destination="uJc-uh-ssP" id="1yA-N0-NgG"/>
                                                             <outlet property="imgSubject" destination="aVU-78-Wdv" id="Oht-3h-fZg"/>
                                                             <outlet property="lblSubName" destination="lE3-wU-cSs" id="Kx4-O7-Yox"/>
                                                         </connections>

@@ -115,7 +115,7 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
                 if response{
                     print(data!)
                     
-                    UserDefaults.standard.set(data!, forKey: APIConstants.UserDataDic)
+                    UserDefaults.standard.set(data!, forKey: APIConstants.UserloggedId)
                     
                     // USer data auth Code..
                     let authCode = data!["authorisation"]! as! [String:Any]

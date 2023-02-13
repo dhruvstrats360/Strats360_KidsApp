@@ -14,7 +14,6 @@ import FTPopOverMenu
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var windowAppD: UIWindow?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -22,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         
+//        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
         return true
     }
 

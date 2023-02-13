@@ -57,7 +57,7 @@ class DescriptionViewController: UIViewController {
     func apiCalling(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
             let loader = self.loader()
-            self.customAlamofire.GetAPIData(url: APIConstants.DesccriptionPageAPI, dataModel: DescriptionPageModel.self, parameter: [:]) { responseData in
+            self.customAlamofire.GetAPIData(url: APIConstants.DesccriptionPageAPI, dataModel: DescriptionPageModel.self, parameter: [:], header: nil) { responseData in
                 self.FetchedDataFromAPI = responseData as? DescriptionPageModel
                 self.descriptionColView.reloadData()
                 self.stopLoader(loader: loader)
@@ -130,7 +130,7 @@ extension DescriptionViewController: UICollectionViewDelegate, UICollectionViewD
         cell.imgLogo.downloaded(from: FetchedDataFromAPI.screenData[indexPath.row].logo)
         cell.imgKid.downloaded(from: FetchedDataFromAPI.screenData[indexPath.row].image)
         cell.lblTitle.text = FetchedDataFromAPI.screenData[indexPath.row].title
-        cell.lblSubTitle.text = FetchedDataFromAPI.screenData[indexPath.row].title
+        cell.lblSubTitle.text = FetchedDataFromAPI.screenData[indexPath.row].subtitle
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { return CGSize(width: view.frame.width, height: view.frame.height * 0.7) }

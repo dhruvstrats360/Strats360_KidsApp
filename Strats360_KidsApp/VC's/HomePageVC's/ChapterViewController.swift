@@ -8,6 +8,7 @@
 import UIKit
 import FTPopOverMenu
 import AVFoundation
+import Alamofire
 
 
 class ChapterViewController: UIViewController {
@@ -20,7 +21,8 @@ class ChapterViewController: UIViewController {
     let customClass = CustomClass()
     let homePagemodel = HomePageModels()
     let customAlamofire = CustomAlamofire()
-    var fetchedDataFromAPI: ChapterPageAPIModel!
+    var upperFetchedDataFromAPI = [CategoryWiseDatum]()
+    var lowerFetchedDataFromAPI = [ChapterDataModel]()
     
     // Constants
     var player: AVAudioPlayer!
@@ -55,7 +57,7 @@ class ChapterViewController: UIViewController {
     
     // Audio players and their funcs..
     @IBAction func audioBtnPressed(_ sender: UIButton) {
-        downloadFileFromURL(url: NSURL(string: fetchedDataFromAPI.data[currentIndex].sound)!)
+        downloadFileFromURL(url: NSURL(string: lowerFetchedDataFromAPI[currentIndex].sound)!)
     }
     func downloadFileFromURL(url:NSURL){
         let loader = self.loader()
@@ -82,7 +84,7 @@ class ChapterViewController: UIViewController {
     }
     
     @IBAction func forwardBtnPressed(_ sender: UIButton) {
-        if currentIndex >= (fetchedDataFromAPI.categoryWiseData.count - 1){
+        if currentIndex >= (upperFetchedDataFromAPI.count - 1){
         }
         else{
             currentIndex += 1
@@ -97,7 +99,7 @@ class ChapterViewController: UIViewController {
     
     // rightBarButton pop btn...
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
-        print(fetchedDataFromAPI as Any)
+        print(upperFetchedDataFromAPI as Any)
         if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
             for view in navigationBarSubviews {
                 if let findClass = NSClassFromString("_UINavigationBarContentView"),
@@ -130,21 +132,40 @@ class ChapterViewController: UIViewController {
                             }
                             // Signed Out...
                             else if selectedIndex == 2{
-                                ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post ,parameter: [:])) { response, data in
+                                let token = UserDefaults.standard.object(forKey: APIConstants.UserAuthToken)!
+                                let header: HTTPHeaders? = [.authorization(bearerToken: token as! String)]
+                                ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post,headerFields: header, parameter: [:])) { response, data in
                                     print(data!)
                                     if response{
                                         // USer login status code...
-                                        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                      let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                                           nvc.viewControllers = [rootVC]
-                                        rootVC.cameFromHomePage = true
-                                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                        appDelegate.window!.rootViewController = nvc
+                                        UIAlertController.CustomAlert(title: "Success", msg: "You Logged Out..", target: self)
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                            let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                                            let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                                            nvc.viewControllers = [rootVC]
+                                            rootVC.cameFromHomePage = true
+                                            let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                                            appDelegate.window!.rootViewController = nvc
+                                        }
                                     }
                                     else{
-                                        UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
+                                        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+                                        DispatchQueue.main.asyncAfter(deadline: .now()){
+                                            UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
+                                        }
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                            // USer login status code...
+                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                          let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                                            let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                                                               nvc.viewControllers = [rootVC]
+                                            rootVC.cameFromHomePage = true
+                                            let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                                            appDelegate.window!.rootViewController = nvc
+                                        }
                                     }
                                 }
                                 
@@ -164,7 +185,7 @@ class ChapterViewController: UIViewController {
 extension ChapterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0{
-            return fetchedDataFromAPI.categoryWiseData.count
+            return upperFetchedDataFromAPI.count
         }
         else{
             // for lower main image section..
@@ -176,7 +197,7 @@ extension ChapterViewController: UICollectionViewDelegate, UICollectionViewDataS
         // LowerCollection Cell..
         if collectionView.tag == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChapterVCLowerCell", for: indexPath) as! ChapterVCLowerCell
-            cell.imgLesson.downloaded(from: fetchedDataFromAPI.data[currentIndex].image)
+            cell.imgLesson.downloaded(from: lowerFetchedDataFromAPI[currentIndex].image)
             return cell
         }
         // UpperCollection Cell..
@@ -187,7 +208,7 @@ extension ChapterViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.lblOverview.backgroundColor = arrBGColor[indexPath.row]
             
             // Gets Label/Image data from URL...
-            customAlamofire.JString_2_Json(Jstring: fetchedDataFromAPI.categoryWiseData[indexPath.row].nameOrImage, completion: { (jsonData) in
+            customAlamofire.JString_2_Json(Jstring: upperFetchedDataFromAPI[indexPath.row].nameOrImage, completion: { (jsonData) in
                 if jsonData["name_or_image"] as! String == "name"{
                     cell.lblOverview.text = jsonData["value"] as? String
                     cell.imgOverview.image = .none

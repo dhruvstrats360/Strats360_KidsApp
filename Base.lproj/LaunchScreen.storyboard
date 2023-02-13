@@ -2,11 +2,18 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,17 +29,10 @@
                                     <constraint firstAttribute="height" constant="350" id="5GK-PI-rCX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDj-Ck-1qz">
-                                <rect key="frame" x="0.0" y="581" width="375" height="197"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Powered by 360 Inc">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="18" name="Roboto-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by 360 Inc." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDj-Ck-1qz">
+                                <rect key="frame" x="0.0" y="754.33333333333337" width="375" height="23.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGray6Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -45,8 +45,6 @@
                             <constraint firstItem="kDj-Ck-1qz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XTd-x6-9dF"/>
                             <constraint firstItem="HXa-Fp-ruC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ntE-yT-Vzp"/>
                             <constraint firstItem="HXa-Fp-ruC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uLu-D2-RGc"/>
-                            <constraint firstItem="kDj-Ck-1qz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w3O-va-XGS"/>
-                            <constraint firstItem="kDj-Ck-1qz" firstAttribute="top" secondItem="HXa-Fp-ruC" secondAttribute="bottom" id="yI5-Xy-Cvr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kDj-Ck-1qz" secondAttribute="bottom" id="zwO-J2-THL"/>
                         </constraints>
                     </view>
@@ -61,5 +59,8 @@
         <namedColor name="LogoColor">
             <color red="0.13199999928474426" green="0.17100000381469727" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

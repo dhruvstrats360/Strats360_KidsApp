@@ -67,10 +67,10 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     }
     func fetchedProfileDataFromAPI(){
         let loader = self.loader()
-        
-        let url = "\(APIConstants.ProfilePageAPI)"
-        
-        let request = RequestModel(url: url, httpMethod: .post, parameter: [:])
+        let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
+        let header: HTTPHeaders? = [.authorization(bearerToken: token)]
+        let id = UserDefaults.standard.value(forKey: APIConstants.UserloggedId)!
+        let request = RequestModel(url: APIConstants.ProfilePageAPI, httpMethod: .post, headerFields: header, parameter: ["id": id] )
         
         ServerCommunication.share.APICallingFunction(request: request) { response, data in
             if response{
@@ -160,8 +160,9 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
                 "profile" : (dicData["image"] as? String)!
             ] as [String: String]
             let url = "\(APIConstants.EditProfilePageAPI)"
-
-            let request = RequestModel(url: url, httpMethod: .post, parameter: parameter )
+            let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
+            let header: HTTPHeaders? = [.authorization(bearerToken: token)]
+            let request = RequestModel(url: url, httpMethod: .post, headerFields: header, parameter: parameter )
             
             ServerCommunication.share.APICallingFunction(request: request) { response, data in
                 if response{
@@ -184,7 +185,10 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
                 imgProfilePic.contentMode = .scaleAspectFit
                 imgProfilePic.image = pickedImage
             }
-            dismiss(animated: true, completion: nil)
+        dismiss(animated: true){
+            // we're here uploading the image..
+            
+        }
         }
 }
 extension ProfileViewController{
@@ -210,19 +214,18 @@ extension ProfileViewController{
             }
             if customModel.validatePassword(password: newPassword) {
                 // url parameters
+                let id = UserDefaults.standard.value(forKey: APIConstants.UserloggedId)!
                 let parameter1 =
                 [
-                    "user_id": 80,
+                    "user_id": id,
                     "old_pwd": oldPassword,
                     "new_pwd": newPassword,
                     "confirm_new_pwd": confirmNewPass
                 ] as [String: Any]
-                let headers : HTTPHeaders? = [
-                        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovLzM2MGtpZHMuMzYwd2Vic2l0ZWRlbW8uY29tL2FwaS9sb2dpbiIsImlhdCI6MTY3NjAyODA3MCwiZXhwIjoxNjc2MDMxNjcwLCJuYmYiOjE2NzYwMjgwNzAsImp0aSI6IlNNdVBkSmZuTGMzazFnOTIiLCJzdWIiOiI3OSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.QYw1WyxIgYnPrHvJ5Fv6q29HtG31MmjPZ8QfpZqhSPE",
-                        "type": "bearer"
-                    ]
+                let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
+                let header: HTTPHeaders? = [.authorization(bearerToken: token)]
                 
-                let request = RequestModel(url: APIConstants.ChangePassAPI, httpMethod: .post, headerFields: headers , parameter: parameter1)
+                let request = RequestModel(url: APIConstants.ChangePassAPI, httpMethod: .post, headerFields: header , parameter: parameter1)
                 ServerCommunication.share.APICallingFunction(request: request) { response, data in
                     if response{
 
@@ -231,6 +234,7 @@ extension ProfileViewController{
                         for index in msgString{
                             errorText = errorText + " " + (index as! String)
                         }
+                        UIAlertController.CustomAlert(title: "Success", msg: "Password changed successfully..", target: self)
                         let alert = UIAlertController(title: "\(errorText)", message: nil, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .destructive))
                         view.present(alert, animated: true)

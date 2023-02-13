@@ -17,7 +17,7 @@ class ServerCommunication : NSObject {
             return
         }
         AF.request(stringURL ,method: requestObject.httpMethod, parameters: requestObject.parameter, headers: requestObject.headerFields).response { response in
-            print("URL : - \(requestObject.url!) \n PARAM :- \(requestObject.parameter!)")
+            print("URL : - \(requestObject.url!) \n PARAM :- \(requestObject.parameter!) \n HEADER :- \(requestObject.headerFields)")
             if(response.data == nil){
                 if let status = response.response?.statusCode {
 
@@ -118,7 +118,7 @@ class ServerCommunication : NSObject {
         guard let stringURL = requestObject.url else {
             return
         }
-        AF.request(stringURL ,method: requestObject.httpMethod, parameters: requestObject.parameter, headers: requestObject.headerFields).response { response in
+        AF.request(stringURL ,method: requestObject.httpMethod, parameters: requestObject.parameter, headers: requestObject.headerFields!).response { response in
             if(response.data == nil){
                 if((response.response?.statusCode) != nil){
                     let responseModel = ResponseDataModel(statusCode: response.response!.statusCode, error: response.error, data: nil, success: false)

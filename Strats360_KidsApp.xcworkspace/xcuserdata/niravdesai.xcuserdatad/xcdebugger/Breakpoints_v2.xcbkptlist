@@ -7,102 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "577057A1-6E80-4D69-8685-3295B0863559"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/Model/CustomModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "GetAPIData(url:dataModel:parameter:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB1A1A2A-D1E5-4255-ADFD-AF150BA3972B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "requestDataTask(requestObject:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "56ED97AB-9AD5-4AF0-8611-F0599D99AA78"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "registrationRequestDataTask(requestObject:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "777974EA-D127-428C-87E2-1B212448B5CE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "registrationRequestDataTask(requestObject:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "777974EA-D127-428C-87E2-1B212448B5CE - f9da45763b1592c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ServerCommunication.registrationRequestDataTask(requestObject: Strats360_KidsApp.RequestModel, completionHandler: (Strats360_KidsApp.ResponseDataModel) -&gt; ()) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/Model/ServerCommunication.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "1151">
-               </Location>
-               <Location
-                  uuid = "777974EA-D127-428C-87E2-1B212448B5CE - 2b4f9eead8c1b457"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in Strats360_KidsApp.ServerCommunication.registrationRequestDataTask(requestObject: Strats360_KidsApp.RequestModel, completionHandler: (Strats360_KidsApp.ResponseDataModel) -&gt; ()) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/Model/ServerCommunication.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "309">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C2520ED9-2676-4019-B6C5-04147EF929D6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -215,189 +119,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87755607-FE5F-4D80-B681-1CF9CEF56275"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "saveDataPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FDE167C8-7587-422F-BFC6-697924F7DEEE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "saveDataPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F5B1A823-088B-4824-892B-601A0E693200"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "saveDataPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CFAC96F7-0F8F-4CDD-81B8-3A51A5713B46"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "changeProfilePic(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "423E44EF-FFE0-4A6B-BC26-DBB4A4ABDDBB"
+            uuid = "B89F1AA3-714B-446E-B69A-D8D781C9A764"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "requestDataTask(requestObject:completionHandler:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3219018-6ADD-486B-84E6-64051BC6B420"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "requestDataTask(requestObject:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1C1BE8A9-2E53-4B6E-89DC-0663766195D6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "requestDataTask(requestObject:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5C377B89-A11A-4DCA-8914-9641DC575C03"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "saveDataPressed(_:)"
-            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5C377B89-A11A-4DCA-8914-9641DC575C03 - 5cb4a7e39b415840"
+                  uuid = "B89F1AA3-714B-446E-B69A-D8D781C9A764 - 95264d4dfaa2e880"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.saveDataPressed(__C.UIButton) -&gt; ()"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in Strats360_KidsApp.ServerCommunication.requestDataTask(requestObject: Strats360_KidsApp.RequestModel, completionHandler: (Strats360_KidsApp.ResponseModel) -&gt; ()) -&gt; ()"
                   moduleName = "Strats360_KidsApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
+                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/Model/ServerCommunication.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "233">
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "16810">
                </Location>
                <Location
-                  uuid = "5C377B89-A11A-4DCA-8914-9641DC575C03 - 5cb4a7e39b415840"
+                  uuid = "B89F1AA3-714B-446E-B69A-D8D781C9A764 - 95264d4dfaa2e880"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.saveDataPressed(__C.UIButton) -&gt; ()"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in Strats360_KidsApp.ServerCommunication.requestDataTask(requestObject: Strats360_KidsApp.RequestModel, completionHandler: (Strats360_KidsApp.ResponseModel) -&gt; ()) -&gt; ()"
                   moduleName = "Strats360_KidsApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
+                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/Model/ServerCommunication.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "449">
-               </Location>
-               <Location
-                  uuid = "5C377B89-A11A-4DCA-8914-9641DC575C03 - 5cb4a7e39b415840"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.saveDataPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "886">
-               </Location>
-               <Location
-                  uuid = "5C377B89-A11A-4DCA-8914-9641DC575C03 - 5cb4a7e39b415840"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.saveDataPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "1335">
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "17132">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -405,305 +167,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F9E393AC-849F-4DBC-AB83-5CE1B85CF5CB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "chngPasspresseD(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "338E90C4-C257-4158-BBDB-2053EB96933E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "saveDataPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5AEA5DB1-2B61-45A7-BF36-86F2A92E4CB9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "saveDataPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "79C61F97-6F68-4B7F-A3B6-7A2F3F541BC3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "txtFieldPopUp(view:numberOfTxtfield:txtplaceholder:title:message:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "27ADE367-FF09-4DB2-8B45-30540288EB0F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "txtFieldPopUp(view:numberOfTxtfield:txtplaceholder:title:message:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "27ADE367-FF09-4DB2-8B45-30540288EB0F - b56e0565393c0aa3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__C.NSDictionary&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in Strats360_KidsApp.ProfileViewController.txtFieldPopUp(view: __C.UIViewController, numberOfTxtfield: Swift.Int, txtplaceholder: Swift.Array&lt;Swift.String&gt;, title: Swift.String, message: Swift.String) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "241"
-                  endingLineNumber = "241"
-                  offsetFromSymbolStart = "2589">
-               </Location>
-               <Location
-                  uuid = "27ADE367-FF09-4DB2-8B45-30540288EB0F - b56e0565393c0aa3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__C.NSDictionary&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in Strats360_KidsApp.ProfileViewController.txtFieldPopUp(view: __C.UIViewController, numberOfTxtfield: Swift.Int, txtplaceholder: Swift.Array&lt;Swift.String&gt;, title: Swift.String, message: Swift.String) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "241"
-                  endingLineNumber = "241"
-                  offsetFromSymbolStart = "3018">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DBF63157-C640-4258-A63F-85DD2F640926"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "ProfileViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "DBF63157-C640-4258-A63F-85DD2F640926 - 6b40762517d64b7e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.UserId.getter : Swift.Int"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "85">
-               </Location>
-               <Location
-                  uuid = "DBF63157-C640-4258-A63F-85DD2F640926 - cf6007a4d8f4f712"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.UserId.setter : Swift.Int"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "97">
-               </Location>
-               <Location
-                  uuid = "DBF63157-C640-4258-A63F-85DD2F640926 - d0a29560ff5d2247"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.UserId.modify : Swift.Int"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "DBF63157-C640-4258-A63F-85DD2F640926 - 7473ffc3e3651e23"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.UserId.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "DBF63157-C640-4258-A63F-85DD2F640926 - c9a002a88f928abd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Strats360_KidsApp.ProfileViewController"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "845">
-               </Location>
-               <Location
-                  uuid = "DBF63157-C640-4258-A63F-85DD2F640926 - 95fbd8108f0d352c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Strats360_KidsApp.ProfileViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Strats360_KidsApp.ProfileViewController&gt;"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "802">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "063E85E7-747B-422C-A8AA-E0AC54FF19A6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "txtFieldPopUp(view:numberOfTxtfield:txtplaceholder:title:message:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "063E85E7-747B-422C-A8AA-E0AC54FF19A6 - 5104f0e76cd5150e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in Strats360_KidsApp.ProfileViewController.txtFieldPopUp(view: __C.UIViewController, numberOfTxtfield: Swift.Int, txtplaceholder: Swift.Array&lt;Swift.String&gt;, title: Swift.String, message: Swift.String) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "204"
-                  endingLineNumber = "204"
-                  offsetFromSymbolStart = "290">
-               </Location>
-               <Location
-                  uuid = "063E85E7-747B-422C-A8AA-E0AC54FF19A6 - 5104f0e76cd5150e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in Strats360_KidsApp.ProfileViewController.txtFieldPopUp(view: __C.UIViewController, numberOfTxtfield: Swift.Int, txtplaceholder: Swift.Array&lt;Swift.String&gt;, title: Swift.String, message: Swift.String) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "204"
-                  endingLineNumber = "204"
-                  offsetFromSymbolStart = "1089">
-               </Location>
-               <Location
-                  uuid = "063E85E7-747B-422C-A8AA-E0AC54FF19A6 - 5104f0e76cd5150e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in Strats360_KidsApp.ProfileViewController.txtFieldPopUp(view: __C.UIViewController, numberOfTxtfield: Swift.Int, txtplaceholder: Swift.Array&lt;Swift.String&gt;, title: Swift.String, message: Swift.String) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "204"
-                  endingLineNumber = "204"
-                  offsetFromSymbolStart = "1974">
-               </Location>
-               <Location
-                  uuid = "063E85E7-747B-422C-A8AA-E0AC54FF19A6 - 5104f0e76cd5150e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in Strats360_KidsApp.ProfileViewController.txtFieldPopUp(view: __C.UIViewController, numberOfTxtfield: Swift.Int, txtplaceholder: Swift.Array&lt;Swift.String&gt;, title: Swift.String, message: Swift.String) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "204"
-                  endingLineNumber = "204"
-                  offsetFromSymbolStart = "2864">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1753E0FE-647F-44A1-A225-4C8C35557B61"
+            uuid = "49A0AD08-DA03-4A4C-9986-6C37AABF3942"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -719,79 +183,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "619AC619-9BDF-49BF-B5AC-870B06050232"
+            uuid = "D99254A0-7901-4E0F-87C1-750A1A156070"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Strats360_KidsApp/Model/ServerCommunication.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "requestDataTask(requestObject:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "619AC619-9BDF-49BF-B5AC-870B06050232 - 95264d4dfaa2e880"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in Strats360_KidsApp.ServerCommunication.requestDataTask(requestObject: Strats360_KidsApp.RequestModel, completionHandler: (Strats360_KidsApp.ResponseModel) -&gt; ()) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/Model/ServerCommunication.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "16613">
-               </Location>
-               <Location
-                  uuid = "619AC619-9BDF-49BF-B5AC-870B06050232 - 95264d4dfaa2e880"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in Strats360_KidsApp.ServerCommunication.requestDataTask(requestObject: Strats360_KidsApp.RequestModel, completionHandler: (Strats360_KidsApp.ResponseModel) -&gt; ()) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/Model/ServerCommunication.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "16935">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "94ABF9A0-171D-46BE-A677-E12EE2FD84E2"
-            shouldBeEnabled = "No"
+            uuid = "F015A289-170D-4595-B1FB-4F8EE9C25D0B"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/ProfileViewController.swift"
+            filePath = "Strats360_KidsApp/VC&apos;s/HomePageVC&apos;s/HomePageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "saveDataPressed(_:)"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "190744EB-E7DD-4D22-929C-013C53F93CEB"
+            uuid = "346E1D5D-210B-441F-999D-6BD2D8DF2656"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Strats360_KidsApp/VC&apos;s/Intro VC&apos;s/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "logingBTNpressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -799,81 +231,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21017C0F-E646-4E5F-91A2-FA6ACF9DEEC2"
-            shouldBeEnabled = "No"
+            uuid = "B215444A-FCE6-42FE-8388-EC9EAD5ACDB4"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/SystemDelegates/SceneDelegate.swift"
+            filePath = "Strats360_KidsApp/VC&apos;s/Intro VC&apos;s/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "isUserLoggedIn()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "logingBTNpressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FF87495D-A8A8-4C1B-A997-853F6AB6CBB0"
+            uuid = "587043A7-A37F-4461-AE53-09C24CA93165"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/Intro VC&apos;s/SignUpViewController.swift"
+            filePath = "Strats360_KidsApp/VC&apos;s/Intro VC&apos;s/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "signUpPressed(_:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "logingBTNpressed(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6538F28B-5EE0-46AC-A219-1BB37291E69C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Strats360_KidsApp/VC&apos;s/Intro VC&apos;s/SignUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "signUpPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6538F28B-5EE0-46AC-A219-1BB37291E69C - c9d11996e65ff6ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__C.NSDictionary&gt;) -&gt; () in Strats360_KidsApp.SignUpViewController.signUpPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/Intro%20VC&apos;s/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "1119">
-               </Location>
-               <Location
-                  uuid = "6538F28B-5EE0-46AC-A219-1BB37291E69C - c9d11996e65ff6ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__C.NSDictionary&gt;) -&gt; () in Strats360_KidsApp.SignUpViewController.signUpPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Strats360_KidsApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niravdesai/Desktop/Strats%20360%20projects/kids%20Repo/Strats360_KidsApp/Strats360_KidsApp/VC&apos;s/Intro%20VC&apos;s/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "1563">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
