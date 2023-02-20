@@ -26,7 +26,7 @@ lblMessage.textColor = .white
     lblMessage.backgroundColor = .clear
 lblMessage.text = toastMessage
     lblMessage.frame = CGRect(x: bgView.frame.midX - (bgView.frame.width * 0.33) , y: 90, width: bgView.frame.width * 0.6, height: 50)
-    lblMessage.font = UIFont(name: "Roboto-Bold", size: lblMessage.frame.height * 0.5)
+    lblMessage.font = UIFont(name: AppConstants.BoldFont, size: lblMessage.frame.height * 0.5)
     lblMessage.textAlignment = .center
 lblMessage.layer.cornerRadius = 8
 lblMessage.layer.masksToBounds = true
@@ -167,7 +167,7 @@ extension UIImageView {
 
 extension UIViewController{
     func splashScreenAnimation(view: UIView){
-        let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: .clear)
+        let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: AppConstants.LogoImage), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: .clear)
         view.addSubview(splashScreen)
         splashScreen.animationType = .heartBeat
     }

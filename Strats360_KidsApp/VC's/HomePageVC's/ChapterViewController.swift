@@ -26,9 +26,10 @@ class ChapterViewController: UIViewController {
     
     // Constants
     var player: AVAudioPlayer!
-    var arritem = ["Profile", "Language", "Sign Out"]
+    var arritem = ["Profile", "Sign Out"]
     let arrBGColor = [UIColor(named: "Color 1"),UIColor(named: "Color 2"),UIColor(named: "Color 3"),UIColor(named: "Color 4"),UIColor(named: "Color 5"),UIColor(named: "Color 6"),UIColor(named: "Color 7"),UIColor(named: "Color 8"),UIColor(named: "Color 9"),UIColor(named: "Color 10"), UIColor(named: "Color 11"),UIColor(named: "Color 12"),UIColor(named: "Color 13"),UIColor(named: "Color 14"),UIColor(named: "Color 15"),UIColor(named: "Color 16"),UIColor(named: "Color 17"),UIColor(named: "Color 18"),UIColor(named: "Color 19"),UIColor(named: "Color 20"),UIColor(named: "Color 1"),UIColor(named: "Color 2"),UIColor(named: "Color 3"),UIColor(named: "Color 4"),UIColor(named: "Color 5"),UIColor(named: "Color 6")]
     var currentIndex = 0
+    let token = UserDefaults.standard.value(forKey: AppConstants.UserAuthToken)! as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,59 +117,18 @@ class ChapterViewController: UIViewController {
                         
                         // here action will be done on clicked btn.
                         if self.arritem.count > 0{
+                            
                             if selectedIndex == 0{
                                 performSegue(withIdentifier: "gotoProfile", sender: self)
                             }
                             else if selectedIndex == 1{
-                                
-                                // 2nd pop on selected btn.
-                                FTPopOverMenu.show(fromSenderFrame: popframe
-                                                   , withMenuArray: ["Hindi", "English","Gujrati"], imageArray: [],configuration: homePagemodel.configuration, doneBlock: { (selectedIndex) in
-                                    if self.arritem.count > 0{
-                                    }
-                                } , dismiss: {
-                                    
-                                })
-                            }
-                            // Signed Out...
-                            else if selectedIndex == 2{
-                                let token = UserDefaults.standard.object(forKey: APIConstants.UserAuthToken)!
-                                let header: HTTPHeaders? = [.authorization(bearerToken: token as! String)]
+                                let header: HTTPHeaders? = [.authorization(bearerToken: token)]
+                                let loader = self.loader()
                                 ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post,headerFields: header, parameter: [:])) { response, data in
                                     print(data!)
-                                    if response{
-                                        // USer login status code...
-                                        UIAlertController.CustomAlert(title: "Success", msg: "You Logged Out..", target: self)
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                            let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                            let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                            nvc.viewControllers = [rootVC]
-                                            rootVC.cameFromHomePage = true
-                                            let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                            appDelegate.window!.rootViewController = nvc
-                                        }
-                                    }
-                                    else{
-                                        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                        DispatchQueue.main.asyncAfter(deadline: .now()){
-                                            UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                                            // USer login status code...
-                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                          let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                            let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                                               nvc.viewControllers = [rootVC]
-                                            rootVC.cameFromHomePage = true
-                                            let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                            appDelegate.window!.rootViewController = nvc
-                                        }
-                                    }
+                                    self.stopLoader(loader: loader)
+                                    self.customClass.LogOut(response: response, self: self, datamsg: data!)
                                 }
-                                
                             }
                         }
                     } , dismiss: {
@@ -283,4 +243,10 @@ class ChapterVCLowerCell: UICollectionViewCell{
     @IBOutlet weak var imgLesson: UIImageView!
     @IBOutlet weak var bgView: UIView!
     
+}
+struct Connectivity {
+  static let sharedInstance = NetworkReachabilityManager()!
+  static var isConnectedToInternet:Bool {
+      return self.sharedInstance.isReachable
+    }
 }

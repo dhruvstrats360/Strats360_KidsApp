@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1DF02D948D1BDBD8A36A26DA /* Pods_Strats360_KidsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B176DCB86172D74D828303C /* Pods_Strats360_KidsApp.framework */; };
+		8F185455299E652D0028885A /* IconName@2x~ipad 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185451299E652C0028885A /* IconName@2x~ipad 1.png */; };
+		8F185456299E652D0028885A /* IconName@3x 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185452299E652C0028885A /* IconName@3x 1.png */; };
+		8F185457299E652D0028885A /* IconName@3x~ipad 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185453299E652D0028885A /* IconName@3x~ipad 1.png */; };
+		8F185458299E652D0028885A /* IconName@2x 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185454299E652D0028885A /* IconName@2x 1.png */; };
 		8F31C7C22965AC0100554AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C12965AC0100554AB8 /* AppDelegate.swift */; };
 		8F31C7C42965AC0100554AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C32965AC0100554AB8 /* SceneDelegate.swift */; };
 		8F31C7C62965AC0100554AB8 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C52965AC0100554AB8 /* DescriptionViewController.swift */; };
@@ -36,7 +40,6 @@
 		8FC463C1298D2FE1001038BE /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC463C0298D2FE1001038BE /* ServerCommunication.swift */; };
 		8FC463C3298D3697001038BE /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC463C2298D3697001038BE /* AppConstants.swift */; };
 		8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC73C229685236000F8DE5 /* HomePageViewController.swift */; };
-		8FCFC4C829797C9D00B136ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */; };
 		8FCFC4CA297A752200B136ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C9297A752200B136ED /* ProfileViewController.swift */; };
 		8FE36F022987A6A400E27752 /* UIkit CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE36F012987A6A400E27752 /* UIkit CustomModel.swift */; };
 		8FE7C5FD296C402600F3E67E /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */; };
@@ -46,6 +49,11 @@
 		2E07282F1800FC428CD2EF97 /* Pods-Strats360_KidsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strats360_KidsApp.release.xcconfig"; path = "Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp.release.xcconfig"; sourceTree = "<group>"; };
 		54C23F2EB65C218EDCFAE9AE /* Pods-Strats360_KidsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strats360_KidsApp.debug.xcconfig"; path = "Target Support Files/Pods-Strats360_KidsApp/Pods-Strats360_KidsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5B176DCB86172D74D828303C /* Pods_Strats360_KidsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strats360_KidsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F01A692299D5E9D00F2CAB0 /* Strats360_KidsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Strats360_KidsApp.entitlements; sourceTree = "<group>"; };
+		8F185451299E652C0028885A /* IconName@2x~ipad 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@2x~ipad 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@2x~ipad 1.png"; sourceTree = "<group>"; };
+		8F185452299E652C0028885A /* IconName@3x 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@3x 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@3x 1.png"; sourceTree = "<group>"; };
+		8F185453299E652D0028885A /* IconName@3x~ipad 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@3x~ipad 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@3x~ipad 1.png"; sourceTree = "<group>"; };
+		8F185454299E652D0028885A /* IconName@2x 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@2x 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@2x 1.png"; sourceTree = "<group>"; };
 		8F31C7BE2965AC0100554AB8 /* Strats360_KidsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strats360_KidsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F31C7C12965AC0100554AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F31C7C32965AC0100554AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +84,6 @@
 		8FC463C0298D2FE1001038BE /* ServerCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 		8FC463C2298D3697001038BE /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8FCC73C229685236000F8DE5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FCFC4C9297A752200B136ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Strats360_KidsApp/VC's/HomePageVC's/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		8FE36F012987A6A400E27752 /* UIkit CustomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIkit CustomModel.swift"; sourceTree = "<group>"; };
 		8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
@@ -102,15 +109,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8F185448299E5C700028885A /* AlternateAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				8F185454299E652D0028885A /* IconName@2x 1.png */,
+				8F185451299E652C0028885A /* IconName@2x~ipad 1.png */,
+				8F185452299E652C0028885A /* IconName@3x 1.png */,
+				8F185453299E652D0028885A /* IconName@3x~ipad 1.png */,
+			);
+			name = AlternateAppIcons;
+			sourceTree = "<group>";
+		};
 		8F31C7B52965AC0100554AB8 = {
 			isa = PBXGroup;
 			children = (
+				8F185448299E5C700028885A /* AlternateAppIcons */,
 				8F31C7FA2966B7D800554AB8 /* Roboto Fonts */,
 				8F31C7C02965AC0100554AB8 /* Strats360_KidsApp */,
 				8F31C7CC2965AC0400554AB8 /* LaunchScreen.storyboard */,
 				8F31C7CA2965AC0400554AB8 /* Assets.xcassets */,
 				8F31C7CF2965AC0400554AB8 /* Info.plist */,
-				8FCFC4C729797C9D00B136ED /* GoogleService-Info.plist */,
 				8F31C7BF2965AC0100554AB8 /* Products */,
 				BEB01B0DAFC2DAC0379857DC /* Pods */,
 				54CEC959D392600B20D3371F /* Frameworks */,
@@ -128,6 +146,7 @@
 		8F31C7C02965AC0100554AB8 /* Strats360_KidsApp */ = {
 			isa = PBXGroup;
 			children = (
+				8F01A692299D5E9D00F2CAB0 /* Strats360_KidsApp.entitlements */,
 				8F31C7D8296698F900554AB8 /* SystemDelegates */,
 				8F31C7DE2966995000554AB8 /* Model */,
 				8F31C7D92966991F00554AB8 /* View */,
@@ -300,15 +319,18 @@
 				8F31C7F12966B7CB00554AB8 /* Roboto-Bold.ttf in Resources */,
 				8F31C7F22966B7CB00554AB8 /* Roboto-LightItalic.ttf in Resources */,
 				8F31C7F32966B7CB00554AB8 /* Roboto-Black.ttf in Resources */,
+				8F185457299E652D0028885A /* IconName@3x~ipad 1.png in Resources */,
+				8F185455299E652D0028885A /* IconName@2x~ipad 1.png in Resources */,
 				8F31C7F42966B7CB00554AB8 /* Roboto-Italic.ttf in Resources */,
 				8F31C7F52966B7CB00554AB8 /* Roboto-BoldItalic.ttf in Resources */,
 				8F31C7F62966B7CB00554AB8 /* Roboto-Regular.ttf in Resources */,
 				8F31C7F72966B7CB00554AB8 /* Roboto-Thin.ttf in Resources */,
+				8F185458299E652D0028885A /* IconName@2x 1.png in Resources */,
 				8F31C7F82966B7CB00554AB8 /* Roboto-MediumItalic.ttf in Resources */,
-				8FCFC4C829797C9D00B136ED /* GoogleService-Info.plist in Resources */,
 				8F31C7F92966B7CB00554AB8 /* LICENSE.txt in Resources */,
 				8F31C7CE2965AC0400554AB8 /* LaunchScreen.storyboard in Resources */,
 				8F31C7CB2965AC0400554AB8 /* Assets.xcassets in Resources */,
+				8F185456299E652D0028885A /* IconName@3x 1.png in Resources */,
 				8F31C7C92965AC0100554AB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,27 +544,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_OPTIMIZATION_PROFILE_FILE = /Users/niravdesai/Desktop/Testing_gitHub/Strats360_KidsApp/Info.plist;
+				CODE_SIGN_ENTITLEMENTS = Strats360_KidsApp/Strats360_KidsApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNA6AL6UGK;
+				DEVELOPMENT_TEAM = ZF7678N4DG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Strats360_KidsApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "360 Kids";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 10.0;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Strats360.360KidsApp;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Strats360.360-Kids";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -558,27 +585,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_OPTIMIZATION_PROFILE_FILE = /Users/niravdesai/Desktop/Testing_gitHub/Strats360_KidsApp/Info.plist;
+				CODE_SIGN_ENTITLEMENTS = Strats360_KidsApp/Strats360_KidsApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNA6AL6UGK;
+				DEVELOPMENT_TEAM = ZF7678N4DG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Strats360_KidsApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "360 Kids";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 10.0;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Strats360.360KidsApp;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Strats360.360-Kids";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

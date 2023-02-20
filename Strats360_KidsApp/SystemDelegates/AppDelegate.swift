@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseCore
 import IQKeyboardManagerSwift
 import FTPopOverMenu
 
@@ -16,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var windowAppD: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        guard UIApplication.shared.supportsAlternateIcons else { return true }
+        UIApplication.shared.setAlternateIconName("IconName")
         // IQkeyboard
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
         return true
     }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

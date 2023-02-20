@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class APIConstants{
     
@@ -18,10 +19,39 @@ public class APIConstants{
     static let LoginPageAPI = "https://360kids.360websitedemo.com/api/login"
     static let ChangePassAPI = "https://360kids.360websitedemo.com/api/change_password"
     static let LogOutAPI = "https://360kids.360websitedemo.com/api/logout"
+    static let ForgotPassAPI = "https://360kids.360websitedemo.com/api/forget_password"
     
+//
+//    static let UserLoginSatus = "UserLoginSatus"
+//    static let UserloggedId = "UserDataDic"
+//    static let UserAuthToken = "UserAuthToken"
     
-    static let UserLoginSatus = "UserLoginSatus"
+//    static let LogoImage = UIImage(imageLiteralResourceName: "Logo")
+}
+public class AppConstants{
+    //UserData
+    static let UserLoginStatus = "UserLoginSatus"
     static let UserloggedId = "UserDataDic"
     static let UserAuthToken = "UserAuthToken"
+    
+    //Logo, btns, Other Images
+    static let LogoImage = "Logo"
+    static let prevBtn = "prev"
+    
+    //Fonts
+    static let MediumFont = "Roboto-medium"
+    static let BoldFont = "Roboto-Bold"
+    static let RegularFont = "Roboto-Regular"
+    
+    // btnImages
+    
+    //    static let
+    //    static let
+    //    static let
+    //    static let
+    //    static let
+    //    static let
+    //    static let
+
 }
 

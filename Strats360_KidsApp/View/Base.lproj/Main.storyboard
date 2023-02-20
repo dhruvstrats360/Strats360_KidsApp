@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QUE-an-ncE">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -33,7 +33,7 @@
                 <navigationController storyboardIdentifier="HomePageNavController" automaticallyAdjustsScrollViewInsets="NO" id="QUE-an-ncE" customClass="HomePageNavController" customModule="Strats360_KidsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="prev" backIndicatorImage="prev" id="o1k-AU-T4C">
-                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -80,15 +80,15 @@
             <objects>
                 <viewController storyboardIdentifier="DescriptionViewController" id="BYZ-38-t0r" customClass="DescriptionViewController" customModule="Strats360_KidsApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue Gradient Login Page Wireframe Mobile Prototype" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaN-Cx-dXj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-EQ-pXY">
-                                <rect key="frame" x="0.0" y="47" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="24" width="1024" height="1038"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="haR-kW-RBc">
                                     <size key="itemSize" width="375" height="570"/>
@@ -98,7 +98,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DescriptionCollectionViewCell" id="jPo-AO-Fim" customClass="DescriptionCollectionViewCell" customModule="Strats360_KidsApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="23.666666666666668" width="375" height="570"/>
+                                        <rect key="frame" x="0.0" y="234" width="375" height="570"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
@@ -111,22 +111,22 @@
                                                             <rect key="frame" x="10" y="10" width="355" height="550"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360 Kids logo" translatesAutoresizingMaskIntoConstraints="NO" id="Kp7-1e-E6t">
-                                                                    <rect key="frame" x="83.666666666666671" y="0.0" width="187.66666666666663" height="132"/>
+                                                                    <rect key="frame" x="84" y="0.0" width="187.5" height="132"/>
                                                                 </imageView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-Wj-O6C">
-                                                                    <rect key="frame" x="83.666666666666671" y="160" width="187.66666666666663" height="264"/>
+                                                                    <rect key="frame" x="84" y="160" width="187.5" height="264"/>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jTF-GK-bwT">
-                                                                    <rect key="frame" x="27.666666666666657" y="486" width="300" height="64"/>
+                                                                    <rect key="frame" x="27.5" y="486" width="300" height="64"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOREM IPSUM DUMMY TEXT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t8-Vr-n2X">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="23.666666666666668"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LOREM IPSUM DUMMY TEXT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t8-Vr-n2X">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="23.5"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-gm-z0N">
-                                                                            <rect key="frame" x="15" y="28.666666666666632" width="270" height="35.333333333333343"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-gm-z0N">
+                                                                            <rect key="frame" x="15" y="28.5" width="270" height="35.5"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -180,17 +180,17 @@
                                 </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="yxK-1A-OTb">
-                                <rect key="frame" x="0.0" y="669" width="375" height="10"/>
+                                <rect key="frame" x="0.0" y="1067" width="1024" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="f8u-im-vxc"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TkB-Vb-Rgk">
-                                <rect key="frame" x="-15" y="674" width="405" height="104"/>
+                                <rect key="frame" x="-15" y="1171" width="1054" height="175"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5t-aY-45D">
-                                        <rect key="frame" x="0.0" y="24.333333333333375" width="142.66666666666666" height="55.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="41" width="389" height="93"/>
                                         <color key="backgroundColor" name="ButtonColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -203,7 +203,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-Mk-QHe">
-                                        <rect key="frame" x="262.66666666666663" y="24.333333333333375" width="142.33333333333337" height="55.333333333333343"/>
+                                        <rect key="frame" x="665" y="41" width="389" height="93"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -262,20 +262,20 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" id="S0L-ep-fRn" customClass="SignUpViewController" customModule="Strats360_KidsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hWd-rJ-keQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360 Kids logo" translatesAutoresizingMaskIntoConstraints="NO" id="bSY-ms-gce">
-                                <rect key="frame" x="93.666666666666671" y="80" width="187.66666666666663" height="124"/>
+                                <rect key="frame" x="256" y="57" width="512" height="208.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-br-9H9">
-                                <rect key="frame" x="37.666666666666657" y="214.00000000000003" width="300" height="454.66666666666674"/>
+                                <rect key="frame" x="102.5" y="275.5" width="819" height="765"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="38a-zF-lF9">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="308"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="819" height="496.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TQ-Uk-YuP">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="819" height="93"/>
                                                 <string key="text">Don't have an Account?
 Create your Account</string>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
@@ -283,25 +283,25 @@ Create your Account</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-at-JMq">
-                                                <rect key="frame" x="0.0" y="63.333333333333314" width="300" height="55"/>
+                                                <rect key="frame" x="0.0" y="101" width="819" height="93"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-Od-9CB">
-                                                <rect key="frame" x="0.0" y="126.3333333333333" width="300" height="55.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="202" width="819" height="93"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y8Q-5B-bxR">
-                                                <rect key="frame" x="0.0" y="189.66666666666669" width="300" height="55.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="303" width="819" height="92.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBa-Cl-8bi" customClass="CountryPickerView" customModule="CountryPickerView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="55.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="269.5" height="92.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-Jy-f4N">
-                                                        <rect key="frame" x="106.6666666666667" y="0.0" width="193.33333333333337" height="55.333333333333336"/>
+                                                        <rect key="frame" x="279.5" y="0.0" width="539.5" height="92.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
@@ -311,14 +311,14 @@ Create your Account</string>
                                                 </constraints>
                                             </stackView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Z-oc-n5K">
-                                                <rect key="frame" x="0.0" y="253" width="300" height="55"/>
+                                                <rect key="frame" x="0.0" y="403.5" width="819" height="93"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84P-4K-D6Q" userLabel="Sign Up">
-                                        <rect key="frame" x="0.0" y="399.66666666666663" width="300" height="55"/>
+                                        <rect key="frame" x="0.0" y="672" width="819" height="93"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -332,10 +332,10 @@ Create your Account</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OF6-49-je3">
-                                <rect key="frame" x="-20" y="674" width="142.66666666666666" height="104"/>
+                                <rect key="frame" x="-20" y="1171" width="389" height="175"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-6P-9ct">
-                                        <rect key="frame" x="0.0" y="24.333333333333375" width="142.66666666666666" height="55.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="41" width="389" height="93"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -388,38 +388,38 @@ Create your Account</string>
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="cmD-ZB-QQd" customClass="LoginViewController" customModule="Strats360_KidsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XOc-j8-tAh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360 Kids logo" translatesAutoresizingMaskIntoConstraints="NO" id="YJN-5x-AXQ">
-                                <rect key="frame" x="93.666666666666671" y="80" width="187.66666666666663" height="124"/>
+                                <rect key="frame" x="256" y="57" width="512" height="208.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U6g-Gl-g07">
-                                <rect key="frame" x="37.666666666666657" y="214.00000000000003" width="300" height="308.66666666666674"/>
+                                <rect key="frame" x="102.5" y="275.5" width="819" height="519"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qTX-cU-jBg">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="181.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="819" height="295"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an Account? Please Login" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-KL-diY">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="55.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="819" height="93"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dhruv@gmail.com" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-mu-1OF">
-                                                <rect key="frame" x="0.0" y="63.333333333333314" width="300" height="55"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-mu-1OF">
+                                                <rect key="frame" x="0.0" y="101" width="819" height="93"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pod-KD-wla">
-                                                <rect key="frame" x="0.0" y="126.3333333333333" width="300" height="55.333333333333329"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pod-KD-wla">
+                                                <rect key="frame" x="0.0" y="202" width="819" height="93"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="061-v9-wW4">
-                                        <rect key="frame" x="0.0" y="253.33333333333334" width="300" height="55.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="426.5" width="819" height="92.5"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -435,10 +435,10 @@ Create your Account</string>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M4e-b5-2IL">
-                                <rect key="frame" x="252.66666666666663" y="674" width="142.33333333333337" height="104"/>
+                                <rect key="frame" x="655" y="1171" width="389" height="175"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaK-AJ-S65">
-                                        <rect key="frame" x="0.0" y="24.333333333333375" width="142.33333333333334" height="55.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="41" width="389" height="93"/>
                                         <color key="backgroundColor" name="LogoColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -452,7 +452,7 @@ Create your Account</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01n-ou-iRm">
-                                <rect key="frame" x="37.666666666666657" y="532.66666666666663" width="300" height="30"/>
+                                <rect key="frame" x="102.5" y="804.5" width="819" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Forgot your password?">
@@ -503,33 +503,32 @@ Create your Account</string>
             <objects>
                 <viewController storyboardIdentifier="HomePageViewController" title="HomePageViewController" hidesBottomBarWhenPushed="YES" id="NGZ-MH-GLM" customClass="HomePageViewController" customModule="Strats360_KidsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NVO-6y-w9l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrJ-ey-J2e">
-                                <rect key="frame" x="33.666666666666657" y="111" width="307.66666666666674" height="667"/>
+                                <rect key="frame" x="92" y="94" width="840" height="1252"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-rR-fUB" userLabel="vip view">
-                                        <rect key="frame" x="0.0" y="0.0" width="307.66666666666669" height="120.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="840" height="250.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sel-Di-9ns">
-                                                <rect key="frame" x="0.0" y="0.0" width="307.66666666666669" height="120.66666666666667"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconName.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sel-Di-9ns">
+                                                <rect key="frame" x="0.0" y="0.0" width="840" height="250.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Sel-Di-9ns" secondAttribute="trailing" id="7pW-HD-Omf"/>
                                             <constraint firstItem="Sel-Di-9ns" firstAttribute="top" secondItem="Le3-rR-fUB" secondAttribute="top" id="GQD-wn-itb"/>
-                                            <constraint firstAttribute="height" constant="120.67" id="eQ0-Nc-GkU"/>
                                             <constraint firstItem="Sel-Di-9ns" firstAttribute="leading" secondItem="Le3-rR-fUB" secondAttribute="leading" id="etg-G6-8DR"/>
                                             <constraint firstAttribute="bottom" secondItem="Sel-Di-9ns" secondAttribute="bottom" id="p9i-y5-CSh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwZ-iw-y0w" userLabel="search view">
-                                        <rect key="frame" x="0.0" y="140.66666666666666" width="307.66666666666669" height="47.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="270.5" width="840" height="95.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="🔍 Search Bar" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEq-Vn-haO">
-                                                <rect key="frame" x="0.0" y="0.0" width="307.66666666666669" height="47.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="840" height="95.5"/>
                                                 <attributedString key="attributedText"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -542,10 +541,10 @@ Create your Account</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-Kf-8Ec" userLabel="subject view">
-                                        <rect key="frame" x="0.0" y="208.33333333333329" width="307.66666666666669" height="458.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="386" width="840" height="866"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-lk-yv6">
-                                                <rect key="frame" x="0.0" y="0.0" width="307.66666666666669" height="458.66666666666669"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-lk-yv6">
+                                                <rect key="frame" x="0.0" y="0.0" width="840" height="866"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="4" id="Tqe-md-UY4">
                                                     <size key="itemSize" width="150" height="130"/>
@@ -564,25 +563,14 @@ Create your Account</string>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSP-25-m8P">
                                                                     <rect key="frame" x="0.0" y="5" width="120" height="140"/>
                                                                     <subviews>
-                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJc-uh-ssP">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="116.33333333333333"/>
-                                                                            <subviews>
-                                                                                <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" image="1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-78-Wdv">
-                                                                                    <rect key="frame" x="-5" y="0.0" width="130" height="116.33333333333333"/>
-                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
-                                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                    </preferredSymbolConfiguration>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="bottom" secondItem="aVU-78-Wdv" secondAttribute="bottom" id="2ao-nt-apX"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="aVU-78-Wdv" secondAttribute="trailing" constant="-5" id="9a3-O1-gjS"/>
-                                                                                <constraint firstItem="aVU-78-Wdv" firstAttribute="leading" secondItem="uJc-uh-ssP" secondAttribute="leading" constant="-5" id="I51-sJ-EQH"/>
-                                                                                <constraint firstItem="aVU-78-Wdv" firstAttribute="top" secondItem="uJc-uh-ssP" secondAttribute="top" id="I8s-lG-IWq"/>
-                                                                            </constraints>
-                                                                        </view>
+                                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" image="loading-default" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-78-Wdv">
+                                                                            <rect key="frame" x="6" y="0.0" width="108" height="112"/>
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                            </preferredSymbolConfiguration>
+                                                                        </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE3-wU-cSs">
-                                                                            <rect key="frame" x="0.0" y="121.33333333333333" width="120" height="18.666666666666671"/>
+                                                                            <rect key="frame" x="0.0" y="122" width="120" height="18"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -591,14 +579,13 @@ Create your Account</string>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="lE3-wU-cSs" secondAttribute="trailing" id="2eM-9M-An3"/>
+                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="centerX" secondItem="uSP-25-m8P" secondAttribute="centerX" id="CoI-hn-97Z"/>
                                                                         <constraint firstItem="lE3-wU-cSs" firstAttribute="leading" secondItem="uSP-25-m8P" secondAttribute="leading" id="GAA-hI-lSj"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="uJc-uh-ssP" secondAttribute="trailing" id="PbE-Jc-jWO"/>
-                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="centerX" secondItem="uSP-25-m8P" secondAttribute="centerX" id="Vd4-55-QLj"/>
-                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="top" secondItem="uSP-25-m8P" secondAttribute="top" id="bvz-42-Kvv"/>
-                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="height" secondItem="uSP-25-m8P" secondAttribute="height" multiplier="0.83" id="coM-QN-Q1s"/>
-                                                                        <constraint firstItem="uJc-uh-ssP" firstAttribute="leading" secondItem="uSP-25-m8P" secondAttribute="leading" id="os3-cf-8Z5"/>
-                                                                        <constraint firstItem="lE3-wU-cSs" firstAttribute="top" secondItem="uJc-uh-ssP" secondAttribute="bottom" constant="5" id="wls-p2-cvQ"/>
+                                                                        <constraint firstItem="lE3-wU-cSs" firstAttribute="top" secondItem="aVU-78-Wdv" secondAttribute="bottom" constant="10" id="JLr-DX-OsG"/>
+                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="height" secondItem="uSP-25-m8P" secondAttribute="height" multiplier="0.8" id="VAE-9R-VEL"/>
+                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="top" secondItem="uSP-25-m8P" secondAttribute="top" id="czb-Qh-9lA"/>
                                                                         <constraint firstAttribute="bottom" secondItem="lE3-wU-cSs" secondAttribute="bottom" id="xFu-81-cCs"/>
+                                                                        <constraint firstItem="aVU-78-Wdv" firstAttribute="width" secondItem="uSP-25-m8P" secondAttribute="width" multiplier="0.9" id="zLd-2U-Aik"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -606,7 +593,6 @@ Create your Account</string>
                                                             <constraints>
                                                                 <constraint firstItem="uSP-25-m8P" firstAttribute="leading" secondItem="lbg-Bq-e5L" secondAttribute="leading" id="0fP-fZ-0wh"/>
                                                                 <constraint firstItem="uSP-25-m8P" firstAttribute="top" secondItem="lbg-Bq-e5L" secondAttribute="top" constant="5" id="406-bm-jta"/>
-                                                                <constraint firstItem="uJc-uh-ssP" firstAttribute="width" secondItem="lbg-Bq-e5L" secondAttribute="width" id="64P-G9-2rR"/>
                                                                 <constraint firstAttribute="bottom" secondItem="uSP-25-m8P" secondAttribute="bottom" constant="5" id="pJK-vW-wwZ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="uSP-25-m8P" secondAttribute="trailing" id="vAA-hu-9ug"/>
                                                             </constraints>
@@ -614,7 +600,6 @@ Create your Account</string>
                                                         <size key="customSize" width="120" height="150"/>
                                                         <connections>
                                                             <outlet property="containerView" destination="uSP-25-m8P" id="t67-Wc-VXh"/>
-                                                            <outlet property="imgBGview" destination="uJc-uh-ssP" id="1yA-N0-NgG"/>
                                                             <outlet property="imgSubject" destination="aVU-78-Wdv" id="Oht-3h-fZg"/>
                                                             <outlet property="lblSubName" destination="lE3-wU-cSs" id="Kx4-O7-Yox"/>
                                                         </connections>
@@ -632,9 +617,9 @@ Create your Account</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Le3-rR-fUB" secondAttribute="trailing" id="36Z-xE-405"/>
+                                    <constraint firstItem="Le3-rR-fUB" firstAttribute="height" secondItem="hrJ-ey-J2e" secondAttribute="height" multiplier="0.2" id="3jw-I9-Mwo"/>
                                     <constraint firstAttribute="bottom" secondItem="zAo-Kf-8Ec" secondAttribute="bottom" id="5WP-vy-DTo"/>
                                     <constraint firstItem="kwZ-iw-y0w" firstAttribute="top" secondItem="Le3-rR-fUB" secondAttribute="bottom" constant="20" id="6tg-w8-A9f"/>
-                                    <constraint firstItem="kwZ-iw-y0w" firstAttribute="height" secondItem="Sel-Di-9ns" secondAttribute="height" multiplier="0.395028" id="9d7-yu-AWK"/>
                                     <constraint firstItem="kwZ-iw-y0w" firstAttribute="width" secondItem="Le3-rR-fUB" secondAttribute="width" id="ACf-0k-YtA"/>
                                     <constraint firstItem="Le3-rR-fUB" firstAttribute="width" secondItem="hrJ-ey-J2e" secondAttribute="width" id="BPS-Hq-8O3"/>
                                     <constraint firstAttribute="trailing" secondItem="zAo-Kf-8Ec" secondAttribute="trailing" id="Bb3-dO-0Xl"/>
@@ -644,6 +629,7 @@ Create your Account</string>
                                     <constraint firstItem="kwZ-iw-y0w" firstAttribute="leading" secondItem="hrJ-ey-J2e" secondAttribute="leading" id="Uwd-0W-WfO"/>
                                     <constraint firstItem="Le3-rR-fUB" firstAttribute="top" secondItem="hrJ-ey-J2e" secondAttribute="top" id="ZoV-l4-69X"/>
                                     <constraint firstAttribute="trailing" secondItem="kwZ-iw-y0w" secondAttribute="trailing" id="eKi-XL-ca2"/>
+                                    <constraint firstItem="lEq-Vn-haO" firstAttribute="height" secondItem="Sel-Di-9ns" secondAttribute="height" multiplier="0.382158" id="tJf-Kq-pyX"/>
                                     <constraint firstItem="zAo-Kf-8Ec" firstAttribute="leading" secondItem="hrJ-ey-J2e" secondAttribute="leading" id="vyc-bC-lDA"/>
                                 </constraints>
                             </view>
@@ -660,11 +646,11 @@ Create your Account</string>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" customizationIdentifier="nav" id="yN2-BY-R1o">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="UDG-9f-vVH">
-                            <rect key="frame" x="94" y="22" width="187" height="0.0"/>
+                            <rect key="frame" x="418.5" y="25" width="187" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZbE-0c-hDZ">
-                                    <rect key="frame" x="43.666666666666657" y="-27.666666666666668" width="100" height="55.333333333333336"/>
+                                    <rect key="frame" x="43.5" y="-27.5" width="100" height="55"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="1Tm-ty-6IZ"/>
                                         <constraint firstAttribute="height" constant="55" id="4f0-zD-HHM"/>
@@ -703,11 +689,11 @@ Create your Account</string>
             <objects>
                 <viewController storyboardIdentifier="ChapterViewController" id="GjQ-xr-pfv" customClass="ChapterViewController" customModule="Strats360_KidsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FHL-WL-hEB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6VH-Q5-1uB" userLabel="Upper Collection View">
-                                <rect key="frame" x="0.0" y="47" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="24" width="1024" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="tl8-5I-ag5"/>
@@ -738,7 +724,7 @@ Create your Account</string>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jxf-7q-xtc">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-default" translatesAutoresizingMaskIntoConstraints="NO" id="jxf-7q-xtc">
                                                             <rect key="frame" x="2" y="2" width="56" height="56"/>
                                                         </imageView>
                                                     </subviews>
@@ -779,7 +765,7 @@ Create your Account</string>
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Qy-lz-bJJ">
-                                <rect key="frame" x="0.0" y="157" width="375" height="655"/>
+                                <rect key="frame" x="0.0" y="134" width="1024" height="1232"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ki5-1M-rhL">
                                     <size key="itemSize" width="350" height="550"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -788,7 +774,7 @@ Create your Account</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="ChapterVCLowerCell" id="JM6-f9-vbE" customClass="ChapterVCLowerCell" customModule="Strats360_KidsApp" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="52.666666666666664" width="350" height="550"/>
+                                        <rect key="frame" x="10" y="0.0" width="350" height="550"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0CQ-wg-wBV">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="550"/>
@@ -797,7 +783,7 @@ Create your Account</string>
                                                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfB-W3-8jT">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="550"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="DjO-hE-rAQ">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-default" translatesAutoresizingMaskIntoConstraints="NO" id="DjO-hE-rAQ">
                                                             <rect key="frame" x="0.0" y="-20" width="350" height="550"/>
                                                         </imageView>
                                                     </subviews>
@@ -828,33 +814,33 @@ Create your Account</string>
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NRH-bk-reZ">
-                                <rect key="frame" x="0.0" y="696.66666666666663" width="375" height="81.333333333333371"/>
+                                <rect key="frame" x="0.0" y="1209.5" width="1024" height="136.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KY9-mn-e0O" userLabel="left btn">
-                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="81.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="136.5"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
                                             <imageReference key="image" image="prev" symbolScale="large"/>
-                                        </buttonConfiguration>
+                                        </state>
                                         <connections>
                                             <action selector="backBtnPressed:" destination="GjQ-xr-pfv" eventType="touchUpInside" id="ieY-x4-cPT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-TR-ztK" userLabel="audio btn">
-                                        <rect key="frame" x="127.66666666666666" y="0.0" width="119.66666666666666" height="81.333333333333329"/>
+                                        <rect key="frame" x="344" y="0.0" width="336" height="136.5"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="sound"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="sound"/>
                                         <connections>
                                             <action selector="audioBtnPressed:" destination="GjQ-xr-pfv" eventType="touchUpInside" id="sqK-EV-T8U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGk-Vh-pcB" userLabel="right btn">
-                                        <rect key="frame" x="255.33333333333334" y="0.0" width="119.66666666666666" height="81.333333333333329"/>
+                                        <rect key="frame" x="688" y="0.0" width="336" height="136.5"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="right-arrow"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="right-arrow"/>
                                         <connections>
                                             <action selector="forwardBtnPressed:" destination="GjQ-xr-pfv" eventType="touchUpInside" id="7Ga-cw-QBl"/>
                                         </connections>
@@ -902,22 +888,22 @@ Create your Account</string>
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" title="Profile Page" id="O2o-Fg-rBj" customClass="ProfileViewController" customModule="Strats360_KidsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jy0-NU-Ia8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-Po-MMn">
-                                <rect key="frame" x="37.666666666666657" y="10" width="300" height="735"/>
+                                <rect key="frame" x="70.5" y="10" width="563" height="975.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4b-CS-7Ue" userLabel="image View">
-                                        <rect key="frame" x="10" y="0.0" width="280" height="154.33333333333334"/>
+                                        <rect key="frame" x="10" y="0.0" width="543" height="205"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlIcon" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-0R-aaY" userLabel="Image">
-                                                <rect key="frame" x="62.666666666666671" y="0.0" width="154.33333333333331" height="154.33333333333334"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-default" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-0R-aaY" userLabel="Image">
+                                                <rect key="frame" x="169" y="0.0" width="205" height="205"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzU-W0-Nx9">
-                                                <rect key="frame" x="62.666666666666671" y="-5.3333333333333286" width="154.33333333333331" height="169.66666666666663"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="pencil"/>
+                                                <rect key="frame" x="169" y="-10.5" width="205" height="225.5"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="pencil"/>
                                                 <connections>
                                                     <action selector="changeProfilePic:" destination="O2o-Fg-rBj" eventType="touchUpInside" id="TEr-sh-tLv"/>
                                                 </connections>
@@ -936,10 +922,10 @@ Create your Account</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mew-ys-gFo" userLabel="Txtfield View">
-                                        <rect key="frame" x="10" y="174.33333333333331" width="280" height="185.33333333333331"/>
+                                        <rect key="frame" x="10" y="225" width="543" height="245.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t9a-WS-ywp">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="543" height="75"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
@@ -948,7 +934,7 @@ Create your Account</string>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXd-Gs-HpB">
-                                                <rect key="frame" x="0.0" y="65" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="85" width="543" height="75.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                                 <connections>
@@ -956,7 +942,7 @@ Create your Account</string>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEB-Fh-9Oc">
-                                                <rect key="frame" x="0.0" y="129.99999999999997" width="280" height="55.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="170.5" width="543" height="75"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                 <connections>
@@ -983,31 +969,40 @@ Create your Account</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-wP-47i" userLabel="Buttons View">
-                                        <rect key="frame" x="10" y="379.66666666666674" width="280" height="310.33333333333326"/>
+                                        <rect key="frame" x="10" y="490.5" width="543" height="391.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-HV-qRt">
-                                                <rect key="frame" x="0.0" y="50" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="50" width="543" height="75.5"/>
                                                 <color key="backgroundColor" name="LogoColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="VIP"/>
+                                                <connections>
+                                                    <action selector="VipBtnPressed:" destination="O2o-Fg-rBj" eventType="touchUpInside" id="LjL-fK-ENM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-Ei-l0M">
-                                                <rect key="frame" x="0.0" y="115" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="135.5" width="543" height="75"/>
                                                 <color key="backgroundColor" name="LogoColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="LOG OUT"/>
+                                                <connections>
+                                                    <action selector="LogOutPressed:" destination="O2o-Fg-rBj" eventType="touchUpInside" id="p9R-fI-zqE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpy-8E-Vtg">
-                                                <rect key="frame" x="0.0" y="179.99999999999994" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="220.5" width="543" height="75.5"/>
                                                 <color key="backgroundColor" name="LogoColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="LIVE EVENT"/>
+                                                <connections>
+                                                    <action selector="LiveEventPressed:" destination="O2o-Fg-rBj" eventType="touchUpInside" id="oJI-VY-b9P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBg-Cn-rf0">
-                                                <rect key="frame" x="0.0" y="10" width="280" height="30"/>
+                                                <rect key="frame" x="0.0" y="10" width="543" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <color key="tintColor" name="Color 4"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1017,7 +1012,7 @@ Create your Account</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ5-3d-1u4">
-                                                <rect key="frame" x="0.0" y="244.99999999999997" width="280" height="55.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="306" width="543" height="75.5"/>
                                                 <color key="backgroundColor" name="LogoColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1138,12 +1133,12 @@ Create your Account</string>
         <segue reference="QIE-Xd-187"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="1" width="794" height="1123"/>
         <image name="3-Dots" width="24" height="24"/>
         <image name="360 Kids logo" width="1400" height="850"/>
         <image name="Blue Gradient Login Page Wireframe Mobile Prototype" width="1294" height="2800"/>
-        <image name="GirlIcon" width="512" height="512"/>
+        <image name="IconName.png" width="152" height="152"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="loading-default" width="848" height="847"/>
         <image name="pencil" width="24" height="24"/>
         <image name="prev" width="32" height="32"/>
         <image name="right-arrow" width="32" height="32"/>

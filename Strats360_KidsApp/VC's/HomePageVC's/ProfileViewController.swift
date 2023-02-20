@@ -25,6 +25,7 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var btnLiveEvent: UIButton!
     
     // custom Model
+    
     let customModel = CustomClass()
     let customALamoFire = CustomAlamofire()
     var FetchedData = [String: Any]()
@@ -32,10 +33,11 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     
     //Constants
     var UserId: Int!
+    let id = UserDefaults.standard.value(forKey: AppConstants.UserloggedId)!
+    let token = UserDefaults.standard.value(forKey: AppConstants.UserAuthToken)! as! String
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //btns, txt, cornerRad etc.
         presetEdits()
         
@@ -47,6 +49,7 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
         
         //img picker
         imagePicker.delegate = self
+        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -67,9 +70,8 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     }
     func fetchedProfileDataFromAPI(){
         let loader = self.loader()
-        let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
+        
         let header: HTTPHeaders? = [.authorization(bearerToken: token)]
-        let id = UserDefaults.standard.value(forKey: APIConstants.UserloggedId)!
         let request = RequestModel(url: APIConstants.ProfilePageAPI, httpMethod: .post, headerFields: header, parameter: ["id": id] )
         
         ServerCommunication.share.APICallingFunction(request: request) { response, data in
@@ -93,7 +95,6 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     }
     
     @IBAction func changeProfilePic(_ sender: UIButton) {
-        
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
@@ -118,6 +119,59 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func chngPasspresseD(_ sender: UIButton) {
     txtFieldPopUp(view: self, numberOfTxtfield: 3, txtplaceholder: ["Your Old Password: ", "Enter your New Password :","Re- Enter your new password :"], title: "Change Password", message: "Enter Your New Password ")
+    }
+    @IBAction func VipBtnPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Comming Soon...", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+        
+        self.present(alert, animated: true)
+    }
+    @IBAction func LiveEventPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Comming Soon...", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+        
+        self.present(alert, animated: true)
+    }
+    @IBAction func LogOutPressed(_ sender: UIButton){
+    let header: HTTPHeaders? = [.authorization(bearerToken: token)]
+            let loader = self.loader()
+            ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post,headerFields: header, parameter: [:])) { response, data in
+                print(data!)
+                if response{
+                    self.stopLoader(loader: loader)
+                    // USer login status code...
+                    UIAlertController.CustomAlert(title: "Success", msg: "You Logged Out..", target: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                        UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                        nvc.viewControllers = [rootVC]
+                        rootVC.cameFromHomePage = true
+                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                        appDelegate.window!.rootViewController = nvc
+                    }
+                }
+                else{
+                    UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
+                    DispatchQueue.main.asyncAfter(deadline: .now()){
+                        UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                        // USer login status code...
+                        UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                      let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
+                                           nvc.viewControllers = [rootVC]
+                        rootVC.cameFromHomePage = true
+                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                        appDelegate.window!.rootViewController = nvc
+                    }
+                }
+            }
+            
+        
     }
     
     @IBAction func saveDataPressed(_ sender: UIButton) {
@@ -146,7 +200,6 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             print("Incorrect Email")
             return
         }
-        
         if (isValidateEmail == true || isValidateName == true) {
             UIAlertController.CustomAlert(title: "Success", msg: "Data Saved Successfully.", target: self)
             customModel.errorTxtFields(txt: [txtEmail,txtphoneNo,txtUserName], error: false)
@@ -160,7 +213,6 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
                 "profile" : (dicData["image"] as? String)!
             ] as [String: String]
             let url = "\(APIConstants.EditProfilePageAPI)"
-            let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
             let header: HTTPHeaders? = [.authorization(bearerToken: token)]
             let request = RequestModel(url: url, httpMethod: .post, headerFields: header, parameter: parameter )
             
@@ -181,14 +233,40 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
         dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                imgProfilePic.contentMode = .scaleAspectFit
-                imgProfilePic.image = pickedImage
-            }
-        dismiss(animated: true){
-            // we're here uploading the image..
+        guard let pickedImage = info[.originalImage] as? UIImage else{ return }
+        
+        imgProfilePic.contentMode = .scaleAspectFit
+        imgProfilePic.image = pickedImage
+        
+        self.dismiss(animated: true){
+            //Parameter HERE
+            let parameters = [
+                "id": "\(self.id)"
+            ] as! [String:Any]
+            //Header HERE
+            let headers: HTTPHeaders? = [.authorization(bearerToken: self.token)]
+            let imgData = pickedImage.jpegData(compressionQuality: 0.7)!
             
-        }
+            AF.upload(multipartFormData: { multipartFormData in
+                //Parameter for Upload files
+                multipartFormData.append(imgData, withName: "profile",fileName: "Profile.png" , mimeType: "image/png")
+                
+                for (key, value) in parameters
+                {
+                    multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                }
+            }, to: APIConstants.EditProfilePageAPI, usingThreshold: UInt64.init() , method: .post, headers: headers).response{ response in
+                
+                if let data = response.data{
+                    print(data)
+                    let jsonData = ServerCommunication.share.nsdataToJSON(data: data ) as! NSDictionary
+                    print(jsonData)
+                }
+                else{
+                    print(response)
+                }
+            }
+            }
         }
 }
 extension ProfileViewController{
@@ -214,7 +292,6 @@ extension ProfileViewController{
             }
             if customModel.validatePassword(password: newPassword) {
                 // url parameters
-                let id = UserDefaults.standard.value(forKey: APIConstants.UserloggedId)!
                 let parameter1 =
                 [
                     "user_id": id,
@@ -222,7 +299,6 @@ extension ProfileViewController{
                     "new_pwd": newPassword,
                     "confirm_new_pwd": confirmNewPass
                 ] as [String: Any]
-                let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
                 let header: HTTPHeaders? = [.authorization(bearerToken: token)]
                 
                 let request = RequestModel(url: APIConstants.ChangePassAPI, httpMethod: .post, headerFields: header , parameter: parameter1)

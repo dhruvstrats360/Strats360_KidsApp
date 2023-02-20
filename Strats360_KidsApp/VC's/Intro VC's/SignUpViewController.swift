@@ -50,7 +50,7 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
         countryPicker.delegate = self
         countryPicker.dataSource = self
         countryPicker.showPhoneCodeInView = true
-        countryPicker.font = UIFont(name: "Roboto-Bold", size: 12)!
+        countryPicker.font = UIFont(name: AppConstants.BoldFont, size: 12)!
         countryPicker.flagSpacingInView = 8.0
         // Do any additional setup after loading the view.
     }
@@ -64,6 +64,11 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
+        
+        txtUserName.clearButtonMode = .never
+        txtPassword.clearButtonMode = .never
+        txtEmail.clearButtonMode = .never
+        txtphoneNo.clearButtonMode = .never
         
         guard let name = txtUserName.text, let email = txtEmail.text, let phone = txtphoneNo.text, let password = txtPassword.text
         else {
@@ -105,7 +110,7 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
             let parameter = [
                 "name" : name,
                 "email" : email,
-                "phone" : countryPicker.selectedCountry.phoneCode + phone,
+                "phone" : countryPicker.selectedCountry.phoneCode + " " + phone,
                 "password" : password
             ] as [String: Any]
             
@@ -115,14 +120,18 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
                 if response{
                     print(data!)
                     
-                    UserDefaults.standard.set(data!, forKey: APIConstants.UserloggedId)
-                    
                     // USer data auth Code..
-                    let authCode = data!["authorisation"]! as! [String:Any]
-                    UserDefaults.standard.set(authCode, forKey: APIConstants.UserAuthToken)
+                    let authCode = data!["authorisation"]! as? NSDictionary
+                    let authToken = authCode!["token"]!
+                    UserDefaults.standard.set(authToken, forKey: AppConstants.UserAuthToken)
+                    
+                    // USer ID
+                    let userData = data!["user"]! as? NSDictionary
+                    let UserId = userData!["id"]!
+                    UserDefaults.standard.set(UserId, forKey: AppConstants.UserloggedId)
                     
                     // USer login status code...
-                    UserDefaults.standard.set(true, forKey: APIConstants.UserLoginSatus)
+                    UserDefaults.standard.set(true, forKey: AppConstants.UserLoginStatus)
                     
                     self.customModel.errorTxtFields(txt: [self.txtEmail,self.txtphoneNo,self.txtPassword,self.txtUserName], error: false)
                     print("User signs up successfully")

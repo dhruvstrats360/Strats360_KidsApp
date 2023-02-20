@@ -29,10 +29,11 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // Constants
     let splashScreen = RevealingSplashView(iconImage: UIImage(imageLiteralResourceName: "Logo"), iconInitialSize: CGSize(width: 350, height: 350), backgroundColor: UIColor(named: "LogoColor")!)
+    let token = UserDefaults.standard.value(forKey: AppConstants.UserAuthToken)! as! String
     
     var ApifetchedData = [HomePageData]()
     var UserData: NSDictionary!
-    var arritem = ["Profile", "Language", "Sign Out"]
+    var arritem = ["Profile", "Sign Out"]
     var isComeFromLogin = false // by default false
     var loggedinuserData = ""
     var timeInterval = 0.0
@@ -47,9 +48,16 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
             self.animatedView.alpha = 0
             self.timeInterval = 2.0
         }
+        //InternetConnection
+        if Connectivity.isConnectedToInternet {
+             print("Connected")
+         } else {
+             let alert = UIAlertController(title: "Please Connect to internet", message: "", preferredStyle: .alert)
+             self.present(alert, animated: true)
+             return
+        }
 //        Fetching Data from API
         DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
-//                self.fetchingAPiData()
             self.fetchingAPIDataV2()
         }
         SubjectColView.delegate = self
@@ -63,9 +71,7 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
 
     func fetchingAPIDataV2(){
         let loader = self.loader()
-        let token = UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String
-        
-        let header: HTTPHeaders? = [.authorization(bearerToken: token)]
+        let header: HTTPHeaders? = [.authorization(bearerToken: token as! String)]
         
         let request = RequestModel(url: APIConstants.HomePageAPI, httpMethod: .post, headerFields: header, parameter: [:])
         ServerCommunication.share.APICallingFunction(request: request) { response, data in
@@ -105,12 +111,6 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
             
         }
     }
-    
-    func shareingIdtoALL(){
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let rootVC:ProfileViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-
-    }
     @IBAction func popBtnPressed(_ sender: UIBarButtonItem) {
         
         if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
@@ -131,60 +131,14 @@ class HomePageViewController: UIViewController, UIGestureRecognizerDelegate {
                                 if selectedIndex == 0{
                                     performSegue(withIdentifier: "gotoProfile", sender: self)
                                 }
-                                
                                 else if selectedIndex == 1{
-                                    // 2nd pop on selected btn.
-                                    
-                                    FTPopOverMenu.show(fromSenderFrame: popframe
-                                                       , withMenuArray: ["Hindi", "English","Gujrati"], imageArray: [],configuration: homepageModel.configuration, doneBlock: { (selectedIndex) in
-                                        if self.arritem.count > 0{
-                                            
-                                             if selectedIndex == 1{
-                                                // 3rd pop on selected btn.
-                                                
-                                            }
-                                        }
-                                    } , dismiss: {
-                                    })
-                                }
-                                if selectedIndex == 2{
-                                    let token = UserDefaults.standard.object(forKey: APIConstants.UserAuthToken)!
-                                    let header: HTTPHeaders? = [.authorization(bearerToken: token as! String)]
+                                    let header: HTTPHeaders? = [.authorization(bearerToken: token)]
+                                    let loader = self.loader()
                                     ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post,headerFields: header, parameter: [:])) { response, data in
                                         print(data!)
-                                        if response{
-                                            // USer login status code...
-                                            UIAlertController.CustomAlert(title: "Success", msg: "You Logged Out..", target: self)
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                                                UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                                let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                                let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                                nvc.viewControllers = [rootVC]
-                                                rootVC.cameFromHomePage = true
-                                                let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                                appDelegate.window!.rootViewController = nvc
-                                            }
-                                        }
-                                        else{
-                                            UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                            DispatchQueue.main.asyncAfter(deadline: .now()){
-                                                UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
-                                            }
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                                                // USer login status code...
-                                                UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
-                                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                              let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                                                let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                                                   nvc.viewControllers = [rootVC]
-                                                rootVC.cameFromHomePage = true
-                                                let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                                                appDelegate.window!.rootViewController = nvc
-                                            }
-                                        }
+                                        self.stopLoader(loader: loader)
+                                        self.CustomModel.LogOut(response: response, self: self, datamsg: data!)
                                     }
-                                    
                                 }
                             }
                         } , dismiss: {
@@ -209,22 +163,28 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         cell.lblSubName.text = ApifetchedData[indexPath.row].name
         cell.contentView.layer.cornerRadius = 15
         
-        cell.imgBGview.layer.cornerRadius = 17
+        cell.imgSubject.layer.cornerRadius = 15
         cell.containerView.layer.cornerRadius = 15
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         DispatchQueue.main.asyncAfter(deadline: .now()){
-            let header: HTTPHeaders? = [.authorization(bearerToken: UserDefaults.standard.value(forKey: APIConstants.UserAuthToken)! as! String)]
+            let header: HTTPHeaders? = [.authorization(bearerToken: self.token)]
             let loader = self.loader()
             ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.ChapterPageAPI, httpMethod: .post, headerFields: header,parameter: ["category_id": self.ApifetchedData[indexPath.row].id])) { response, data in
                 if response{
+                    self.stopLoader(loader: loader)
                     print(data!)
                     let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
                     let arrUpperData = data!["category_wise_data"]! as! Array<Any>
                     let arrLowerData = data!["data"]! as! Array<Any>
-                    
+                    if arrUpperData.isEmpty || arrLowerData.isEmpty{
+                    DispatchQueue.main.asyncAfter(deadline: .now()){
+                            UIAlertController.CustomAlert(title: "Comming Soon....", msg: "", target: self)
+                        }
+                        return
+                    }
                     for index in 0...(arrUpperData.count - 1){
                         let fetchedDATA = arrUpperData[index] as! NSDictionary
                         destinationVC.upperFetchedDataFromAPI.append(CategoryWiseDatum(nameOrImage: fetchedDATA["name_or_image"]! as! String))
@@ -234,12 +194,15 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
                         destinationVC.lowerFetchedDataFromAPI.append(ChapterDataModel(id: fetchedDATA["id"]! as! Int, categoryID: fetchedDATA["category_id"]! as! String , name: fetchedDATA["name"]! as! String, image: fetchedDATA["image"]! as! String, sound: fetchedDATA["sound"]! as! String))
                         print(fetchedDATA)
                     }
-                    self.stopLoader(loader: loader)
+//                    self.stopLoader(loader: loader)
                     
                     self.navigationController?.pushViewController(destinationVC, animated: true)
                 }
                 else{
-                    UIAlertController.CustomAlert(title: "Error", msg: data!["message"]! as! String, target: self)
+                    self.stopLoader(loader: loader)
+                    DispatchQueue.main.asyncAfter(deadline: .now()){
+                        UIAlertController.CustomAlert(title: "Error", msg: data!["message"]! as! String, target: self)
+                    }
                 }
             }
         }
@@ -250,6 +213,5 @@ class HomePageCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var lblSubName: UILabel!
     @IBOutlet weak var imgSubject: UIImageView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var imgBGview: UIView!
 }
 

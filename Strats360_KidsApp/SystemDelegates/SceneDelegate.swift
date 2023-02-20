@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     }
     func isUserLoggedIn() -> Bool {
-        let status = UserDefaults.standard.bool(forKey: APIConstants.UserLoginSatus) 
+        let status = UserDefaults.standard.bool(forKey: AppConstants.UserLoginStatus) 
       return status
     }
 

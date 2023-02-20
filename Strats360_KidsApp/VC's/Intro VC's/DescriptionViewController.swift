@@ -34,6 +34,15 @@ class DescriptionViewController: UIViewController {
         view.addSubview(self.splashScreen)
         splashScreen.startAnimation()
         
+        //InternetConnection
+        if Connectivity.isConnectedToInternet {
+             print("Connected")
+         } else {
+             let alert = UIAlertController(title: "Please Connect to internet", message: "", preferredStyle: .alert)
+             self.present(alert, animated: true)
+             return
+        }
+        
         //APi Calling
         apiCalling()
         
@@ -69,7 +78,12 @@ class DescriptionViewController: UIViewController {
         pageController.numberOfPages = 3
         pageController.layer.shadowOffset = CGSize(width: 0.5, height: 10)
         pageController.tintColor = .black
-        pageController.backgroundStyle = .prominent
+        if #available(iOS 14.0, *) {
+            pageController.backgroundStyle = .prominent
+        } else {
+            // Fallback on earlier versions
+            pageController.layer.style = .none
+        }
         btnBack.isHidden = true
         navigationController?.navigationBar.isHidden = true
     }
