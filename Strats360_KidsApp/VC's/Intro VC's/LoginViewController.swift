@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
     let CustomModel = CustomClass()
     var cameFromHomePage = false
     var UserId: Int!
-    let token = UserDefaults.standard.value(forKey: AppConstants.UserAuthToken)! as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +41,7 @@ class LoginViewController: UIViewController {
         // txtFields edits
         txtPassword.placeholder = "Password"
         txtUsername.placeholder = "User Name"
-//        txtUsername.text = "tester3@gmail.com"
-//        txtPassword.text = "tester@123"
+        
     }
     
     @IBAction func signUpBTNpressed(_ sender: UIButton) {
@@ -73,7 +71,7 @@ class LoginViewController: UIViewController {
             print("Incorrect Name & password")
             return
         }
-        if ( isValidateEmail == true || isValidatePassword == true  ) {
+        if (isValidateEmail == true || isValidatePassword == true) {
             
             // Parameters -  name, profile
             let parameter = [
@@ -81,7 +79,7 @@ class LoginViewController: UIViewController {
                 "password" : password
             ] as [String: Any]
             
-            let request = RequestModel(url: APIConstants.LoginPageAPI, httpMethod: .post, headerFields: [:], parameter: parameter )
+            let request = RequestModel(url: APIConstants.LoginPageAPI, httpMethod: .post, headerFields: [:], parameter: parameter)
             
             ServerCommunication.share.APICallingFunction(request: request) { response, data in
                 if response{
@@ -137,7 +135,6 @@ extension UINavigationController {
 }
 extension LoginViewController{
     func txtFieldPopUp(){
-        
         let alert = UIAlertController(title: "Forgot Password", message: "No worries Enter your Email ID, you will get new Password their." , preferredStyle: .alert)
         //2. Add the text field. You can configure it however you need.
         alert.addTextField{ input in
@@ -163,7 +160,8 @@ extension LoginViewController{
                 // url parameters
                 let loader = self.loader()
                 let parameter1 = ["email": emailId ] as [String: Any]
-                let header: HTTPHeaders? = [.authorization(bearerToken: self.token)]
+                let token = UserDefaults.standard.value(forKey: AppConstants.UserAuthToken)! as! String
+                let header: HTTPHeaders? = [.authorization(bearerToken: token )]
                 let request = RequestModel(url: APIConstants.ForgotPassAPI, httpMethod: .post, headerFields: header , parameter: parameter1)
                 ServerCommunication.share.APICallingFunction(request: request) { response, data in
                     if response{

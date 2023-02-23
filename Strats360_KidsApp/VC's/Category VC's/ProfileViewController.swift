@@ -25,13 +25,13 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var btnLiveEvent: UIButton!
     
     // custom Model
-    
     let customModel = CustomClass()
     let customALamoFire = CustomAlamofire()
     var FetchedData = [String: Any]()
     let imagePicker = UIImagePickerController()
     
     //Constants
+    var userIsVIP = false
     var UserId: Int!
     let id = UserDefaults.standard.value(forKey: AppConstants.UserloggedId)!
     let token = UserDefaults.standard.value(forKey: AppConstants.UserAuthToken)! as! String
@@ -45,15 +45,11 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
         btnSavechanges.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0).isActive = true
         
         // fetching data from API.
-        fetchedProfileDataFromAPI()
+        self.fetchedProfileDataFromAPI()
         
         //img picker
         imagePicker.delegate = self
         
-
-    }
-    override func viewWillAppear(_ animated: Bool) {
-
     }
     
     func presetEdits(){
@@ -121,10 +117,12 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
     txtFieldPopUp(view: self, numberOfTxtfield: 3, txtplaceholder: ["Your Old Password: ", "Enter your New Password :","Re- Enter your new password :"], title: "Change Password", message: "Enter Your New Password ")
     }
     @IBAction func VipBtnPressed(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Comming Soon...", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive))
-        
-        self.present(alert, animated: true)
+        if userIsVIP{
+            performSegue(withIdentifier: "vipUser", sender: self)
+        }
+        else{
+            performSegue(withIdentifier: "normalUser", sender: self)
+        }
     }
     @IBAction func LiveEventPressed(_ sender: UIButton) {
         let alert = UIAlertController(title: "Comming Soon...", message: nil, preferredStyle: .alert)
@@ -137,41 +135,9 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             let loader = self.loader()
             ServerCommunication.share.APICallingFunction(request: RequestModel(url: APIConstants.LogOutAPI,httpMethod: .post,headerFields: header, parameter: [:])) { response, data in
                 print(data!)
-                if response{
-                    self.stopLoader(loader: loader)
-                    // USer login status code...
-                    UIAlertController.CustomAlert(title: "Success", msg: "You Logged Out..", target: self)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
-                        UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                        nvc.viewControllers = [rootVC]
-                        rootVC.cameFromHomePage = true
-                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                        appDelegate.window!.rootViewController = nvc
-                    }
-                }
-                else{
-                    UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
-                    DispatchQueue.main.asyncAfter(deadline: .now()){
-                        UIAlertController.CustomAlert(title: "Error", msg: (data!["message"]! as? String)!, target: self)
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                        // USer login status code...
-                        UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                      let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                        let nvc:UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "StartNavController") as! StartNavController
-                                           nvc.viewControllers = [rootVC]
-                        rootVC.cameFromHomePage = true
-                        let appDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-                        appDelegate.window!.rootViewController = nvc
-                    }
-                }
-            }
-            
-        
+                self.stopLoader(loader: loader)
+                self.customModel.LogOut(response: response, self: self, datamsg: data!)
+        }
     }
     
     @IBAction func saveDataPressed(_ sender: UIButton) {
@@ -201,12 +167,12 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             return
         }
         if (isValidateEmail == true || isValidateName == true) {
-            UIAlertController.CustomAlert(title: "Success", msg: "Data Saved Successfully.", target: self)
-            customModel.errorTxtFields(txt: [txtEmail,txtphoneNo,txtUserName], error: false)
+            
             // id, name, email, phone, profile
             let dicData:[String:Any] = self.FetchedData["data"] as! [String : Any]
             
             let parameter = [
+                "id": "\(self.id)",
                 "name" : name,
                 "email" : email,
                 "phone" : phone,
@@ -219,14 +185,24 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             ServerCommunication.share.APICallingFunction(request: request) { response, data in
                 if response{
                     print(data!)
+                    UIAlertController.CustomAlert(title: "Success", msg: "Data Saved Successfully.", target: self)
+                    self.customModel.errorTxtFields(txt: [self.txtEmail,self.txtphoneNo,self.txtUserName], error: false)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                        self.dismiss(animated: true)
+                        self.dismiss(animated: true)
+                    }
                 }
                 else{
+                    UIAlertController.CustomAlert(title: "Error", msg: data!["message"]! as! String, target: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.dismiss(animated: true)
+                    }
                     print(data!)
                 }
             }
             print("All fields are correct")
         }
-        self.dismiss(animated: true)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -269,6 +245,7 @@ class ProfileViewController:UIViewController, UIImagePickerControllerDelegate & 
             }
         }
 }
+
 extension ProfileViewController{
     func txtFieldPopUp(view: UIViewController, numberOfTxtfield: Int, txtplaceholder: [String], title: String, message: String){
         let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: .alert)

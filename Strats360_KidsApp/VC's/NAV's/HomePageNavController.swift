@@ -11,9 +11,6 @@ class HomePageNavController: UINavigationController, UINavigationBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationBar.backIndicatorImage = UIImage(named: "prev")
-        
     }
     /*
     // MARK: - Navigation

@@ -16,6 +16,8 @@ struct HomePageAPIModel: Codable {
     let banner: String
     let data: [HomePageData]
     
+    
+    
     init(status: Int, message: String, logo: String,banner: String, data: [HomePageData]){
         self.status = status
         self.message = message
@@ -30,10 +32,12 @@ struct HomePageData: Codable {
     let id: Int
     let name: String
     let image: String
-    init(id: Int, name: String, image: String){
+    let premium_cat:String
+    init(id: Int, name: String, image: String,premium_cat:String){
         self.id = id
         self.name = name
         self.image = image
+        self.premium_cat = premium_cat
     }
 }
 

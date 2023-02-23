@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         
-//        UserDefaults.standard.set(false, forKey: APIConstants.UserLoginSatus)
+//        UserDefaults.standard.set(false, forKey: AppConstants.UserLoginStatus)
         return true
     }
     // MARK: UISceneSession Lifecycle

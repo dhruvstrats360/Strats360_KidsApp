@@ -12,7 +12,7 @@ import Alamofire
 import RevealingSplashView
 
 //MARK: Custom Class
-class CustomClass{
+public class CustomClass{
     
     func curveBTN( btn button: UIButton){
         button.layer.masksToBounds = true
@@ -68,7 +68,7 @@ class CustomClass{
     
     func validateName(name: String) ->Bool {
         //  Length be 18 characters max and 3 characters minimum, you can always modify. // No characters limit..
-        let nameRegex = "^[a-zA-Z-]+ ?.* [a-zA-Z-]+$"
+        let nameRegex = "^[a-zA-Z-]+[a-zA-Z-]+$"
         let trimmedString = name.trimmingCharacters(in: .whitespaces)
         let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
         let isValidateName = validateName.evaluate(with: trimmedString)

@@ -77,13 +77,7 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
         let isValidateName = self.customModel.validateName(name: name)
         let isValidateEmail = self.customModel.validateEmailId(emailID: email)
         let isValidatePassword = self.customModel.validatePassword(password: password)
-        if (isValidateName == false && isValidateEmail == false){
-            customModel.errorTxtField(txt: txtUserName, iserror: true)
-            customModel.errorTxtField(txt: txtEmail, iserror: true)
-            UIAlertController.CustomAlert(title: "Error", msg: "Incorrect Name & Password", target: self)
-           print("Incorrect Name & email")
-           return
-        }
+        
         if (isValidateName == false) {
             customModel.errorTxtField(txt: txtUserName, iserror: true)
             UIAlertController.CustomAlert(title: "Error", msg: "Incorrect Name", target: self)
@@ -103,8 +97,7 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
             return
         }
         
-        
-        if (isValidateEmail == true || isValidateName == true || isValidatePassword == true  ) {
+        if (isValidateEmail == true || isValidateName == true || isValidatePassword == true){
             
             // Parameters - id, name, email, phone, profile
             let parameter = [
@@ -160,6 +153,15 @@ class SignUpViewController: UIViewController, CountryPickerViewDelegate, Country
                 }
             }
             print("All fields are correct")
+        }
+        else{
+            let parameter = [
+                "name" : name,
+                "email" : email,
+                "phone" : countryPicker.selectedCountry.phoneCode + " " + phone,
+                "password" : password
+            ] as [String: Any]
+            
         }
     }
 }

@@ -12,6 +12,8 @@
 		8F185456299E652D0028885A /* IconName@3x 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185452299E652C0028885A /* IconName@3x 1.png */; };
 		8F185457299E652D0028885A /* IconName@3x~ipad 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185453299E652D0028885A /* IconName@3x~ipad 1.png */; };
 		8F185458299E652D0028885A /* IconName@2x 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F185454299E652D0028885A /* IconName@2x 1.png */; };
+		8F22AACA29A648850039A62E /* Subscribe2VIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22AAC929A648850039A62E /* Subscribe2VIPViewController.swift */; };
+		8F22AACC29A72FB70039A62E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22AACB29A72FB60039A62E /* ProfileViewController.swift */; };
 		8F31C7C22965AC0100554AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C12965AC0100554AB8 /* AppDelegate.swift */; };
 		8F31C7C42965AC0100554AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C32965AC0100554AB8 /* SceneDelegate.swift */; };
 		8F31C7C62965AC0100554AB8 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31C7C52965AC0100554AB8 /* DescriptionViewController.swift */; };
@@ -39,8 +41,8 @@
 		8FB6F4132988E0D300D3E4D3 /* APIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */; };
 		8FC463C1298D2FE1001038BE /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC463C0298D2FE1001038BE /* ServerCommunication.swift */; };
 		8FC463C3298D3697001038BE /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC463C2298D3697001038BE /* AppConstants.swift */; };
+		8FCB926D29A647E700B0FF76 /* VIPDashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCB926C29A647E600B0FF76 /* VIPDashViewController.swift */; };
 		8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC73C229685236000F8DE5 /* HomePageViewController.swift */; };
-		8FCFC4CA297A752200B136ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCFC4C9297A752200B136ED /* ProfileViewController.swift */; };
 		8FE36F022987A6A400E27752 /* UIkit CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE36F012987A6A400E27752 /* UIkit CustomModel.swift */; };
 		8FE7C5FD296C402600F3E67E /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		8F185452299E652C0028885A /* IconName@3x 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@3x 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@3x 1.png"; sourceTree = "<group>"; };
 		8F185453299E652D0028885A /* IconName@3x~ipad 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@3x~ipad 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@3x~ipad 1.png"; sourceTree = "<group>"; };
 		8F185454299E652D0028885A /* IconName@2x 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconName@2x 1.png"; path = "Assets.xcassets/AppIcon.appiconset/IconName@2x 1.png"; sourceTree = "<group>"; };
+		8F22AAC929A648850039A62E /* Subscribe2VIPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe2VIPViewController.swift; sourceTree = "<group>"; };
+		8F22AACB29A72FB60039A62E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8F31C7BE2965AC0100554AB8 /* Strats360_KidsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strats360_KidsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F31C7C12965AC0100554AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F31C7C32965AC0100554AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,8 +87,8 @@
 		8FB6F4122988E0D300D3E4D3 /* APIDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModels.swift; sourceTree = "<group>"; };
 		8FC463C0298D2FE1001038BE /* ServerCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 		8FC463C2298D3697001038BE /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8FCB926C29A647E600B0FF76 /* VIPDashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VIPDashViewController.swift; path = "Strats360_KidsApp/VC's/VIP VC's/VIPDashViewController.swift"; sourceTree = SOURCE_ROOT; };
 		8FCC73C229685236000F8DE5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		8FCFC4C9297A752200B136ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Strats360_KidsApp/VC's/HomePageVC's/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		8FE36F012987A6A400E27752 /* UIkit CustomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIkit CustomModel.swift"; sourceTree = "<group>"; };
 		8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,9 +162,10 @@
 		8F31C7D7296698EF00554AB8 /* VC's */ = {
 			isa = PBXGroup;
 			children = (
+				8FCB927029A6482E00B0FF76 /* VIP VC's */,
 				8F98E965296C001600B6D71A /* NAV's */,
 				8FCC73C129684056000F8DE5 /* Intro VC's */,
-				8FCC73C42968523C000F8DE5 /* HomePageVC's */,
+				8FCC73C42968523C000F8DE5 /* Category VC's */,
 			);
 			path = "VC's";
 			sourceTree = "<group>";
@@ -223,6 +228,15 @@
 			path = "NAV's";
 			sourceTree = "<group>";
 		};
+		8FCB927029A6482E00B0FF76 /* VIP VC's */ = {
+			isa = PBXGroup;
+			children = (
+				8FCB926C29A647E600B0FF76 /* VIPDashViewController.swift */,
+				8F22AAC929A648850039A62E /* Subscribe2VIPViewController.swift */,
+			);
+			path = "VIP VC's";
+			sourceTree = "<group>";
+		};
 		8FCC73C129684056000F8DE5 /* Intro VC's */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,14 +247,14 @@
 			path = "Intro VC's";
 			sourceTree = "<group>";
 		};
-		8FCC73C42968523C000F8DE5 /* HomePageVC's */ = {
+		8FCC73C42968523C000F8DE5 /* Category VC's */ = {
 			isa = PBXGroup;
 			children = (
 				8FCC73C229685236000F8DE5 /* HomePageViewController.swift */,
 				8FE7C5FC296C402600F3E67E /* ChapterViewController.swift */,
-				8FCFC4C9297A752200B136ED /* ProfileViewController.swift */,
+				8F22AACB29A72FB60039A62E /* ProfileViewController.swift */,
 			);
-			path = "HomePageVC's";
+			path = "Category VC's";
 			sourceTree = "<group>";
 		};
 		BEB01B0DAFC2DAC0379857DC /* Pods */ = {
@@ -384,20 +398,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCB926D29A647E700B0FF76 /* VIPDashViewController.swift in Sources */,
 				8FE36F022987A6A400E27752 /* UIkit CustomModel.swift in Sources */,
 				8FC463C1298D2FE1001038BE /* ServerCommunication.swift in Sources */,
 				8FE7C5FD296C402600F3E67E /* ChapterViewController.swift in Sources */,
 				8F98E967296C1B6900B6D71A /* HomePageNavController.swift in Sources */,
 				8FC463C3298D3697001038BE /* AppConstants.swift in Sources */,
+				8F22AACC29A72FB70039A62E /* ProfileViewController.swift in Sources */,
 				8F31C7FE29671C3A00554AB8 /* LoginViewController.swift in Sources */,
 				8FCC73C329685236000F8DE5 /* HomePageViewController.swift in Sources */,
 				8FB6F4132988E0D300D3E4D3 /* APIDataModels.swift in Sources */,
 				8F98E964296C001300B6D71A /* StartNavController.swift in Sources */,
 				8F31C7DD2966994C00554AB8 /* CustomModel.swift in Sources */,
-				8FCFC4CA297A752200B136ED /* ProfileViewController.swift in Sources */,
 				8F31C7C62965AC0100554AB8 /* DescriptionViewController.swift in Sources */,
 				8F31C7C22965AC0100554AB8 /* AppDelegate.swift in Sources */,
 				8F31C7C42965AC0100554AB8 /* SceneDelegate.swift in Sources */,
+				8F22AACA29A648850039A62E /* Subscribe2VIPViewController.swift in Sources */,
 				8F31C7FC2966EE2700554AB8 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
